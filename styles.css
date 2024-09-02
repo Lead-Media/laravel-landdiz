@@ -1,0 +1,227 @@
+:root {
+    --primary-color: red;
+    --secondary-color: blue;
+    --button-radius: 20px;
+    --form-field-radius: 15px;
+    --form-button-radius: var(--form-field-radius);
+}
+
+.underline,
+.dotted-underline {
+    text-decoration: underline;
+}
+.dotted-underline {
+    text-decoration-style: dotted;
+}
+.flex,
+.flex-row,
+.flex-column {
+    display: flex;
+}
+.flex-row {
+    flex-direction: row;
+}
+.flex-column {
+    flex-direction: column;
+}
+.align-center {
+    align-items: center;
+}
+.text-center {
+    text-align: center;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+}
+
+
+/* Шрифты */
+@font-face {
+    font-family: "Jost";
+    src: url("/fonts/Jost-Black.ttf");
+    font-weight: 700;
+}
+@font-face {
+    font-family: "Jost";
+    src: url("/fonts/Jost-Medium.ttf");
+    font-weight: 500;
+}
+@font-face {
+    font-family: "Jost";
+    src: url("/fonts/Jost-Regular.ttf");
+    font-weight: 400;
+}
+@font-face {
+    font-family: "Jost";
+    src: url("/fonts/Jost-Variable.ttf");
+}
+
+.wrapper {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.f-jost {
+    font-family: "Jost", sans-serif;
+}
+
+.footer {
+    display: grid;
+    font-weight: 500;
+    background: #181E1A;
+    color: white;
+    bottom: 0;
+}
+.footer .logo img {
+    width: 200px;
+}
+.footer .title {
+    font-weight: 700;
+    margin-bottom: 1em;
+    font-size: 20px;
+}
+.footer .menu {
+    display: flex;
+    font-size: 16px;
+}
+.footer .menu a {
+    display: block;
+    margin-bottom: .5em;
+    cursor: pointer;
+}
+.footer .social-links {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+.footer .social-links a > img {
+    border-radius: 50%;
+    width: 41px;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+}
+.footer .policy {
+    display: flex;
+    flex-direction: row;
+    font-size: 13px;
+    justify-content: space-between;
+}
+.footer .policy a {
+    font-size: 16px;
+    text-align: center;
+    font-weight: 400;
+}
+
+@media (max-width: 768px) {
+    .footer {
+        gap: 3em;
+    }
+    .footer .logo {
+        display: flex;
+        justify-content: center;
+    }
+    .footer .title {
+        font-size: 16px;
+        text-align: center;
+    }
+    .footer .menu a {
+        display: block;
+        text-align: start;
+    }
+    .footer .menu {
+        font-size: 11px;
+        gap: 2em 1em;
+        flex-wrap: wrap;
+    }
+    .footer .menu > div {
+        justify-self: stretch;
+        min-width: 40%;
+        flex: 1 1 calc((100% / 3) - 2em);
+    }
+    .footer .menu .info {
+        text-align: center;
+    }
+
+    .footer .policy {
+        align-items: center;
+        flex-direction: column;
+        gap: 2em;
+    }
+
+    .footer .social-links {
+        align-items: center;
+    }
+    .footer .social-links .links {
+        display: flex;
+        gap: 1em;
+    }
+    .footer .social-links a > img {
+        width: 50px;
+    }
+}
+
+@media (min-width: 768px) {
+    .footer {
+        grid-template-areas: "a b b b"
+                             "c b b b"
+                             "d d d d";
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        gap: 10% 15%;
+    }
+    .footer .log {
+        grid-area: a;
+    }
+    .footer .menu {
+        flex-direction: row;
+        grid-area: b;
+        column-gap: 15%;
+    }
+    .footer .social-links {
+        grid-area: c;
+    }
+    .footer .policy {
+        grid-area: d;
+    }
+    .footer .policy > * {
+        width: calc(100% / 3);
+    }
+    .footer .policy :last-child {
+        text-align: right;
+        align-items: flex-end;
+    }
+
+    .footer .policy,
+    .footer .social-links {
+        border-top: 1px solid rgba(255, 255, 255, .35) ;
+        padding-top: 3em;
+    }
+}
+
+@media (max-width: 768px) {
+    .m-pad-x-7 {
+        padding-left: 7%;
+        padding-right: 7%;
+    }
+    .m-pad-x-20 {
+        padding-left: 20%;
+        padding-right: 20%;
+    }
+    .m-pad-y-50 {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+}
+
+@media (min-width: 768px) {
+    .pad-x-8 {
+        padding-left: 8%;
+        padding-right: 8%;
+    }
+    .pad-y-60 {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+}
