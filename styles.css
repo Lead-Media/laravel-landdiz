@@ -1,11 +1,51 @@
 :root {
     --primary-color: red;
     --secondary-color: blue;
-    --button-radius: 20px;
+    --button-radius: 10px;
     --form-field-radius: 15px;
     --form-button-radius: var(--form-field-radius);
+    --light-text: white;
 }
 
+.btn {
+    border-radius: var(--button-radius);
+    padding: 1em 2em;
+    text-align: center;
+    box-sizing: border-box;
+    border: 3px solid transparent;
+    transition: all .5s;
+    cursor: pointer;
+}
+.btn.primary {
+    background: var(--primary-color);
+}
+.btn.primary:hover {
+    background: var(--secondary-color);
+}
+.btn.secondary {
+    border-color: var(--primary-color);
+}
+.btn.secondary:hover {
+    border-color: var(--secondary-color);
+}
+
+.dark-bg {
+    background: #646464;
+}
+
+.light-t {
+    color: var(--light-text);
+}
+
+.mt-0 {
+    margin-top: 0;
+}
+.mt-1 {
+    margin-top: .5em;
+}
+.mt-2 {
+    margin-top: 1em;
+}
 .mb-0 {
     margin-bottom: 0;
 }
@@ -15,10 +55,54 @@
 .mb-2 {
     margin-bottom: 1em;
 }
+.gap-1 {
+    gap: 1em;
+}
 .gap-2 {
     gap: 2em;
 }
+.gap-3 {
+    gap: 3em;
+}
 
+input[type="checkbox"] {
+    display: none;
+}
+input[type="checkbox"].round + label {
+    border-radius: 50%;
+}
+input[type="checkbox"] + label.bottom::before {
+    margin-bottom: .5em;
+}
+input[type="checkbox"].round:disabled + label {
+    cursor: default;
+}
+input[type="checkbox"].w34 + label::before {
+    width: 34px;
+    height: 34px;
+    line-height: 34px;
+}
+input[type="checkbox"].w20 + label::before {
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+}
+input[type="checkbox"] + label::before {
+    display: block;
+    content: "✔";
+    background: white;
+    color: var(--primary-color);
+    text-align: center;
+    vertical-align: middle;
+}
+input[type="checkbox"]:checked + label::before {
+    background: var(--primary-color);
+    color: var(--light-text);
+}
+
+.upper {
+    text-transform: uppercase;
+}
 .underline,
 .dotted-underline {
     text-decoration: underline;
@@ -27,6 +111,7 @@
     -webkit-text-decoration-style: dotted;
             text-decoration-style: dotted;
 }
+
 .flex,
 .flex-row,
 .flex-column {
@@ -58,6 +143,11 @@
 .text-center {
     text-align: center;
 }
+.center {
+    justify-content: center;
+    align-items: center;
+}
+
 .thin {
     font-weight: 300;
 }
@@ -65,11 +155,27 @@
     font-weight: 700;
 }
 
+.f-16 {
+    font-size: 16px;
+}
+.f-18 {
+    font-size: 18px;
+}
+.f-24 {
+    font-size: 24px;
+}
+
 .primary-bg {
     background: var(--primary-color) !important;
 }
 .secondary-bg {
     background: var(--secondary-color) !important;
+}
+.primary-border {
+    border: 3px solid var(--primary-color);
+}
+.secondary-border {
+    border: 3px solid var(--secondary-color);
 }
 
 body {
@@ -99,16 +205,35 @@ body {
     src: url("/fonts/Jost-Variable.ttf");
 }
 
-.wrapper {
-    width: 100%;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
+@font-face {
+    font-family: "Sansation";
+    src: url("/fonts/Sansation-Bold.ttf");
+    font-weight: 700;
+}
+@font-face {
+    font-family: "Sansation";
+    src: url("/fonts/Sansation-Regular.ttf");
+    font-weight: 400;
+}
+@font-face {
+    font-family: "Sansation";
+    src: url("/fonts/Sansation-Light.ttf");
+    font-weight: 300;
 }
 
 .f-jost {
     font-family: "Jost", sans-serif;
 }
+.f-sansation {
+    font-family: "Sansation", sans-serif;
+}
 
+
+.wrapper {
+    width: 100%;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+}
 .wrapper-title {
     font-size: 58px;
 }
@@ -119,7 +244,7 @@ body {
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
     font-size: 18px;
-    color: white;
+    color: var(--light-text);
     background: #1A2E49;
     -webkit-box-flex: 1;
     -webkit-flex: 1 1 0;
@@ -170,7 +295,7 @@ body {
     display: grid;
     font-weight: 500;
     background: #181E1A;
-    color: white;
+    color: var(--light-text);
     bottom: 0;
 }
 .footer .logo img {
@@ -382,5 +507,9 @@ body {
     .pad-y-60 {
         padding-top: 60px;
         padding-bottom: 60px;
+    }
+    .pad-y-100 {
+        padding-top: 100px;
+        padding-bottom: 100px;
     }
 }
