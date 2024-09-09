@@ -5,67 +5,2228 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Главная страница</title>
     <link rel="stylesheet" href="/styles.css">
+    
+    <link rel="stylesheet" href="/swiper/swiper-bundle.css"/>
+    <script src="/swiper/swiper-bundle.js"></script>
+    
+    <!-- Иконочный шрифт -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0" />
+
+    <!-- Яндекс карты -->
+    <!-- <script crossorigin src="https://cdn.jsdelivr.net/npm/@babel/standalone@7/babel.min.js"></script>
+    <script src="https://api-maps.yandex.ru/v3/?apikey=API_KEY&lang=ru_RU" type="text/javascript"></script>
+    <script data-plugins="transform-modules-umd" data-presets="typescript" type="text/babel">
+        initMap();
+
+        async function initMap() {
+            await ymaps3.ready;
+            const {YMap, YMapDefaultSchemeLayer} = ymaps3;
+            const map = new YMap(
+                document.getElementById('yandex-mapps'),
+                {
+                    location: {
+                        center: [37.588144, 55.733842],
+                        zoom: 10
+                    }
+                }
+            );
+            map.addChild(new YMapDefaultSchemeLayer());
+        }
+    </script> -->
+    <style> #yandex-mapps { width: 100%; height: 100%; margin: 0; padding: 0; font-family: Arial, Helvetica, sans-serif; } .toolbar { position: absolute; z-index: 1000; top: 0; left: 0; display: flex; align-items: center; padding: 16px; } .toolbar a { padding: 16px; }  </style>
   </head>
   <body>
-    <div class="wrapper desktop f-sansation pad-x-8 pad-y-100 dark-bg light-t thin">
-        <div class="wrapper-title upper mb-1" style="margin-right: 240px;">Ландшафтные работы c учётом климатических условий и типа почвы от 1000 руб/м2</div>
-        <div class="f24">Создадим красивый и удобный для проживания участок</div>
-        <div class="flex-row gap-3" style="margin-top:50px;">
-            <div style="max-width: 210px;">
-                <input id="dec-1" type="checkbox" class="w34 flex center" value="1" disabled>
-                <label for="dec-1" class="bottom f-18">Поможем советом даже после окончания работ</label>
+    <div class="wrapper header p-x-8 p-y-60 m-p-0">
+        <div class="flex center gap-1 mb-2 width-full j-between">
+            <div class="logo flex center gap-1">
+                <img class="primary-bg" height="74px" title="Leval" src="/images/icons/logo.svg">
+                <span class="logo-title f-jost f-40 m-f-24">LEVAL</span>
             </div>
-            <div style="max-width: 210px;">
-                <input id="dec-2" type="checkbox" class="w34 flex center" value="1" disabled>
-                <label for="dec-2" class="bottom f-18">Смета фиксированная и  прикрепляется к договору</label>
+            <div class="f-16 desktop balance">Ландшафтные работы в Москве и области “под ключ” с 2015 года</div>
+            <div class="f-16 desktop shrink-0">
+                <svg class="primary-fg" width="21" height="25" viewBox="0 0 21 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M20.1305 12.1621C19.7938 14.4289 18.7837 16.3599 17.1843 17.955C16.2584 18.7946 15.4166 19.7181 14.4906 20.5577C13.1438 21.9849 11.7969 23.4961 10.4501 24.9233C7.58806 21.9849 4.8102 19.4662 2.2007 16.6957C0.685504 15.0166 0.0962609 12.8337 0.180438 10.567C0.264616 5.69753 4.05261 1.49976 8.76655 0.996025C14.0697 0.408336 18.6153 3.43073 19.9622 8.38411C20.2989 9.39157 20.1305 11.9942 20.1305 12.1621ZM10.1976 14.177C11.9653 14.177 13.4805 12.7498 13.4805 10.9867C13.4805 9.22366 11.9653 7.71246 10.2817 7.71246C8.59819 7.71246 6.99882 9.22366 6.99882 10.9028C6.99882 12.6658 8.42984 14.177 10.1976 14.177Z"/>
+                </svg>
+                <span>Адрес офиса:<br>Москва, ул. Касаткина, 10 А</span>
             </div>
-            <div style="max-width: 210px;">
-                <input id="dec-3" type="checkbox" class="w34 flex center" value="1" disabled>
-                <label for="dec-3" class="bottom f-18">Оптимизируем смету под ваш бюджет</label>
+            <a class="desktop btn secondary-bg light-t shrink-0 flex center p-x-2 p-y-1">
+                <img class="btn-icon" title="Скачать прайс на услуги" src="/images/icons/download.svg">
+                <span>Скачать прайс на услуги</span>
+            </a>
+            <div class="desktop">
+                <span class="dot-left">Задайте вопрос, мы онлайн</span>
+                <div class="flex center">
+                    <a href="/">
+                        <svg width="45" height="44" viewBox="0 0 45 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="0.981171" y="0.500427" width="42.8462" height="42.8462" rx="21.4231" fill="white"/>
+                            <path d="M22.4045 12.2778C17.0792 12.2778 12.7583 16.5986 12.7583 21.9239C12.7583 24.0563 13.4485 26.0203 14.6157 27.6196L13.3868 31.2559L17.2194 30.0606C18.7177 31.0146 20.4966 31.5701 22.4045 31.5701C27.7298 31.5701 32.0506 27.2493 32.0506 21.9239C32.0506 16.5986 27.7298 12.2778 22.4045 12.2778ZM26.8207 27.0977C25.0699 27.7992 22.9825 27.1202 20.6986 25.3862C18.4147 23.6523 16.9108 21.2113 16.8098 19.3988C16.7088 17.5863 18.1846 16.6716 18.9871 16.6772C19.7895 16.6828 20.6705 19.2473 20.6817 19.6401C20.693 20.0385 19.6997 20.7455 19.6604 21.0822C19.6212 21.4189 21.0128 23.0799 21.602 23.5288C22.1856 23.9721 23.3921 24.8251 24.015 24.7465C24.6322 24.6624 25.0419 23.4222 25.4347 23.3437C25.8275 23.2651 27.9711 24.3313 28.1843 24.6062C28.3976 24.8868 28.3751 26.4805 26.8207 27.0977Z" fill="var(--primary-color)"/>
+                        </svg>
+                    </a>
+                    <a href="/">
+                        <svg width="45" height="44" viewBox="0 0 45 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="0.327393" y="0.000427246" width="43.8462" height="43.8462" rx="21.9231" fill="white"/>
+                            <path d="M20.3625 24.1542L20.0714 28.0704C20.4859 28.0704 20.6674 27.8995 20.8832 27.6923L22.8289 25.9068L26.8607 28.7412C27.6006 29.1358 28.1213 28.9287 28.32 28.0869L30.9679 16.1803C31.2042 15.1346 30.5739 14.7236 29.8546 14.9834L14.296 20.7016C13.2341 21.0961 13.2512 21.665 14.1145 21.9215L18.0915 23.1085L27.33 17.558C27.765 17.2818 28.159 17.4331 27.8335 17.7126L20.3625 24.1542Z" fill="var(--primary-color"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <div class="contacts shrink-0 text-right">
+                <div class="dot-left bold f-14">Пн-Сб с 10:00 до 19:00</div>
+                <div class="f-24 m-f-12">+7 (812) 375-91-47</div>
+                <a class="upper underline f-14 m-f-12" href="">Заказать обратный звонок</a>
             </div>
         </div>
-        <div class="flex-row gap-2 align-center" style="margin-top:50px;">
-            <div class="btn primary">ПОЛУЧИТЬ КОНСУЛЬТАЦИЮ</div>
-            <div class="btn secondary">ПОЛУЧИТЬ КОНСУЛЬТАЦИЮ</div>
+        <div class="header-menu-btn mobile flex center s-1">
+            <img onclick="toggle('headmenu')" class="open-btn" title="Меню" src="images/icons/menu.svg">
+        </div>
+        <div id="headmenu" class="header-menu flex p-2 b-light b-x m-f-24">
+            <div class="mobile close-btn text-right" onclick="toggle('headmenu')">
+                <img width="26px" title="Скрыть" src="/images/icons/close.svg">
+            </div>
+            <div class="desktop">
+                <svg width="42" height="41" viewBox="0 0 42 41" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="21.0625" cy="20.8467" r="20" fill="white"/>
+                    <path d="M40.9375 20.8467C40.9375 24.8023 39.7645 28.6691 37.5669 31.9581C35.3693 35.2471 32.2457 37.8105 28.5912 39.3243C24.9367 40.838 20.9153 41.2341 17.0357 40.4624C13.1561 39.6907 9.59242 37.7859 6.79537 34.9888C3.99832 32.1918 2.09351 28.6281 1.3218 24.7485C0.550099 20.8689 0.946166 16.8475 2.45992 13.193C3.97367 9.53849 6.53712 6.41491 9.8261 4.21729C13.1151 2.01966 16.9819 0.84668 20.9375 0.84668C23.5639 0.84668 26.1647 1.364 28.5912 2.36909C31.0177 3.37418 33.2225 4.84737 35.0796 6.70454C36.9368 8.56171 38.41 10.7665 39.4151 13.193C40.4202 15.6195 40.9375 18.2202 40.9375 20.8467ZM21.8874 33.0912V31.8938C23.7802 32.0787 25.6703 31.5166 27.1545 30.3275C28.3787 28.7455 28.9338 26.7465 28.7005 24.7598C26.7138 24.5271 24.7151 25.0821 23.1328 26.3058C22.5379 26.9308 22.1097 27.6952 21.8874 28.5289V21.4959C22.7505 22.1472 23.8286 22.4467 24.904 22.334C25.9793 22.2213 26.9719 21.7048 27.6812 20.8887C28.3905 20.0726 28.7638 19.0177 28.7256 17.9371C28.6873 16.8565 28.2405 15.8307 27.4753 15.0667C27.2846 14.8768 27.0766 14.7051 26.8539 14.5539C27.0765 14.4017 27.2845 14.2292 27.4753 14.0385C27.8948 13.6178 28.2218 13.1141 28.4355 12.5597C28.6491 12.0053 28.7447 11.4125 28.7162 10.819C28.6876 10.2256 28.5355 9.64462 28.2695 9.11334C28.0036 8.58206 27.6297 8.11213 27.1717 7.73362C26.7137 7.35511 26.1818 7.07635 25.61 6.91518C25.0381 6.754 24.4389 6.71396 23.8507 6.79761C23.2625 6.88126 22.6982 7.08676 22.194 7.40097C21.6897 7.71518 21.2566 8.13118 20.9223 8.62235C20.5689 8.10303 20.1052 7.66811 19.5643 7.34862C19.0234 7.02913 18.4187 6.83293 17.7933 6.77403C17.1678 6.71513 16.5371 6.79498 15.9461 7.00788C15.3551 7.22077 14.8183 7.56147 14.3741 8.00567C13.9299 8.44987 13.5892 8.98663 13.3763 9.57765C13.1634 10.1687 13.0836 10.7994 13.1425 11.4248C13.2014 12.0502 13.3976 12.655 13.7171 13.1958C14.0366 13.7367 14.4715 14.2004 14.9908 14.5539C14.0629 15.2031 13.4308 16.1944 13.2338 17.3096C13.0367 18.4248 13.2907 19.5726 13.9399 20.5006C14.5891 21.4285 15.5804 22.0606 16.6956 22.2576C17.8108 22.4547 18.9587 22.2007 19.8866 21.5515V27.1622C19.6638 26.3282 19.2346 25.5637 18.6387 24.9391C17.0573 23.7156 15.0593 23.1605 13.0734 23.3931C12.8412 25.3801 13.3971 27.3791 14.622 28.9609C16.1061 30.1502 17.9963 30.7123 19.8891 30.5271V33.0912H15.0135C14.7482 33.0912 14.4938 33.1966 14.3062 33.3842C14.1186 33.5718 14.0132 33.8263 14.0132 34.0916C14.0132 34.3569 14.1186 34.6114 14.3062 34.799C14.4938 34.9866 14.7482 35.092 15.0135 35.092H26.7604C27.0257 35.092 27.2802 34.9866 27.4678 34.799C27.6554 34.6114 27.7608 34.3569 27.7608 34.0916C27.7608 33.8263 27.6554 33.5718 27.4678 33.3842C27.2802 33.1966 27.0257 33.0912 26.7604 33.0912H21.8874ZM20.9223 17.1508C20.4075 17.1508 19.9042 16.9981 19.4762 16.712C19.0482 16.4258 18.7147 16.0192 18.5179 15.5434C18.3211 15.0677 18.2699 14.5442 18.3707 14.0394C18.4715 13.5345 18.7199 13.0709 19.0843 12.7072C19.4487 12.3435 19.9128 12.096 20.4178 11.9962C20.9229 11.8964 21.4462 11.9486 21.9216 12.1464C22.397 12.3441 22.803 12.6784 23.0883 13.1069C23.3736 13.5355 23.5253 14.039 23.5243 14.5539C23.5237 15.2435 23.2492 15.9047 22.7613 16.3921C22.2734 16.8796 21.612 17.1508 20.9223 17.1508Z" fill="var(--primary-color)" stroke="white" stroke-width="0.00256"/>
+                </svg>
+            </div>
+            <div><a href="">Услуги</a></div>
+            <div><a href="">Акции</a></div>
+            <div><a href="">Портфолио</a></div>
+            <div><a href="">О компании</a></div>
+            <div><a href="">Контакты</a></div>
+        </div>
+    </div>
+    <div class="content">
+
+        <!-- Здесь и далее у каждого блока есть граница снизу. Удаляется в файлах стилей в самом начале. -->
+        <!-- Нужна для понимания границ блока. -->
+
+        <!-- Блок "Ландшафтные работы" -->
+        <div class="wrapper desktop p-x-8 p-y-100 thin">
+            <div class="wrapper-title upper mb-1" style="margin-right: 240px;">Ландшафтные работы c учётом климатических условий и типа почвы от 1000 руб/м2</div>
+            <div class="wrapper-subtitle">Создадим красивый и удобный для проживания участок</div>
+            <div class="flex-row gap-3" style="margin-top:50px;">
+                <div style="max-width: 210px;">
+                    <input id="dec-1" type="checkbox" class="w34" disabled>
+                    <label for="dec-1" class="bottom">Поможем советом даже после окончания работ</label>
+                </div>
+                <div style="max-width: 210px;">
+                    <input id="dec-2" type="checkbox" class="w34" disabled>
+                    <label for="dec-2" class="bottom">Смета фиксированная и  прикрепляется к договору</label>
+                </div>
+                <div style="max-width: 210px;">
+                    <input id="dec-3" type="checkbox" class="w34" disabled>
+                    <label for="dec-3" class="bottom">Оптимизируем смету под ваш бюджет</label>
+                </div>
+            </div>
+            <div class="flex-row gap-2 align-center" style="margin-top:50px;">
+                <div class="btn primary">ПОЛУЧИТЬ КОНСУЛЬТАЦИЮ</div>
+                <div class="btn secondary">ПОЛУЧИТЬ КОНСУЛЬТАЦИЮ</div>
+                <div>
+                    <svg width="26" height="21" viewBox="0 0 26 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M5.07217 8.24255C6.82297 8.24255 8.24227 6.82325 8.24227 5.07245C8.24227 3.32165 6.82297 1.90234 5.07217 1.90234C3.32137 1.90234 1.90207 3.32165 1.90207 5.07245C1.90207 6.82325 3.32137 8.24255 5.07217 8.24255Z" fill="#FF0000"/>
+                        <path opacity="0.25" d="M5.07216 10.1443C7.87344 10.1443 10.1443 7.87344 10.1443 5.07216C10.1443 2.27089 7.87344 0 5.07216 0C2.27089 0 0 2.27089 0 5.07216C0 7.87344 2.27089 10.1443 5.07216 10.1443Z" fill="#FF0000"/>
+                        <path d="M24.4028 8.08419L20.2166 3.40342C19.3866 2.55865 18.0399 2.55865 17.2048 3.40874C16.9386 3.6797 16.7611 4.00379 16.6672 4.34383C15.832 3.69564 14.6315 3.75939 13.8642 4.54041C13.598 4.81137 13.4205 5.13547 13.3265 5.4755C12.4914 4.82731 11.2909 4.89107 10.5236 5.67208C10.2626 5.93773 10.0851 6.2512 9.99116 6.58592L8.00767 4.58291C7.17773 3.73814 5.83105 3.73814 4.99589 4.58823C4.16596 5.433 4.16596 6.80376 4.99589 7.64853L12.5749 15.3683L8.08074 16.0856C6.86455 16.2609 5.9511 17.3395 5.9511 18.588C5.9511 19.5231 6.70274 20.2882 7.62141 20.2882H18.1235C19.7572 20.2882 21.297 19.64 22.4558 18.4605L24.2096 16.6753C25.3632 15.5012 26 13.9338 26 12.2709C25.9948 10.7248 25.4258 9.23712 24.4028 8.08419ZM23.411 15.8784L21.6572 17.6636C20.7124 18.6252 19.4545 19.1565 18.113 19.1565H7.62141C7.31344 19.1565 7.0629 18.9015 7.0629 18.588C7.0629 17.8973 7.56921 17.3076 8.24777 17.2066L13.8329 16.3141C14.0416 16.2822 14.2087 16.1334 14.2765 15.9315C14.3392 15.7296 14.287 15.5065 14.1408 15.3577L5.78407 6.85157C5.38737 6.44778 5.38737 5.79428 5.78929 5.38518C5.98764 5.18328 6.24862 5.08234 6.50439 5.08234C6.76537 5.08234 7.02114 5.18328 7.21949 5.38518L12.7889 11.0542C13.0081 11.2773 13.3579 11.2773 13.5771 11.0542C13.6867 10.9426 13.7389 10.7991 13.7389 10.6504C13.7389 10.5016 13.6867 10.3582 13.5771 10.2466L11.3013 7.93012C10.9046 7.52633 10.9046 6.87282 11.3065 6.46372C11.7032 6.05993 12.3452 6.05993 12.7419 6.46372L15.0177 8.7802C15.237 9.00335 15.5867 9.00335 15.8059 8.7802C15.9155 8.66863 15.9677 8.52517 15.9677 8.37641C15.9677 8.22764 15.9155 8.08419 15.8059 7.97262L14.6419 6.78782C14.2452 6.38403 14.2452 5.73053 14.6471 5.32142C15.0438 4.91763 15.6859 4.91763 16.0826 5.32142L17.2518 6.51154C17.471 6.72406 17.8155 6.71875 18.0295 6.50091C18.2487 6.27777 18.2487 5.92179 18.0295 5.69865L17.9825 5.65083C17.7894 5.45425 17.685 5.19391 17.685 4.92295C17.685 4.65198 17.7894 4.39164 17.9878 4.18975C18.3844 3.78596 19.0265 3.79127 19.4023 4.1685L23.5728 8.83333C24.4132 9.77373 24.8725 10.9904 24.8725 12.2602C24.8778 13.6363 24.361 14.9167 23.411 15.8784Z" fill="currentColor"/>
+                    </svg>                                      
+                    <div class="f-16">Перезвоним через 5 минут и поможем решить вашу проблему</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Форма "Перезвоните мне" -->
+        <div class="wrapper"></div>
+
+        <!-- Блок "Рассчитайте стоимость" -->
+        <div class="wrapper p-x-8 m-p-x-7 p-y-60 m-p-y-50">
+            <div class="wrapper-title upper mb-1">Рассчитайте стоимость ландшафтных работ и получите скидку -10% на любую услугу</div>
+            <div class="wrapper-subtitle mb-2">Ответив всего на несколько вопросов</div>
+            <div class="flex gap-1 wrap stretch">
+                <div class="light-bg-extra p-x-3 p-y-2 flex-1">
+                    <form class="flex-column height-full" action="" metod="get"> <!-- Форма -->
+                        <div class="flex-1">
+                            <div class="progress mb-3 f-14 m-f-12"> <!-- Прогресс-бар -->
+                                <div class="current-line" style="width: 40%;"></div>
+                                <div class="current-text-progress flex center height-full" style="clip-path: inset(0 60% 0 0 round 20vh);"><span>Расчёт пройден на <span id="">40</span>%</span></div>
+                                <div class="current-text flex center height-full" style="clip-path: inset(0 0 0 40% round 20vh);"><span>Расчёт пройден на <span id="">40</span>%</span></div>
+                            </div>
+                            <div class="flex m-flex-column gap-1 m-gap-0 align-center mb-4"> <!-- Заголовок -->
+                                <div class="white-bg p-x-2 p-y-1 br-1 f-14 nowrap" style="color: var(--primary-color)">Вопрос <span id="">1</span></div>
+                                <div class="f-40 m-f-20">Укажите размер вашего участка</div>
+                            </div>
+                            <div class="flex f-wrap gap-row-2 gap-column-3 mb-4 m-center"> <!-- Ответы -->
+                                <input id="checkbox0001" class="w34 round gray" type="checkbox">
+                                <label for="checkbox0001" class="right align-center gap-1 white-bg br-2 width-full primary-outline">До 10 соток</label>
+                                <input id="checkbox0002" class="w34 round gray" type="checkbox">
+                                <label for="checkbox0002" class="right align-center gap-1 white-bg br-2 width-full primary-outline">От 10 до 15 соток</label>
+                                <input id="checkbox0003" class="w34 round gray" type="checkbox">
+                                <label for="checkbox0003" class="right align-center gap-1 white-bg br-2 width-full primary-outline">От 15 до 20 соток</label>
+                                <input id="checkbox0004" class="w34 round gray" type="checkbox">
+                                <label for="checkbox0004" class="right align-center gap-1 white-bg br-2 width-full primary-outline">От 20 до 30 соток</label>
+                                <input id="checkbox0005" class="w34 round gray" type="checkbox">
+                                <label for="checkbox0005" class="right align-center gap-1 white-bg br-2 width-full primary-outline">Свыше 30 соток</label>
+                            </div>
+                        </div>
+                        <div class="flex j-between flex-0">
+                            <bitton type="" class="btn primary br-2">Назад</bitton>
+                            <button type="" class="btn primary br-2">Далее</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="desktop light-bg-extra p-2 flex-1-0">
+                    <span class="p-1 border br-2 f-14" style="position: absolute; color: #424242;">• Онлайн</span>
+                    <div class="flex-column center mb-1">
+                        <img width="300" style="margin-bottom: -1em;" class="p-0" title="Анастасия Мироненко" src="/images/workers/anastasia.png">
+                        <div class="flex-column center white-bg p-x-2 p-y-1 br-1">
+                            <div class="f-24 upper">Анастасия Мироненко</div>
+                            <div class="f-14 upper">Ландшафтный дизайнер студии Leval</div>
+                        </div>
+                    </div>
+                    <div class="f-18 balance text-center p-1">В самое ближайшее время мы рассчитаем стоимость по вашим ответам</div>
+                    <div class="text-center p-1 upper semibold mb-2">В конце получите:</div>
+                    <div class="flex-column gap-1 align-center">
+                        <div class="p-0 border-box" style="width: 400px; height: 85px; background: url(/images/estimate/1.png);">
+                            <div class="flex p-x-3 p-y-2 j-between light-t align-center border-box" style="width: 400px; height: 85px; border-radius: 15px; background: rgba(66, 66, 66, .7);">
+                                <div class="balance f-18">Стоимость ландшафтных работ с точностью до 95%</div>
+                                <div class="border-50 s-1 flex center border-50 primary-bg shrink-0" style="width: 35px;">
+                                    <svg width="10" height="14" viewBox="0 0 10 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M10.0017 7.8174C9.95359 6.36805 8.33471 4.95015 8.33471 3.5C8.33471 1.56966 6.83979 0 5.00137 0C3.16296 0 1.66804 1.56966 1.66804 3.5C1.66804 4.95015 0.0461702 6.36653 0.000909062 7.81597C0.000304596 7.83533 0 7.85477 0 7.87428V12.2486C0 13.2152 0.747458 14 1.66804 14H8.33471C9.25529 14 10.0027 13.2152 10.0027 12.2486V7.87428C10.0027 7.85525 10.0024 7.83629 10.0017 7.8174ZM5.82853 9.62572C5.838 10.1778 5.41632 10.7027 5.41632 11.2548V11.8129C5.41632 12.0552 5.22946 12.2514 4.99863 12.2514C4.76779 12.2514 4.58093 12.0552 4.58093 11.8129V11.2562C4.58093 10.7032 4.16323 10.1787 4.16323 9.62572C4.16323 9.14097 4.53696 8.75144 4.99588 8.75144C5.4548 8.75144 5.82853 9.14386 5.82853 9.62572ZM6.66667 4.45905C6.66667 5.37953 5.92048 6.12572 5 6.12572C4.07953 6.12572 3.33333 5.37953 3.33333 4.45905V3.5C3.33333 2.53339 4.08079 1.74856 5.00137 1.74856C5.91921 1.74856 6.66667 2.53339 6.66667 3.5V4.45905Z" fill="currentColor"/>
+                                    </svg> 
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-0 border-box" style="width: 400px; height: 85px; background: url(/images/estimate/1.png);">
+                            <div class="flex p-x-3 p-y-2 j-between light-t align-center border-box" style="width: 400px; height: 85px; border-radius: 15px; background: rgba(66, 66, 66, .7);">
+                                <div class="balance f-18">Бесплатную консультацию ландшафтного дизайнера</div>
+                                <div class="border-50 s-1 flex center border-50 primary-bg shrink-0" style="width: 35px;">
+                                    <svg width="10" height="14" viewBox="0 0 10 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M10.0017 7.8174C9.95359 6.36805 8.33471 4.95015 8.33471 3.5C8.33471 1.56966 6.83979 0 5.00137 0C3.16296 0 1.66804 1.56966 1.66804 3.5C1.66804 4.95015 0.0461702 6.36653 0.000909062 7.81597C0.000304596 7.83533 0 7.85477 0 7.87428V12.2486C0 13.2152 0.747458 14 1.66804 14H8.33471C9.25529 14 10.0027 13.2152 10.0027 12.2486V7.87428C10.0027 7.85525 10.0024 7.83629 10.0017 7.8174ZM5.82853 9.62572C5.838 10.1778 5.41632 10.7027 5.41632 11.2548V11.8129C5.41632 12.0552 5.22946 12.2514 4.99863 12.2514C4.76779 12.2514 4.58093 12.0552 4.58093 11.8129V11.2562C4.58093 10.7032 4.16323 10.1787 4.16323 9.62572C4.16323 9.14097 4.53696 8.75144 4.99588 8.75144C5.4548 8.75144 5.82853 9.14386 5.82853 9.62572ZM6.66667 4.45905C6.66667 5.37953 5.92048 6.12572 5 6.12572C4.07953 6.12572 3.33333 5.37953 3.33333 4.45905V3.5C3.33333 2.53339 4.08079 1.74856 5.00137 1.74856C5.91921 1.74856 6.66667 2.53339 6.66667 3.5V4.45905Z" fill="currentColor"/>
+                                    </svg> 
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-0 border-box" style="width: 400px; height: 85px; background: url(/images/estimate/1.png);">
+                            <div class="flex p-x-3 p-y-2 j-between light-t align-center border-box" style="width: 400px; height: 85px; border-radius: 15px; background: rgba(66, 66, 66, .7);">
+                                <div class="balance f-18">Скидку -10% на любую услугу</div>
+                                <div class="border-50 s-1 flex center border-50 primary-bg shrink-0" style="width: 35px;">
+                                    <svg width="10" height="14" viewBox="0 0 10 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M10.0017 7.8174C9.95359 6.36805 8.33471 4.95015 8.33471 3.5C8.33471 1.56966 6.83979 0 5.00137 0C3.16296 0 1.66804 1.56966 1.66804 3.5C1.66804 4.95015 0.0461702 6.36653 0.000909062 7.81597C0.000304596 7.83533 0 7.85477 0 7.87428V12.2486C0 13.2152 0.747458 14 1.66804 14H8.33471C9.25529 14 10.0027 13.2152 10.0027 12.2486V7.87428C10.0027 7.85525 10.0024 7.83629 10.0017 7.8174ZM5.82853 9.62572C5.838 10.1778 5.41632 10.7027 5.41632 11.2548V11.8129C5.41632 12.0552 5.22946 12.2514 4.99863 12.2514C4.76779 12.2514 4.58093 12.0552 4.58093 11.8129V11.2562C4.58093 10.7032 4.16323 10.1787 4.16323 9.62572C4.16323 9.14097 4.53696 8.75144 4.99588 8.75144C5.4548 8.75144 5.82853 9.14386 5.82853 9.62572ZM6.66667 4.45905C6.66667 5.37953 5.92048 6.12572 5 6.12572C4.07953 6.12572 3.33333 5.37953 3.33333 4.45905V3.5C3.33333 2.53339 4.08079 1.74856 5.00137 1.74856C5.91921 1.74856 6.66667 2.53339 6.66667 3.5V4.45905Z" fill="currentColor"/>
+                                    </svg> 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Блок "Зелёные аллеи" -->
+        <div class="wrapper desktop p-x-8 m-p-x-7 p-y-60 m-p-y-50">
+            <div class="sitemap flex wrap gap-1 f-18 mb-3"><span>Главная</span><span>Портфолио</span><span>Ландшафт</span><span class="current">Зеленые аллеи</span></div>
+            <div class="wrapper-title upper mb-1 bold">Зеленые аллеи</div>
+            <div class="flex-column gap-1 mb-4">
+                <div class="swiper one-full">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img title="title" src="/images/content/slider_image_1.png"></div>
+                        <div class="swiper-slide"><img title="title" src="/images/content/slider_image_2.png"></div>
+                        <div class="swiper-slide"><img title="title" src="/images/content/slider_image_3.png"></div>
+                        <div class="swiper-slide"><img title="title" src="/images/content/slider_image_4.png"></div>
+                        <div class="swiper-slide"><img title="title" src="/images/content/slider_image_5.png"></div>
+                    </div>
+                </div>
+                <div class="swiper multi desktop">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img title="title" src="/images/content/slider_image_1.png"></div>
+                        <div class="swiper-slide"><img title="title" src="/images/content/slider_image_2.png"></div>
+                        <div class="swiper-slide"><img title="title" src="/images/content/slider_image_3.png"></div>
+                        <div class="swiper-slide"><img title="title" src="/images/content/slider_image_4.png"></div>
+                        <div class="swiper-slide"><img title="title" src="/images/content/slider_image_5.png"></div>
+                    </div>
+                </div>
+            </div>
+            <style>
+                .swiper.one-full {
+                    width: 100%;
+                    aspect-ratio: 19/9;
+                }
+                .swiper.one-full .swiper-slide {
+                    width: 100%;
+                }
+            </style>
+            <script>
+                const swiper = new Swiper('.swiper.one-full', {
+                    autoplay: {
+                        delay: 3000
+                    },
+                    loop: true
+                })
+            </script>
+            <style>
+                .swiper.multi {
+                    width: 100%;
+                    height: 178px;
+                }
+                .swiper.multi .swiper-slide,
+                .swiper.multi .swiper-slide img {
+                    width: auto;
+                    aspect-ratio: 16 / 9;
+                    height: 178px;
+                    object-fit: cover;
+                }
+            </style>
+            <script>
+                const swiper2 = new Swiper('.swiper.multi', {
+                    spaceBetween: '18px',
+                    autoplay: {
+                        delay: 3000
+                    },
+                    slidesPerView: "auto",
+                    loop: true,
+                    autoHeight: true
+                })
+            </script>
+            <div class="mb-3 p-3 white-bg">
+                <div class="title mb-1 f-40 bold">Описание</div>
+                <div>Основные особенности проекта включают в себя крытую зону для готовки, где вы можете наслаждаться приготовлением пищи на свежем воздухе в любое время года. Кроме того, создана уютная зона отдыха, где вы сможете проводить время в спокойной обстановке, наслаждаясь природой и отдыхая на свежем воздухе.</div>
+            </div>
+            <div class="flex center primary-fg"><a class="semibold">← Вернуться в портфолио</a></div>
+        </div>
+
+        <!-- Блок "Дарим расчёт" -->
+        <div class="wrapper raschet desktop p-x-8 light-t">
+            <div class="background-image"></div>
+            <div class="flex-column width-960">
+                <div class="wrapper-title upper mb-1">Дарим расчет!</div>
+                <div class="wrapper-subtitle mb-2 balance">Рассчитайте стоимость ландшафтного дизайна в онлайн-калькуляторе!</div>
+                <div class="btn primary flat p-x-3 p-y-2 width-fit white-deg"><a class="none-dec" href="">Начать ↗</a></div>
+            </div>
+        </div>
+
+        <!-- Блок "Установка САП" -->
+        <div class="wrapper desktop p-x-8 p-y-60">
+            <div class="wrapper-title upper mb-1">Установка систем автоматического полива</div>
+            <div class="mb-3">Ухоженные сады и парки радуют великолепными пейзажами. Для каждой культуры оптимален свой режим увлажнения. Правильно полить разнообразный по видовому составу биоценоз — сложная задача.</div>
+            <div class="mb-3">Сотрудники студии «In Garden» установят и настроят умную систему автополива. Она безупречно отработает в сухую погоду и отдохнет в сезон дождей. Газоны и цветники, кустарники и деревья отблагодарят насыщенной свежей зеленью.</div>
+            <ul>
+                <li>После получения заявки мы приедем к вам, чтобы: оценить планировку и особенности ландшафта, выяснить ваши пожелания, определить возможности для установки элементов автополива</li>
+                <li>После получения заявки мы приедем к вам, чтобы: оценить планировку и особенности ландшафта, выяснить ваши пожелания, определить возможности для установки элементов автополива</li>
+                <li>После получения заявки мы приедем к вам, чтобы: оценить планировку и особенности ландшафта, выяснить ваши пожелания, определить возможности для установки элементов автополива</li>
+                <li>Реализация плана монтажа автополива на вашем участке (установка, настройка, запуск, обучение управлением). Вы</li>
+            </ul>
+        </div>
+
+        <!-- Блок "Сохраним ваши силы" -->
+        <div class="wrapper sili desktop p-x-8 light-t">
+            <div class="background-filter"></div>
+            <div class="flex align-end">
+                <img class="smartphone" title="smartphone" src="/images/tecnic/smartphone.png">
+                <div class="p-x-8 p-y-60">
+                    <div class="wrapper-title mb-1 balance">Сохраним ваши силы, нервы и деньги</div>
+                    <div class="mb-2 balance">Для этого необходимо необходимо создать 3D-визуализацию вашего проекта, так вы сможете четко представить расположение всех элементов еще на этапе разработки</div>
+                    <div class="mb-3 f-16 bold">Свяжемся с вами через 5 минут</div>
+                    <div class="btn primary flat p-x-3 p-y-2 width-fit white-deg upper"><a class="none-dec" href="">Оставить заявку на 3D-визуализацию</a></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Блок "Проектирование автополива" -->
+        <div class="wrapper desktop p-x-8 p-y-60">
+            <div class="wrapper-subtitle bold mb-1">Проектирование автополива</div>
+            <div class="flex gap-2">
+                <div class="balance">
+                    <div class="mb-2">Система автополива разрабатывается для каждого участка индивидуально. Набор элементов автоматического полива будет зависеть от площади орошения, объемов и способов подачи воды, технического состояния водопровода.</div>
+                    <div class="f-24 mb-1">За полив отвечают:</div>
+                    <div class="mb-2"><b>Контроллер</b> — координирует работу всего оборудования. Собирает и анализирует информацию с датчиков, контролирует расход воды. Обеспечивает своевременное включение системы автополива и распределение воды по заданным зонам. Современные контроллеры позволяют устанавливать индивидуальные настройки орошения для каждой из подключенных зон.</div>
+                    <div class="mb-2"><b>Трубопровод</b> — система скрытых в грунте труб, обеспечивает поступление достаточного количества воды к оросителям.</div>
+                    <div class="mb-2"><b>Система электромагнитных клапанов</b> — открывают подачу воды для заданных зон.</div>
+                    <div class="mb-2"><b>Оросители</b> — распыляют воду по участку. Радиус и направление полива зависит от вида устройства (статические или импульсные дождеватели, роторы) и форсунок. В зависимости от модели сменного сопла, радиус полива составит от 0.5 м до 10 м, угол полива тоже можно менять, а специальные модели сменных форсунок позволяют поливать даже прямоугольные формы участка</div>
+                    <div><b>Напорное оборудование</b> — служит для поддержания необходимого в системе давления. Включает в себя насос, резервуары для воды (при необходимости), систему клапанов.</div>
+                </div>
+                <img title="Место для фото" src="/images/tecnic/poliv.webp" height="690px">
+            </div>
+        </div>
+
+        <!-- Блок "Наша гордость" -->
+        <div class="wrapper gordost m-p-x-7 m-p-y-50 p-y-60">
+            <div class="wrapper-title p-x-8 mb-1">Наша гордость - это отремонтированные квартиры, за каждой из которых стоит история длиной в 3-6 месяцев</div>
+            <div class="pdf desktop p-x-8 flex center" style="position: absolute; right: 0; margin: -100px 0; z-index: 10;">
+                <img class="rotate-anim" title="PDF" src="/images/tecnic/pdf-bg.png" width="200px">
+                <div class="bold flex-column center" style="color: rgb(0, 102, 255); position: absolute;"><span>↻</span><span>Обновлен:</span><span>30.8.2024</span></div>
+            </div>
+            <div class="swiper-container">
+                <div class="swiper one-full-data">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="flex gap-3 height-full">
+                                <img class="desktop width-half height-full shrink-0" title="Комната" src="/images/content/room.png">
+                                <div class="flex-1 width-half">
+                                    <div class="wrapper-subtitle upper mb-2" style="margin-right: 200px;">Дизайнерский ремонт в 3-х комнатной квартире 100м²</div>
+                                    <img class="mobile width-full shrink-0 mb-2" title="Комната" src="/images/content/room.png">
+                                    <div class="flex gap-1 mb-3">
+                                        <span class="dot-top"><span class="f-12">Сроки строительства</span><br><span class="f-20 bold">Малиновая ул, 18</span></span>
+                                        <span class="dot-top"><span class="f-12">Сроки</span><br><span class="f-20 bold">3 месяца</span></span>
+                                        <span class="dot-top"><span class="f-12">Стоимость</span><br><span class="f-20 bold">175 000 руб</span></span>
+                                    </div>
+                                    <div class="mb-3">
+                                        <div class="f-14 mb-1">Описание:</div>
+                                        <div>Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение шаблона, а также реальное распределение букв и пробелов в абзацах, которое не получается при простой дубликации "Здесь ваш текст.. Здесь ваш текст.. Здесь ваш текст.." Многие программы электронной вёрстки и редакторы HTML используют Lorem Ipsum в качестве текста по умолчанию, так что поиск по ключевым словам "lorem</div>
+                                    </div>
+                                    <div class="flex gap-1 align-center">
+                                        <div class="btn primary flat upper width-fit">Рассчитать в калькуляторе</div>
+                                        <span class="f-16"><b>Понравился ремонт?</b><br>Рассчитайте в калькуляторе свой</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">Slide 2</div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+                <div class="navigation desktop">
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                </div>
+            </div>
+            <style>
+                .swiper-container {
+                    position: relative;
+                }
+                .swiper.one-full-data {
+                    width: 84%;
+                    height: auto;
+                }
+                @media (max-width: 768px) {
+                    .swiper.one-full-data {
+                        width: 100%;
+                    }
+                }
+            </style>
+            <script>
+                const swiper3 = new Swiper('.swiper.one-full-data', {
+                    loop: true,
+                    pagination: {
+                        el: '.swiper-pagination',
+                        dynamicBullets: true,
+                        dynamicMainBullets: 3
+                    },
+                    navigation: {
+                        nextEl: ".swiper-button-next",
+                        prevEl: '.swiper-button-prev'
+                    }
+                })
+            </script>
+            <div class="mobile text-center"><a class="primary-fg" href="">Показать все →</a></div>
+        </div>
+
+        <!-- Блок "Получите консультацию" -->
+        <div class="wrapper-subtitle primary-fg">В работе...</div>
+        <div class="wrapper consulting p-x-8 m-p-x-7 light-t background-image flex j-between wrap" style="background-image: url(/images/content/dom.jpg);">
+            <div class="p-y-60 m-p-y-50">
+                <div class="wrapper-title upper mb-2 ">Получите<br>консультацию<br>ландшафтного<br>дизайнера</div>
+                <form class="mb-3">
+                    <div class="">В какое время вам позвонить?</div>
+                    <div>
+                        <!-- <input> -->
+                        <!-- <input> -->
+                        <!-- <a class="btn primary flat" href="">Перезвоните мне </a> -->
+                    </div>
+                    <input class="w20" id="accept1" type="checkbox">
+                    <label class="right-inline f-14" for="accept1" style="">Согласен с условиями <a class="primary-fg none-dec" href="" target="_blank">политики конфиденциальности данных</a></label>
+                </form>
+                <div class="flex gap-1 align-center wrap m-center">
+                    <div>или напишите, мы онлайн</div>
+                    <div>
+                        <a href=""><img class="social-icon" title="wa" src="/images/icons/wa_colored.png"></a>
+                        <a href=""><img class="social-icon" title="tg" src="/images/icons/tg_colored.png"></a>
+                    </div>
+                </div>
+            </div>
             <div>
-                <svg width="26" height="21" viewBox="0 0 26 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M5.07217 8.24255C6.82297 8.24255 8.24227 6.82325 8.24227 5.07245C8.24227 3.32165 6.82297 1.90234 5.07217 1.90234C3.32137 1.90234 1.90207 3.32165 1.90207 5.07245C1.90207 6.82325 3.32137 8.24255 5.07217 8.24255Z" fill="#FF0000"/>
-                    <path opacity="0.25" d="M5.07216 10.1443C7.87344 10.1443 10.1443 7.87344 10.1443 5.07216C10.1443 2.27089 7.87344 0 5.07216 0C2.27089 0 0 2.27089 0 5.07216C0 7.87344 2.27089 10.1443 5.07216 10.1443Z" fill="#FF0000"/>
-                    <path d="M24.4028 8.08419L20.2166 3.40342C19.3866 2.55865 18.0399 2.55865 17.2048 3.40874C16.9386 3.6797 16.7611 4.00379 16.6672 4.34383C15.832 3.69564 14.6315 3.75939 13.8642 4.54041C13.598 4.81137 13.4205 5.13547 13.3265 5.4755C12.4914 4.82731 11.2909 4.89107 10.5236 5.67208C10.2626 5.93773 10.0851 6.2512 9.99116 6.58592L8.00767 4.58291C7.17773 3.73814 5.83105 3.73814 4.99589 4.58823C4.16596 5.433 4.16596 6.80376 4.99589 7.64853L12.5749 15.3683L8.08074 16.0856C6.86455 16.2609 5.9511 17.3395 5.9511 18.588C5.9511 19.5231 6.70274 20.2882 7.62141 20.2882H18.1235C19.7572 20.2882 21.297 19.64 22.4558 18.4605L24.2096 16.6753C25.3632 15.5012 26 13.9338 26 12.2709C25.9948 10.7248 25.4258 9.23712 24.4028 8.08419ZM23.411 15.8784L21.6572 17.6636C20.7124 18.6252 19.4545 19.1565 18.113 19.1565H7.62141C7.31344 19.1565 7.0629 18.9015 7.0629 18.588C7.0629 17.8973 7.56921 17.3076 8.24777 17.2066L13.8329 16.3141C14.0416 16.2822 14.2087 16.1334 14.2765 15.9315C14.3392 15.7296 14.287 15.5065 14.1408 15.3577L5.78407 6.85157C5.38737 6.44778 5.38737 5.79428 5.78929 5.38518C5.98764 5.18328 6.24862 5.08234 6.50439 5.08234C6.76537 5.08234 7.02114 5.18328 7.21949 5.38518L12.7889 11.0542C13.0081 11.2773 13.3579 11.2773 13.5771 11.0542C13.6867 10.9426 13.7389 10.7991 13.7389 10.6504C13.7389 10.5016 13.6867 10.3582 13.5771 10.2466L11.3013 7.93012C10.9046 7.52633 10.9046 6.87282 11.3065 6.46372C11.7032 6.05993 12.3452 6.05993 12.7419 6.46372L15.0177 8.7802C15.237 9.00335 15.5867 9.00335 15.8059 8.7802C15.9155 8.66863 15.9677 8.52517 15.9677 8.37641C15.9677 8.22764 15.9155 8.08419 15.8059 7.97262L14.6419 6.78782C14.2452 6.38403 14.2452 5.73053 14.6471 5.32142C15.0438 4.91763 15.6859 4.91763 16.0826 5.32142L17.2518 6.51154C17.471 6.72406 17.8155 6.71875 18.0295 6.50091C18.2487 6.27777 18.2487 5.92179 18.0295 5.69865L17.9825 5.65083C17.7894 5.45425 17.685 5.19391 17.685 4.92295C17.685 4.65198 17.7894 4.39164 17.9878 4.18975C18.3844 3.78596 19.0265 3.79127 19.4023 4.1685L23.5728 8.83333C24.4132 9.77373 24.8725 10.9904 24.8725 12.2602C24.8778 13.6363 24.361 14.9167 23.411 15.8784Z" fill="white"/>
-                </svg>                                      
-                <div class="f-16">Перезвоним через 5 минут и поможем решить вашу проблему</div>
+                <div>
+                    <img title="title" src="/images/workers/stock.png">
+                </div>
+                <div class="desktop flex-column align-end">
+                    <div>Баринова Ирина</div>
+                    <div class="f-14">Руководитель</div>
+                </div>
             </div>
+            <style>
+                .wrapper.consulting {
+                    position: relative;
+                }
+                .wrapper.consulting img {
+                    max-width: 100%;
+                }
+            </style>
+        </div>
+
+        <!-- Блок "Другие наши услуги" -->
+        <div class="wrapper p-x-8 m-p-x-7 p-y-60 m-p-y-50">
+            <div class="wrapper-title upper mb-1 m-text-center">Другие наши услуги</div>
+            <div class="m-f-12 mobile text-center mb-3">Листайте влево/вправо <img title="swipe" src="/images/icons/swipe.svg"></div>
+            <div class="swiper services-list mb-2">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="background-image light-t border-box flex-column flex-end height-full p-x-3 p-y-4" style="background-image: url('/images/content/dom.jpg');">Ландшафтное освещение</div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="background-image light-t border-box flex-column flex-end height-full p-x-3 p-y-4" style="background-image: url('/images/content/dom.jpg');">Ландшафтное проектирование</div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="background-image light-t border-box flex-column flex-end height-full p-x-3 p-y-4" style="background-image: url('/images/content/dom.jpg');">Благоустройство участка</div>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+            <style>
+                .swiper.services-list {
+                    width: 100%;
+                    height: 440px;
+                }
+                .swiper.services-list .swiper-slide,
+                .swiper.services-list .swiper-slide > div {
+                    width: 480px;
+                    height: 400px;
+                }
+            </style>
+            <script>
+                const swiper4 = new Swiper('.swiper.services-list', {
+                    spaceBetween: '20px',
+                    autoplay: {
+                        delay: 3000
+                    },
+                    slidesPerView: 'auto',
+                    loop: true,
+                    pagination: {
+                        el: '.swiper-pagination',
+                        dynamicBullets: true,
+                        dynamicMainBullets: 3
+                    },
+                    breakpoints: {
+                        0: {
+                            slidesPerView: 1,
+                        },
+                        768: {
+                            pagination: false,
+                            slidesPerView: 'auto'
+                        }
+                    }
+                })
+            </script>
+        </div>
+
+        <!-- Блок "Наши контакты" -->
+        <div class="wrapper p-x-8 p-y-60 m-p-x-7 m-p-y-50 flex m-flex-column gap-3">
+            <div class="flex-column gap-3">
+                <div class="wrapper-title desktop mb-1">Наши <span class="bold">контакты</span></div>
+                <div class="flex-column gap-3 j-evenly grow-1">
+                    <div class="wrapper-title upper text-center balance mobile">Свяжитесь с нами удобным для вас способом</div>
+                    <div class="wrapper-subtitle mobile mb-1 m-text-center">Наши <span class="bold">контакты</span></div>
+                    <div class="flex-column m-align-center gap-1 wrap">
+                        <div class="flex align-center m-align-center gap-1 wrap">
+                            <div><span class="material-icon primary-fg f-36">location_on</span></div>
+                            <div><span class="bold">Адрес офиса:</span><br>Малая Семеновская ул., 9</div>
+                        </div>
+                        <div class="flex align-center gap-1">
+                            <div><span class="material-icon primary-fg f-36">schedule</span></div>
+                            <div>ПН-СБ с 08:00 до 20:00</div>
+                        </div>
+                        <div class="flex align-center gap-1">
+                            <div><span class="material-icon primary-fg f-36">call</span></div>
+                            <div><span class="bold">+7 969 999 35 33</span></div>
+                        </div>
+                        <div class="flex align-center gap-1">
+                            <div><span class="material-icon primary-fg f-36">mail</span></div>
+                            <div>mail@dizajn-landshaftnyj.ru</div>
+                        </div>
+                    </div>
+                    <div class="flex-column gap-1 m-center">
+                        <div>Пишите, <span class="bold">мы онлайн</span></div>
+                        <div class="flex gap-1">
+                            <a href=""><img class="social-icon" title="vb" src="/images/icons/vb_colored.png"></a>
+                            <a href=""><img class="social-icon" title="wa" src="/images/icons/wa_colored.png"></a>
+                            <a href=""><img class="social-icon" title="tg" src="/images/icons/tg_colored.png"></a>
+                        </div>
+                    </div>
+                    <div class="flex-column gap-1 m-center">
+                        <div><span class="bold">Мы в соцсетях</span></div>
+                        <div class="flex gap-1">
+                            <a href=""><img class="social-icon" title="fb" src="/images/icons/fb_colored.png"></a>
+                            <a href=""><img class="social-icon" title="in" src="/images/icons/in_colored.png"></a>
+                            <a href=""><img class="social-icon" title="vk" src="/images/icons/vk_colored.png"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="mb-3 text-center primary-fg dotted-underline mobile"><a class="" href="">Реквизиты для юрлиц</a></div>
+                <div class="mb-3">
+                    <div class="f-24 mb-2 m-text-center m-upper">До встречи в офисе</div>
+                    <div class="grid-1-2 gap-1 width-full">
+                        <img class="grid-a width-full height-full" title="office" src="/images/content/office-1.png">
+                        <img class="grid-b width-full height-full" title="office" src="/images/content/office-2.png">
+                        <img class="grid-c width-full height-full" title="office" src="/images/content/office-3.png">
+                    </div>
+                </div>
+                <div class="desktop">
+                    <div class="f-24 mb-2">До встречи у вас на участке</div>
+                    <div class="grid-1-2 gap-1">
+                        <img class="grid-a width-full height-full" title="area" src="/images/content/area-1.png">
+                        <img class="grid-b width-full height-full" title="area" src="/images/content/area-2.png">
+                        <img class="grid-c width-full height-full" title="area" src="/images/content/area-3.png">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Блок "Адреса офиса" -->
+        <div class="wrapper p-x-8 p-y-60 m-p-x-7 m-p-y-50">
+            <div class="wrapper-subtitle mb-1">Адреса офиса</div>
+            <div id="yandex-mapps" style="height: 700px;"></div>
+            <style>
+                @media (max-width: 768px) {
+                    #yandex-mapps {
+                        aspect-ratio: 4 / 3;
+                        height: auto !important;
+                    }
+                }
+            </style>
+        </div>
+
+        <!-- Блок "Акции и скидки" -->
+        <div class="wrapper p-x-8 p-y-60 m-p-x-0 m-p-y-50">
+            <div class="wrapper-title upper mb-1 desktop">Акции и скидки</div>
+            <div class="wrapper-title upper mb-1 mobile m-p-x-7">Повысьте стоимость своего объекта недвижимости от 20 % от рыночной стоимости</div>
+            <div class="m-f-12 mobile text-center mb-3 m-p-x-7">Листайте влево/вправо <img title="swipe" src="/images/icons/swipe.svg"></div>
+            <div class="swiper multi-promo">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="background-image light-t border-box flex-column j-between p-3" style="min-height: 375px; background-image: url('/images/content/promo.png');">
+                            <div class="upper f-24">Аудит проекта другой компании — бесплатно</div>
+                            <div><a class="dotted-underline upper">Участвовать в акции <span class="material-icon">arrow_right_alt</span></a></div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="background-image light-t border-box flex-column j-between p-3" style="min-height: 375px; background-image: url('/images/content/promo.png');">
+                            <div class="upper f-24">Аудит проекта другой компании — бесплатно</div>
+                            <div><a class="dotted-underline upper">Участвовать в акции <span class="material-icon">arrow_right_alt</span></a></div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="background-image light-t border-box flex-column j-between p-3" style="min-height: 375px; background-image: url('/images/content/promo.png');">
+                            <div class="upper f-24">Аудит проекта другой компании — бесплатно</div>
+                            <div><a class="dotted-underline upper">Участвовать в акции <span class="material-icon">arrow_right_alt</span></a></div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="background-image light-t border-box flex-column j-between p-3" style="min-height: 375px; background-image: url('/images/content/promo.png');">
+                            <div class="upper f-24">Аудит проекта другой компании — бесплатно</div>
+                            <div><a class="dotted-underline upper">Участвовать в акции <span class="material-icon">arrow_right_alt</span></a></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+            <style>
+                .swiprer.multi-promo {
+                    width: 100%;
+                    height: auto;
+                }
+                .swiper.multi-promo .swiper-slide,
+                .swiper.multi-promo .swiper-slide > * {
+                    width: 100%;
+                    max-width: 500px;
+                    height: 375px;
+                }
+            </style>
+            <script>
+                const swiper5 = new Swiper('.swiper.multi-promo', {
+                    spaceBetween: '20px',
+                    slidesPerView: 'auto',
+                    loop: true,
+                    breakpoints: {
+                        0: {
+                            slidesPerView: 1,
+                            centeredSlides: true
+                        },
+                        768: {
+                            slidesPerView: 'auto',
+                            grid: {
+                                fill: 'row',
+                                rows: 2
+                            },
+                            pagination: false
+                        },
+                        1200: {
+                            slidesPerView: 3,
+                            grid: {
+                                rows: 2,
+                                fill: 'row'
+                            },
+                            pagination: false
+                        }
+                    },
+                    pagination: {
+                        el: '.swiper-pagination',
+                        dynamicBullets: true,
+                        dynamicMainBullets: 3
+                    }
+                })
+            </script>
+        </div>
+
+        <!-- Блок "Вакансии" -->
+        <div class="wrapper p-x-8 p-y-60 m-p-x-7 m-p-y-50">
+            <div class="wrapper-title upper mb-1">Вакансии</div>
+            <div class="wrapper-subtitle mb-2 text-right">По всем вакансиям звоните в отдел кадров: <span class="bold">+7&nbsp(958)&nbsp756-88-69</span></div>
+            <div class="vacancies flex-column gap-1">
+                <div class="vacancy mb-1 white-bg p-3">
+                    <div class="flex gap-1 j-between">
+                        <div class="flex wrap gap-row-1 gap-column-2">
+                            <div class="bold f-24">Проектировщик</div>
+                            <div class="dot-left">Полная занятость, полный рабочий день</div>
+                            <div class="dot-left">Требуемый опыт работы: 1–3 года</div>
+                            <div class="dot-left">Стабильная заработная плата</div>
+                        </div>
+                        <div><span class="pointer material-icon f-24 primary-fg" onclick="toggle('vacancy007'); innerSelf(this, 'cancel', 'add_circle')">add_circle</span></div>
+                    </div>
+                    <div id="vacancy007" class="description">
+                        <p>
+                            Мы ландшафтная компания In Garden
+                            Занимаемся проектированием частных территорий, общественных пространств на всей территории РФ, как удаленно, так и физически выезжая на объекты (территория Тюменской области)
+                        </p>
+                        <ul style="padding-left: 1.25em;">
+                            <li>Если у Вас есть чувство вкуса и стиля</li>
+                            <li>Вы готовы постоянно учиться и совершенствоваться</li>
+                            <li>Вы хотите защищать окружающую среду и делать жизнь людей лучше - тебе к нам!</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="vacancy mb-1 white-bg p-3">
+                    <div class="flex gap-1 j-between">
+                        <div class="flex wrap gap-row-1 gap-column-2">
+                            <div class="bold f-24">Проектировщик</div>
+                            <div class="dot-left">Полная занятость, полный рабочий день</div>
+                            <div class="dot-left">Требуемый опыт работы: 1–3 года</div>
+                            <div class="dot-left">Стабильная заработная плата</div>
+                        </div>
+                        <div><span class="pointer material-icon f-24 primary-fg" onclick="toggle('vacancy008'); innerSelf(this, 'cancel', 'add_circle')">add_circle</span></div>
+                    </div>
+                    <div id="vacancy008" class="description">
+                        <p>
+                            Мы ландшафтная компания In Garden
+                            Занимаемся проектированием частных территорий, общественных пространств на всей территории РФ, как удаленно, так и физически выезжая на объекты (территория Тюменской области)
+                        </p>
+                        <ul style="padding-left: 1.25em;">
+                            <li>Если у Вас есть чувство вкуса и стиля</li>
+                            <li>Вы готовы постоянно учиться и совершенствоваться</li>
+                            <li>Вы хотите защищать окружающую среду и делать жизнь людей лучше - тебе к нам!</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="vacancy mb-1 white-bg p-3">
+                    <div class="flex gap-1 j-between">
+                        <div class="flex wrap gap-row-1 gap-column-2">
+                            <div class="bold f-24">Проектировщик</div>
+                            <div class="dot-left">Полная занятость, полный рабочий день</div>
+                            <div class="dot-left">Требуемый опыт работы: 1–3 года</div>
+                            <div class="dot-left">Стабильная заработная плата</div>
+                        </div>
+                        <div><span class="pointer material-icon f-24 primary-fg" onclick="toggle('vacancy009'); innerSelf(this, 'cancel', 'add_circle')">add_circle</span></div>
+                    </div>
+                    <div id="vacancy009" class="description">
+                        <p>
+                            Мы ландшафтная компания In Garden
+                            Занимаемся проектированием частных территорий, общественных пространств на всей территории РФ, как удаленно, так и физически выезжая на объекты (территория Тюменской области)
+                        </p>
+                        <ul style="padding-left: 1.25em;">
+                            <li>Если у Вас есть чувство вкуса и стиля</li>
+                            <li>Вы готовы постоянно учиться и совершенствоваться</li>
+                            <li>Вы хотите защищать окружающую среду и делать жизнь людей лучше - тебе к нам!</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <style>
+                .vacancy {
+                    width: -webkit-fit-content;
+                    width: -moz-fit-content;
+                    width: fit-content;
+                }
+                .vacancy .description {
+                margin-top: 3em;
+                }
+                .vacancy .description:not(.visible) {
+                display: none;
+                }
+            </style>
+        </div>
+
+        <!-- Блок "Наименование работ" -->
+        <div class="wrapper p-x-8 p-y-60 m-p-x-7 m-p-y-50">
+            <div class="overflow-x">
+                <table class="name-work width-full mb-3">
+                    <thead>
+                        <tr>
+                            <td class="bold f-24" rowspan="2">Наименование работ</td>
+                            <td class="bold f-24">Планирование</td>
+                            <td class="bold f-24">Концепция</td>
+                            <td class="bold f-24">Планирование + концепция</td>
+                        </tr>
+                        <tr>
+                            <td><a href="" class="d-block btn primary flat none-dec p-x-2 p-y-1 nowrap width-full">Выбрать план</a></td>
+                            <td><a href="" class="d-block btn primary flat none-dec p-x-2 p-y-1 nowrap">Выбрать план</a></td>
+                            <td><a href="" class="d-block btn primary flat none-dec p-x-2 p-y-1 nowrap">Выбрать план</a></td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td></td>
+                            <td>от 65 500 руб.</td>
+                            <td>от 95 500 руб.</td>
+                            <td>от 120 500 руб.</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>до 20 рабочих дней</td>
+                            <td>до 40 рабочих дней</td>
+                            <td>до 60 рабочих дней</td>
+                        </tr>
+                        <tr>
+                            <td class="description-field flex align-center"><div>Планирование проекта</div><div class="help material-icon" data-help=" Размещение строений и коммуникаций на участке, функциональное зонирование, дорожно-тропиночная сеть для удобного передвижения по участку. Вы получите готовый генеральный план участка;">help</div></td>
+                            <td><span class="material-icon primary-fg">verified</span></td>
+                            <td></td>
+                            <td><span class="material-icon primary-fg">verified</span></td>
+                        </tr>
+                        <tr>
+                            <td class="description-field flex align-center"><div>Планирование проекта</div><div class="help material-icon">help</div></td>
+                            <td></td>
+                            <td><span class="material-icon primary-fg">verified</span></td>
+                            <td><span class="material-icon primary-fg">verified</span></td>
+                        </tr>
+                        <tr>
+                            <td class="bold">Дополнительно</td>
+                            <td class="bold text-left" colspan="3"><span>*Удобно, при заключении с нами договора на выполнение работ. В этом случае все эскизные и рабочие чертежи мы выполняем поэтапно и бесплатно</span><br><span>*Минимальная стоимость проектных работ, для всех вариантов: 30 000 руб</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="f-14 text-center">*Геология, геодезия, топография рассчитывается отдельно. Точную стоимость услуги уточняйте</div>
+            </div>
+            <style>
+                table.name-work {
+                    border-collapse: collapse;
+                }
+                table.name-work td {
+                    border: 1px solid #ccc;
+                    padding: 1em;
+                }
+                table.name-work thead td,
+                table.name-work td:not(.text-left):nth-child(n + 2) {
+                    text-align: center;
+                }
+                table.name-work .description-field .help {
+                    position: relative;
+                }
+                table.name-work .description-field .help:before,
+                table.name-work .description-field .help:after {
+                    display: block;
+                    position: absolute;
+                    background: #E4F0E7;
+                    right: 1em;
+                    transition: all .3s;
+                    display: none;
+                    z-index: +1;
+                }
+                table.name-work .description-field .help:before {
+                    content: "";
+                    width: 100px;
+                    height: 100px;
+                    clip-path: inset(0 round 0 100% 0 100%);
+                    bottom: 1em;
+                }
+                table.name-work .description-field .help:after {
+                    content: 'Размещение строений и коммуникаций на участке, функциональное зонирование, дорожно-тропиночная сеть для удобного передвижения по участку. Вы получите готовый генеральный план участка';
+                    bottom: 2em;
+                    font-size: 14px;
+                    border-radius: 1em;
+                    padding: 1em;
+                    width: 100%;
+                    min-width: 150px;
+                    max-width: 400px;
+                }
+                table.name-work .description-field .help:hover:before,
+                table.name-work .description-field .help:hover:after {
+                    display: block;
+                }
+            </style>
+        </div>
+
+        <!-- Блок "Спасибо за обращение" -->
+        <div class="wrapper thanks p-x-8 m-p-x-7 background-image flex align-center f-wrap" style="background-image: url(/images/tecnic/interior.png);">
+            <div class="flex-column gap-3 flex-1 m-text-center m-center">
+                <div class="wrapper-title upper mb-1 m-f-40">Спасибо за обращение в нашу компанию!</div>
+                <div class="desktop thin f-24"><span style="color: #75903F">◦ ◦ ◦ ◦</span> Мы скоро свяжемся с вами</div>
+                <div class="btn primary flat p-x-3 p-y-2 width-fit white-deg">На главную ↗</div>
+            </div>
+            <div>
+                <img title="title" src="/images/workers/stock.png">
+            </div>
+            <style>
+                .wrapper.thanks {
+                    padding-top: 60px;
+                }
+                .wrapper.thanks img {
+                    max-width: 100%;
+                }
+                @media (max-width: 768px) {
+                    .wrapper.thanks {
+                        padding-top: 50px;
+                    }
+                    .wrapper.thanks .btn {
+                        width: 50%;
+                        padding: 2em 3em;
+                    }
+                }
+            </style>
+        </div>
+
+        <!-- Блок "Специалисты" -->
+        <div class="wrapper p-y-60 m-p-y-50">
+            <div class="wrapper-title upper p-x-8 m-p-x-7 mb-1">Специалисты с глубоким пониманием растительности, грунтов и климата</div>
+            <div class="wrapper-subtitle p-x-8 m-p-x-7 mb-2">Что позволяет создавать ландшафтные проекты, которые будут процветать в течение многих лет</div>
+            <div class="m-f-12 mobile text-center mb-3">Листайте влево/вправо <img title="swipe" src="/images/icons/swipe.svg"></div>
+            <div class="swiper-container">
+                <div class="swiper multi-workers">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide" style="background-image: url(/images/workers/1.png);">
+                            <div class="toggle-button"><span class="pointer material-icon f-36 primary-fg" onclick="toggle('special001', this, 'active'); innerSelf(this, 'cancel', 'add_circle')">add_circle</span></div>
+                            <div id="special001" class="hidden background-image light-t border-box flex-column flex-end height-full p-x-3 p-y-4">
+                                <div class="f-24 bold mb-1">Иван Иванов</div>
+                                <div class="f-16 thin">Проектировщик</div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide" style="background-image: url(/images/workers/1.png);">
+                            <div class="toggle-button"><span class="pointer material-icon f-36 primary-fg" onclick="toggle('special002', this, 'active'); innerSelf(this, 'cancel', 'add_circle')">add_circle</span></div>
+                            <div id="special002" class="hidden background-image light-t border-box flex-column flex-end height-full p-x-3 p-y-4">
+                                <div class="f-24 bold mb-1">Иван Иванов</div>
+                                <div class="f-16 thin">Проектировщик</div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide" style="background-image: url(/images/workers/1.png);">
+                            <div class="toggle-button"><span class="pointer material-icon f-36 primary-fg" onclick="toggle('special003', this, 'active'); innerSelf(this, 'cancel', 'add_circle')">add_circle</span></div>
+                            <div id="special003" class="hidden background-image light-t border-box flex-column flex-end height-full p-x-3 p-y-4">
+                                <div class="f-24 bold mb-1">Иван Иванов</div>
+                                <div class="f-16 thin">Проектировщик</div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide" style="background-image: url(/images/workers/1.png);">
+                            <div class="toggle-button"><span class="pointer material-icon f-36 primary-fg" onclick="toggle('special004', this, 'active'); innerSelf(this, 'cancel', 'add_circle')">add_circle</span></div>
+                            <div id="special004" class="hidden background-image light-t border-box flex-column flex-end height-full p-x-3 p-y-4">
+                                <div class="f-24 bold mb-1">Иван Иванов</div>
+                                <div class="f-16 thin">Проектировщик</div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide" style="background-image: url(/images/workers/1.png);">
+                            <div class="toggle-button"><span class="pointer material-icon f-36 primary-fg" onclick="toggle('special005', this, 'active'); innerSelf(this, 'cancel', 'add_circle')">add_circle</span></div>
+                            <div id="special005" class="hidden background-image light-t border-box flex-column flex-end height-full p-x-3 p-y-4">
+                                <div class="f-24 bold mb-1">Иван Иванов</div>
+                                <div class="f-16 thin">Проектировщик</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+                <div class="multi-workers navigation desktop">
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                </div>
+            </div>
+            <style>
+                .swiper.multi-workers {
+                    width: 84%;
+                }
+                .swiper.multi-workers .swiper-slide,
+                .swiper.multi-workers .logo {
+                    width: 370px;
+                    height: 500px;
+                    transition: all .2s;
+                }
+                .swiper.multi-workers .logo:hover {
+                    background: var(--primary-color);
+                }
+                .multi-workers .toggle-button {
+                    position: absolute;
+                    right: 1em;
+                    bottom: 1em;
+                    border: 5px rgba(var(--primary-color), .5);
+                }
+                .multi-workers .toggle-button span:not(.active)::before {
+                    display: block;
+                    position: absolute;
+                    content: "add_circle";
+                    color: inherit;
+                    opacity: .25;
+                    font-size: 46px;
+                    top: -5px;
+                    left: -5px;
+                }
+                .multi-workers .toggle-button span.active {
+                    color: #57785B !important;
+                }
+                .multi-workers .background-image {
+                    background-image: linear-gradient(transparent, rgba(0, 0, 0, .3));
+                }
+            </style>
+            <script>
+                const swiper6 = new Swiper('.multi-workers', {
+                    spaceBetween: '20px',
+                    slidesPerView: 'auto',
+                    loop: true,
+                    pagination: {
+                        el: '.swiper-pagination',
+                        dynamicBullets: true,
+                        dynamicMainBullets: 3
+                    },
+                    navigation: {
+                        nextEl: ".multi-workers .swiper-button-next",
+                        prevEl: '.multi-workers .swiper-button-prev'
+                    }
+                })
+            </script>
+        </div>
+
+        <!-- Блок "Нам доверяют компании" -->
+        <div class="wrapper p-y-60 m-p-y-50">
+            <div class="wrapper-title upper p-x-8 m-p-x-7 mb-1">Нам доверяют компании</div>
+            <div class="m-f-12 mobile text-center mb-3">Листайте влево/вправо <img title="swipe" src="/images/icons/swipe.svg"></div>
+            <div class="swiper-container">
+                <div class="swiper multi-logos">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img class="logo" title="title" src="/images/tecnic/logo.png"></div>
+                        <div class="swiper-slide"><img class="logo" title="title" src="/images/tecnic/logo.png"></div>
+                        <div class="swiper-slide"><img class="logo" title="title" src="/images/tecnic/logo.png"></div>
+                        <div class="swiper-slide"><img class="logo" title="title" src="/images/tecnic/logo.png"></div>
+                        <div class="swiper-slide"><img class="logo" title="title" src="/images/tecnic/logo.png"></div>
+                        <div class="swiper-slide"><img class="logo" title="title" src="/images/tecnic/logo.png"></div>
+                        <div class="swiper-slide"><img class="logo" title="title" src="/images/tecnic/logo.png"></div>
+                        <div class="swiper-slide"><img class="logo" title="title" src="/images/tecnic/logo.png"></div>
+                        <div class="swiper-slide"><img class="logo" title="title" src="/images/tecnic/logo.png"></div>
+                        <div class="swiper-slide"><img class="logo" title="title" src="/images/tecnic/logo.png"></div>
+                        <div class="swiper-slide"><img class="logo" title="title" src="/images/tecnic/logo.png"></div>
+                        <div class="swiper-slide"><img class="logo" title="title" src="/images/tecnic/logo.png"></div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+                <div class="multi-logos navigation desktop">
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                </div>
+            </div>
+            <style>
+                .swiper.multi-logos {
+                    width: 84%;
+                }
+                .swiper.multi-logos .swiper-slide,
+                .swiper.multi-logos .logo {
+                    width: 200px;
+                    transition: all .2s;
+                }
+                .swiper.multi-logos .logo:hover {
+                    background: var(--primary-color);
+                }
+            </style>
+            <script>
+                const swiper7 = new Swiper('.swiper.multi-logos', {
+                    spaceBetween: 0,
+                    slidesPerView: 'auto',
+                    loop: true,
+                    pagination: {
+                        el: '.swiper-pagination',
+                        dynamicBullets: true,
+                        dynamicMainBullets: 3
+                    },
+                    navigation: {
+                        nextEl: ".multi-logos .swiper-button-next",
+                        prevEl: '.multi-logos .swiper-button-prev'
+                    }
+                })
+            </script>
+        </div>
+
+        <!-- Блок "Вы можете нам довериться" -->
+        <div class="wrapper desktop p-x-8 p-y-60 flex-row gap-2 align-end wrap">
+            <div class="flex-1">
+                <div class="wrapper-title upper thin mb-1"><span class="bold">Вы можете нам довериться</span> и быть спокойным за качество и сроки работы</div>
+                <div class="grid gap-3" style="grid-template-columns: repeat(3, 1fr); margin-top:50px;">
+                    <div style="max-width: 210px;">
+                        <input id="dec-1" type="checkbox" class="w34 round" checked disabled>
+                        <label for="dec-1" class="bottom"><span class="bold">Экономим ваш бюджет.</span><br>Покупаем материалы по лучшим ценам у проверенных поставщиков</label>
+                    </div>
+                    <div style="max-width: 210px;">
+                        <input id="dec-2" type="checkbox" class="w34 round" checked disabled>
+                        <label for="dec-2" class="bottom"><span class="bold">Не дергаем вас по пустякам.</span><br>Сами закупаем, доставляем, разгружаем</label>
+                    </div>
+                    <div style="max-width: 210px;">
+                        <input id="dec-3" type="checkbox" class="w34 round" checked disabled>
+                        <label for="dec-3" class="bottom"><span class="bold">Используем ваш материал при желании/наличии</span> или можем закупать сами</label>
+                    </div>
+                    <div style="max-width: 210px;">
+                        <input id="dec-1" type="checkbox" class="w34 round" checked disabled>
+                        <label for="dec-1" class="bottom"><span class="bold">Собственная спец техника.</span><br>Вам не нужно беспокоиться - все берем на себя</label>
+                    </div>
+                    <div style="max-width: 210px;">
+                        <input id="dec-2" type="checkbox" class="w34 round" checked disabled>
+                        <label for="dec-2" class="bottom"><span class="bold">Составляем смету и фиксируем</span> финальную стоимость</label>
+                    </div>
+                    <div style="max-width: 210px;">
+                        <input id="dec-3" type="checkbox" class="w34 round" checked disabled>
+                        <label for="dec-3" class="bottom"><span class="bold">Наличный или безналичный расчет.</span><br>Поэтапная оплата</label>
+                    </div>
+                </div>
+            </div>
+            <div class="flex-column align-center text-center flex-1-0">
+                <div class="f-24 bold mb-1">Гарантии по договору.<br>Вы защищены юридически</div>
+                <div class="mb-2">Заключаем договор на выполнение услуг по ландшафтному дизайну с заказчиком, <b>оказываем</b> услуги ландшафтного дизайна для юридических лиц</div>
+                <img title="Договор подряда" src="/images/content/dogovor.png" width="533px" style="aspect-ratio: 533 / 586; object-fit: cover; object-position: top;">
+            </div>
+        </div>
+
+        <!-- Блок "Числа" -->
+        <div class="wrapper achivments p-x-8 p-y-60 m-p-x-7 m-p-y-50 flex m-flex-column wrap gap-3 align-center">
+            <div class="flex gap-3 flex-1">
+                <div>
+                    <div class="number bold">7</div>
+                    <div>Лет на рынке ландшафтных работ в Москве и области</div>
+                </div>
+                <div>
+                    <div class="number bold">12</div>
+                    <div>Ключевых лиц компании</div>
+                </div>
+                <div>
+                    <div class="number bold">117</div>
+                    <div>Ландшафтных работ провели за 2022 год</div>
+                </div>
+            </div>
+            <div class="flex-1-0">
+                <div class="swiper one-full-achivments">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img class="width-full height-full" title="title" src="/images/tecnic/achovment.png"></div>
+                        <div class="swiper-slide"><img class="width-full height-full" title="title" src="/images/tecnic/achovment.png"></div>
+                        <div class="swiper-slide"><img class="width-full height-full" title="title" src="/images/tecnic/achovment.png"></div>
+                        <div class="swiper-slide"><img class="width-full height-full" title="title" src="/images/tecnic/achovment.png"></div>
+                        <div class="swiper-slide"><img class="width-full height-full" title="title" src="/images/tecnic/achovment.png"></div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                    <div class="desktop">
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-button-next"></div>
+                    </div>
+                </div>
+                <style>
+                    .swiper.one-full-achivments {
+                        aspect-ratio: 1;
+                        height: 300px;
+                    }
+                    .swiper.one-full-achivments .swiper-slide img {
+                        object-fit: contain;
+                    }
+
+                    .swiper.one-full-achivments .swiper-button-prev,
+                    .swiper.one-full-achivments .swiper-button-next {
+                        width: 44px !important;
+                        height: 44px !important;
+                    }
+
+                    .wrapper.achivments .number {
+                        font-size: 15vw;
+                    }
+
+                    @media (max-width: 768px) {
+                        .swiper.one-full-achivments {
+                            height: 400px;
+                        }
+                    }
+                    @media (min-width: 1921px) {
+                        .wrapper.achivments .number {
+                            font-size: 250px;
+                        }
+                    }
+                </style>
+                <script>
+                    const swiper8 = new Swiper('.one-full-achivments', {
+                    spaceBetween: 0,
+                    slidesPerView: 'auto',
+                    loop: true,
+                    pagination: {
+                        el: '.swiper-pagination',
+                        dynamicBullets: true,
+                        dynamicMainBullets: 3
+                    },
+                    navigation: {
+                        nextEl: ".one-full-achivments .swiper-button-next",
+                        prevEl: '.one-full-achivments .swiper-button-prev'
+                    }
+                })
+                </script>
+            </div>
+        </div>
+
+        <!-- Блок "Наша команда" -->
+        <div class="wrapper p-y-60 m-p-y-50">
+            <div class="wrapper-title upper p-x-8 m-p-x-7 mb-1 thin">Наша команда</div>
+            <div class="m-f-12 mobile text-center mb-3">Листайте влево/вправо <img title="swipe" src="/images/icons/swipe.svg"></div>
+            <div class="swiper-container">
+                <div class="swiper multi-team">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img title="title" src="/images/workers/team.png"></div>
+                        <div class="swiper-slide"><img title="title" src="/images/workers/team.png"></div>
+                        <div class="swiper-slide"><img title="title" src="/images/workers/team.png"></div>
+                        <div class="swiper-slide"><img title="title" src="/images/workers/team.png"></div>
+                        <div class="swiper-slide"><img title="title" src="/images/workers/team.png"></div>
+                        <div class="swiper-slide"><img title="title" src="/images/workers/team.png"></div>
+                        <div class="swiper-slide"><img title="title" src="/images/workers/team.png"></div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+                <div class="multi-team navigation desktop">
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                </div>
+            </div>
+            <style>
+                .swiper.multi-team {
+                    width: 84%;
+                    aspect-ratio: 16 / 9;
+                }
+                .swiper.multi-team .swiper-slide,
+                .swiper.multi-team img{
+                    object-fit: contain;
+                    height: 100%;
+                }
+            </style>
+            <script>
+                const swiper9 = new Swiper('.swiper.multi-team', {
+                    spaceBetween: 0,
+                    slidesPerView: 'auto',
+                    loop: true,
+                    pagination: {
+                        el: '.swiper-pagination',
+                        dynamicBullets: true,
+                        dynamicMainBullets: 3
+                    },
+                    navigation: {
+                        nextEl: ".multi-team .swiper-button-next",
+                        prevEl: '.multi-team .swiper-button-prev'
+                    }
+                })
+            </script>
+        </div>
+
+        <!-- Блок "Наши ценности" -->
+
+        <div class="wrapper desktop p-x-8 m-p-x-7 p-y-60 m-p-y-50">
+            <div class="wrapper-title thin mb-1">НАШИ <span class="bold">ЦЕННОСТИ</span></div>
+            <div class="flex-row gap-2 wrap">
+                <div class="block primary-bg">
+                    <div class="block-title">
+                        <div class="title">Инновационные решения</div>
+                        <div class="number-circle">01</div>
+                    </div>
+                    <div class="description">Наша задача — не просто предоставить вам решения на сегодняшний день, но и решения, которые будут эффективными, действенными и эстетичными даже в будущем.</div>
+                </div>
+                <div class="block secondary-bg">
+                    <div class="block-title">
+                        <div class="title">Забота о клиентах</div>
+                        <div class="number-circle">02</div>
+                    </div>
+                    <div class="description">Профессионализм, удовлетворенность клиентов и создание высококачественных схем — главные приоритеты ландшафтных архитекторов «In Garden»</div>
+                </div>
+                <div class="block">
+                    <div class="block-title">
+                        <div class="title">Создаем пространство для вас</div>
+                        <div class="number-circle">03</div>
+                    </div>
+                    <div class="description">Мы знаем как создать индивидуальное пространство, адаптированное к потребностям клиента.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Блок "О компании" -->
+        <div class="wrapper about p-x-8 m-p-x-7 p-y-60 m-p-y-50 light-t">
+            <div class="wrapper-title upper mb-1 balance m-dark-t">О компании<br>In Garden</div>
+            <div class="mb-4">
+                <div class="background-image mb-2">«In Garden» студия садового дизайна и ландшафтной архитектуры, базирующаяся в Москве, которая создает высококачественный современный садовый дизайн и ландшафты.</div>
+                <div class="flex-column gap-1 m-dark-t">
+                    <div>У нас есть опыт в широком спектре проектов, включая частные сады, жилые дома, общественные территории, парки и выставочные сады.</div>
+                    <div>За 7 лет работы наша компания заработала репутацию создателя инновационных и вдохновляющих садов для сотен очень довольных клиентов</div>
+                </div>
+            </div>
+            <style>
+                @media (max-width: 768px) {
+                    .wrapper.about {
+                        background-image: unset !important;
+                    }
+                    .wrapper.about .wrapper-title {
+                        font-weight: bold;
+                    }
+                    .wrapper.about .background-image {
+                        background-image: url(/images/tecnic/ingarden.png);
+                        margin: 30px -8% 50px -8%;
+                        padding: 50px 8%;
+                    }
+                }
+                @media (min-width: 768px) {
+                    .wrapper.about {
+                        background-image: url(/images/tecnic/ingarden.png);
+                    }
+                    .wrapper.about > div:first-child {
+                        margin-top: 20%;
+                        margin-bottom: 1em;
+                        text-align: center;
+                    }
+                    .wrapper.about > div:nth-child(2) {
+                        width: 50%;
+                        margin-left: 50%;
+                    }
+                    .wrapper.about .background-image {
+                        font-weight: bold;
+                    }
+                }
+            </style>
+        </div>
+
+        <!-- Блок "Наша цель" -->
+        <div class="wrapper p-y-60 m-p-y-50">
+            <div class="wrapper-title upper mb-1 p-x-8 m-p-x-7">Наша цель - <span class="primary-fg">избавить вас от стресса и хлопот</span>, взяв на себя весь комплекс работ</div>
+            <div class="swiper-container">
+                <div class="swiper multi-purpose">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="white-bg p-3 border-box flex-column flex-start gap-1 br-2px">
+                                <div class="p-x-2 p-y-1 white-bg br-2px primary-fg shadow-2px">Шаг 1</div>
+                                <div class="upper f-40 m-f-32">Заявка <br>на сайте</div>
+                                <div class="f-24">Звоните</div>
+                                <div class="f-28 grow-1">+7 (968) 300-20-18</div>
+                                <div class="f-24">или оставляете <br>заявку на сайте</div>
+                                <div class="btn primary upper flat m-br-1">Оставить заявку</div> 
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="light-t background-image" style="background-image: url(/images/tecnic/instruments.jpg);">
+                                <div class="background-shadow p-3 border-box flex-column flex-start gap-1 br-2px">
+                                    <div class="p-x-2 p-y-1 white-bg br-2px primary-fg shadow-2px">Шаг 2</div>
+                                    <div class="upper f-40 m-f-32">Полы</div>
+                                    <div class="grow-1">
+                                        <ul>
+                                            <li>Устройство гидроизоляции в сантехническом узле и на кухне</li>
+                                            <li>Выравнивание и нивелирующая стяжка</li>
+                                            <li>Укладка паркета/ламината</li>
+                                            <li>Установка плинтусов и порогов</li>
+                                        </ul>
+                                    </div>
+                                    <div class="f-16">Поможем принять новостройку. Проверим все вплоть до симметрии установленных радиаторов</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="light-t background-image" style="background-image: url(/images/tecnic/instruments.jpg);">
+                                <div class="background-shadow p-3 border-box flex-column flex-start gap-1 br-2px">
+                                    <div class="p-x-2 p-y-1 white-bg br-2px primary-fg shadow-2px">Шаг 3</div>
+                                    <div class="upper f-40 m-f-32">Подготовительные работы</div>
+                                    <div class="grow-1">
+                                        <ul>
+                                            <li>Демонтаж и возведение стен</li>
+                                            <li>Планировка и архитектурный проект</li>
+                                            <li>Рабочая документация и чертежи</li>
+                                        </ul>
+                                    </div>
+                                    <div class="f-16">Используем современные способы выравнивания полов: полимерные смеси, наливные полы и укладку Кнауф-плит на керамзитовую засыпку</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="light-t background-image" style="background-image: url(/images/tecnic/instruments.jpg);">
+                                <div class="background-shadow p-3 border-box flex-column flex-start gap-1 br-2px">
+                                    <div class="p-x-2 p-y-1 white-bg br-2px primary-fg shadow-2px">Шаг 4</div>
+                                    <div class="upper f-40 m-f-32">Подготовительные работы</div>
+                                    <div class="grow-1">
+                                        <ul>
+                                            <li>Демонтаж и возведение стен</li>
+                                            <li>Планировка и архитектурный проект</li>
+                                            <li>Рабочая документация и чертежи</li>
+                                        </ul>
+                                    </div>
+                                    <div class="f-16">Используем современные способы выравнивания полов: полимерные смеси, наливные полы и укладку Кнауф-плит на керамзитовую засыпку</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="light-t background-image" style="background-image: url(/images/tecnic/instruments.jpg);">
+                                <div class="background-shadow p-3 border-box flex-column flex-start gap-1 br-2px">
+                                    <div class="p-x-2 p-y-1 white-bg br-2px primary-fg shadow-2px">Шаг 5</div>
+                                    <div class="upper f-40 m-f-32">Подготовительные работы</div>
+                                    <div class="grow-1">
+                                        <ul>
+                                            <li>Демонтаж и возведение стен</li>
+                                            <li>Планировка и архитектурный проект</li>
+                                            <li>Рабочая документация и чертежи</li>
+                                        </ul>
+                                    </div>
+                                    <div class="f-16">Используем современные способы выравнивания полов: полимерные смеси, наливные полы и укладку Кнауф-плит на керамзитовую засыпку</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+                <div class="multi-purpose navigation desktop">
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                </div>
+                <style>
+                    .swiper.multi-purpose {
+                        width: 84%;
+                    }
+                    .swiper.multi-purpose .swiper-slide,
+                    .swiper.multi-purpose .swiper-slide > * {
+                        width: 100%;
+                        max-width: 500px;
+                        height: 700px;
+                    }
+                </style>
+                <script>
+                    const swiper10 = new Swiper('.swiper.multi-purpose', {
+                        spaceBetween: '20px',
+                        slidesPerView: 'auto',
+                        loop: true,
+                        pagination: {
+                            el: '.swiper-pagination',
+                            dynamicBullets: true,
+                            dynamicMainBullets: 3
+                        },
+                        navigation: {
+                            nextEl: ".multi-purpose .swiper-button-next",
+                            prevEl: '.multi-purpose .swiper-button-prev'
+                        },
+                        breakpoints: {
+                            0: {
+                                slidesPerView: 1
+                            },
+                            768: {
+                                slidesPerView: 'auto'
+                            }
+                        }
+                    })
+                </script>
+            </div>
+        </div>
+
+        <!-- Блок "Работаем на совесть" -->
+        <div class="wrapper stages p-x-8 m-p-x-7 p-y-60 m-p-y-50 flex-row wrap gap-2">
+            <div class="flex-1">
+                <div class="wrapper-title upper mb-1">Работаем на совесть и относимся по-человечески внимательно к клиентам</div>
+                <div class="wrapper-subtitle">Что вы получите, обратившись к нам</div>
+            </div>
+            <div class="flex-1-0 flex-column gap-1">
+                <div class="stage">
+                    <div class="stage-image"><img title="photo" src="/images/tecnic/этапы.png"></div>
+                    <div class="stage-data flex-column">
+                        <div class="number mb-1 f-40 primary-fg">01</div>
+                        <div class="p-x-3 p-y-3 white-bg">
+                            <div class="bold upper f-20 mb-1">Личный дизайнер-архитектор</div>
+                            <div>Поможет с планировкой, подберет отделочные материалы и проконтролирует финальный результат</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="stage">
+                    <div class="stage-image"><img title="photo" src="/images/tecnic/этапы.png"></div>
+                    <div class="stage-data flex-column">
+                        <div class="number mb-1 f-40 primary-fg">02</div>
+                        <div class="p-x-3 p-y-3 white-bg">
+                            <div class="bold upper f-20 mb-1">Личный дизайнер-архитектор</div>
+                            <div>Поможет с планировкой, подберет отделочные материалы и проконтролирует финальный результат</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="stage">
+                    <div class="stage-image"><img title="photo" src="/images/tecnic/этапы.png"></div>
+                    <div class="stage-data flex-column">
+                        <div class="number mb-1 f-40 primary-fg">03</div>
+                        <div class="p-x-3 p-y-3 white-bg">
+                            <div class="bold upper f-20 mb-1">Личный дизайнер-архитектор</div>
+                            <div>Поможет с планировкой, подберет отделочные материалы и проконтролирует финальный результат</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="stage">
+                    <div class="stage-image"><img title="photo" src="/images/tecnic/этапы.png"></div>
+                    <div class="stage-data flex-column">
+                        <div class="number mb-1 f-40 primary-fg">04</div>
+                        <div class="p-x-3 p-y-3 white-bg">
+                            <div class="bold upper f-20 mb-1">Личный дизайнер-архитектор</div>
+                            <div>Поможет с планировкой, подберет отделочные материалы и проконтролирует финальный результат</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <style>
+                .wrapper.stages .stage {
+                    position: relative;
+                    height: 400px;
+                }
+                .wrapper.stages .stage-data {
+                    position: absolute;
+                    bottom: 0;
+                    right: 0;
+                    left: 0;
+                }
+                .wrapper.stages .stage-image img {
+                    height: 400px;
+                    width: 100%;
+                    max-width: 870px;
+                    object-fit: cover;
+                }
+                @media (max-width: 768px) {
+                    .wrapper.stages .stage {
+                        height: auto;
+                        background: white;
+                    }
+                    .wrapper.stages .stage-data {
+                        position: relative;
+                        flex-direction: row-reverse;
+                        padding-right: 0;
+                    }
+                    .wrapper.stages .stage-data .number {
+                        margin-right: .25em;
+                    }
+                    .wrapper.stages .stage-image img {
+                        aspect-ratio: 16 / 9;
+                        height: auto;
+                    }
+                }
+                @media (min-width: 768px) {
+                    .wrapper.stages .stage-image {
+                        padding-left: 3em;
+                    }
+                }
+            </style>
+        </div>
+
+        <!-- Блок "Куратор" -->
+        <div class="wrapper tutor p-x-8 m-p-x-7 p-y-60 m-p-y-50 light-t background-image flex m-flex-column j-between gap-2" style="background-image: url(/images/tecnic/куратор-3.png);">
+            <div class="flex-column gap-2">
+                <div class="wrapper-title upper">С каждым клиентом - общаюсь и курирую ваш ремонт лично!</div>
+                <div class="tutro-card flex gap-1 f-36 m-f-14 center">
+                    <div class="mobile"><img class="br-2" title="tutor" src="/images/tecnic/куратор-2.png"></div>
+                    <div>Рад приветствовать на сайте. Я Андрей, профессиональный строитель и руководитель компании Naremonte.</div>
+                </div>
+                <div>Уже 8 лет в нише ремонта. За это время изучил боли и желания клиентов так, что иногда читаю мысли и часто исполняю мечты!</div>
+            </div>
+            <div class="numbers flex-column m-center gap-2 flex-0 text-right">
+                <div>
+                    <div class="f-96 m-f-60">500</div>
+                    <div class="f-14">квартир в Сочи отремонтировали</div>
+                </div>
+                <div>
+                    <div class="f-96 m-f-60">6 <span class="f-40">лет</span></div>
+                    <div class="f-14">Успешно работаем в нише ремонтов</div>
+                </div>
+                <div>
+                    <div class="f-96 m-f-60">1000+</div>
+                    <div class="f-14">довольных клиентов с красивым ремонтом квартир</div>
+                </div>
+                <div class="play flex gap-2 center">
+                    <div class="f-14">Рассказываю и показываю как мы работаем за 2 минуты</div>
+                    <div>
+                        <a href="">
+                            <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="100" height="100" rx="50" fill="var(--primary-color)"/>
+                                <path d="M45.5823 42.35C44.1606 41.5279 43 42.2049 43 43.8491V55.9965C43 57.6407 44.1606 58.3177 45.592 57.4956L56.2113 51.4025C57.6427 50.5804 57.6427 49.2554 56.2113 48.4334L45.5823 42.35Z" fill="currentColor"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <style>
+                .wrapper.tutor {
+                    background-position-x: center;
+                }
+                .wrapper.tutor > :first-child {
+                    width: 45%;
+                }
+                @media (max-width: 768px) {
+                    .wrapper.tutor > :first-child {
+                        width: 100%;
+                    }
+                    .wrapper.tutor {
+                        background: #646464;
+                        background-image: none !important;
+                    }
+                    .wrapper.tutor .tutro-card {
+                        order: -1;
+                    }
+                    .wrapper.tutor .numbers {
+                        display: grid;
+                        grid-template-columns: 1fr 1fr;
+                        gap: .5em 1em;
+                    }
+                    .wrapper.tutor .numbers .play svg {
+                        width: 50px;
+                    }
+                }
+            </style>
+        </div>
+
+        <!-- Блок "Ремонт под любой бюджет" -->
+        <div class="wrapper p-x-8 m-p-x-7 p-y-60 m-p-y-50">
+            <div class="wrapper-title upper mb-1">Ремонт под любой бюджет</div>
+            <div class="f-32 m-f-18 mb-2">Разные тарифы - это лишь разница в наборе услуг. Качество ремонта - всегда стандартно высокое</div>
+            <div class="swiper multi-tariffs">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="white-bg p-3 border-box flex-column flex-start gap-1 br-2px">
+                            <div class="block-title upper f-40 m-f-32">Базовый</div>
+                            <div class="f-28 grow-1">
+                                <ul>
+                                    <li>Концепция</li>
+                                    <li>Планировочные решения</li>
+                                    <li>Рабочая документация</li>
+                                </ul>
+                            </div>
+                            <div class="f-48">1700 <span class="f-24">руб/м²</span></div>
+                            <div class="btn primary upper flat m-br-1 width-full">Оставить заявку</div> 
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="background-image" style="background-image: url(/images/tecnic/interior.jpg);">
+                            <div class="light-t background-shadow p-3 border-box flex-column flex-start gap-1 br-2px">
+                                <div class="block-title upper f-40 m-f-32">Оптимальный</div>
+                                <div class="f-28 grow-1">
+                                    <ul>
+                                        <li>Концепция</li>
+                                        <li>Планировочные решения</li>
+                                        <li>Рабочая документация</li>
+                                    </ul>
+                                </div>
+                                <div class="f-48">1700 <span class="f-24">руб/м²</span></div>
+                                <div class="btn primary upper flat m-br-1 width-full">Оставить заявку</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="background-image" style="background-image: url(/images/tecnic/interior.jpg);">
+                            <div class="light-t background-shadow p-3 border-box flex-column flex-start gap-1 br-2px">
+                                <div class="block-title upper f-40 m-f-32">Премиум</div>
+                                <div class="f-28 grow-1">
+                                    <ul>
+                                        <li>Концепция</li>
+                                        <li>Планировочные решения</li>
+                                        <li>Рабочая документация</li>
+                                    </ul>
+                                </div>
+                                <div class="f-48">1700 <span class="f-24">руб/м²</span></div>
+                                <div class="btn primary upper flat m-br-1 width-full">Оставить заявку</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="background-image" style="background-image: url(/images/tecnic/interior.jpg);">
+                            <div class="light-t background-shadow p-3 border-box flex-column flex-start gap-1 br-2px">
+                                <div class="block-title upper f-40 m-f-32">Индивидуальный по дизайн проекту</div>
+                                <div class="f-28 grow-1">
+                                    <ul>
+                                        <li>Концепция</li>
+                                        <li>Планировочные решения</li>
+                                        <li>Рабочая документация</li>
+                                    </ul>
+                                </div>
+                                <div class="f-48">1700 <span class="f-24">руб/м²</span></div>
+                                <div class="btn primary upper flat m-br-1 width-full">Оставить заявку</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination mobile"></div>
+            </div>
+            <style>
+                .swiper.multi-tariffs {
+                    width: 100%;
+                }
+                .swiper.multi-tariffs .swiper-slide,
+                .swiper.multi-tariffs .swiper-slide > * {
+                    width: 100%;
+                    max-width: 500px;
+                    height: 700px;
+                }
+            </style>
+            <script>
+                const swiper11 = new Swiper('.swiper.multi-tariffs', {
+                    spaceBetween: '20px',
+                    slidesPerView: 'auto',
+                    loop: true,
+                    pagination: {
+                        el: '.swiper-pagination',
+                        dynamicBullets: true,
+                        dynamicMainBullets: 3
+                    }
+                })
+            </script>
+        </div>
+
+        <!-- Блок "Наши контакты 2" -->
+        <div class="wrapper p-x-8 p-y-60 m-p-x-7 m-p-y-50">
+            <div class="wrapper-title upper mb-1">Готовы ответить на любой ваш вопрос</div>
+            <div class="flex m-flex-column gap-2">
+                <div class="flex-column gap-2">
+                    <div class="wrapper-subtitle upper">Наши контакты</div>
+                    <div class="flex-column gap-1 wrap">
+                        <div class="flex align-center gap-1 wrap">
+                            <div><span class="material-icon primary-fg f-36">location_on</span></div>
+                            <div>Сочи, Пластунская 123 к2</div>
+                        </div>
+                        <div class="flex align-center gap-1">
+                            <div><span class="material-icon primary-fg f-36">schedule</span></div>
+                            <div>Пн-Пт: 9:00 - 18:00</div>
+                        </div>
+                        <div class="flex align-center gap-1">
+                            <div><span class="material-icon primary-fg f-36">call</span></div>
+                            <div>+7 (968) 300-20-18</div>
+                        </div>
+                        <div class="flex align-center gap-1">
+                            <div><span class="material-icon primary-fg f-36">mail</span></div>
+                            <div>info@naremonte.ru</div>
+                        </div>
+                    </div>
+                    <div class="flex-column gap-1">
+                        <div class="upper">Пишите, мы онлайн</div>
+                        <div class="flex gap-1">
+                            <a href=""><img class="social-icon" title="vb" src="/images/icons/vb_colored.png"></a>
+                            <a href=""><img class="social-icon" title="wa" src="/images/icons/wa_colored.png"></a>
+                            <a href=""><img class="social-icon" title="tg" src="/images/icons/tg_colored.png"></a>
+                        </div>
+                    </div>
+                    <div class="flex-column gap-1">
+                        <div class="upper">Мы в соцсетях</div>
+                        <div class="flex gap-1">
+                            <a href=""><img class="social-icon" title="fb" src="/images/icons/fb_colored.png"></a>
+                            <a href=""><img class="social-icon" title="in" src="/images/icons/in_colored.png"></a>
+                            <a href=""><img class="social-icon" title="vk" src="/images/icons/vk_colored.png"></a>
+                        </div>
+                    </div>
+                    <div class="desktop upper dotted-underline"><a class="" href="">Реквизиты для юрлиц</a></div>
+                </div>
+                <div class="flex-1-0">
+                    <div class="mb-1" id="yandex-mapps-gray" style="aspect-ratio: 2; filter: grayscale(1);"></div>
+                    <div class="mobile text-center upper dotted-underline"><a class="" href="">Реквизиты для юрлиц</a></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Блок "Как мы работаем" -->
+        <div class="wrapper p-y-60 m-p-y-50">
+            <div class="wrapper-title upper p-x-8 m-p-x-7 mb-1">Как мы работаем</div>
+            <div class="m-f-12 mobile text-center mb-3">Листайте влево/вправо <img title="swipe" src="/images/icons/swipe.svg"></div>
+            <div class="swiper-container">
+                <div class="swiper multi-regulations">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="flex-column gap-1">
+                                <img title="title" src="/images/content/этап.png">
+                                <div class="bold">Заполните заявку</div>
+                                <div>Достаточно указать имя и личный номер телефона</div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="flex-column gap-1">
+                                <img title="title" src="/images/content/этап.png">
+                                <div class="bold">Бесплатно получаете смету на ремонт квартиры</div>
+                                <div>Инженер - сметчик проведёт замеры, составит смету, определит спектр и сумму работ с материалами - полностью прозрачно</div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="flex-column gap-1">
+                                <img title="title" src="/images/content/этап.png">
+                                <div class="bold">Подписываем договор</div>
+                                <div>У нас нет скрытых условий и непонятных терминов - все права и обязаности сторон зафиксированы в документе</div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="flex-column gap-1">
+                                <img title="title" src="/images/content/этап.png">
+                                <div class="bold">Привозим необходимые материалы</div>
+                                <div>Поставка занимает от 1 дня - без ожидания, предоплаты, наценок</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="multi-regulations swiper-pagination"></div>
+                </div>
+                <div class="multi-regulations navigation desktop">
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                </div>
+            </div>
+            <style>
+                .swiper.multi-regulations {
+                    width: 84%;
+                }
+                .swiper.multi-regulations .swiper-wrapper {
+                    width: 100%;
+                    max-width: 370px;
+                    transition: all .2s;
+                }
+                .swiper.multi-regulations .swiper-slide img {
+                    width: 100%;
+                    aspect-ratio: 4 / 3;
+                    object-fit: cover;
+                }
+            </style>
+            <script>
+                const swiper12 = new Swiper('.multi-regulations', {
+                    spaceBetween: '20px',
+                    slidesPerView: 'auto',
+                    loop: true,
+                    pagination: {
+                        el: '.swiper-pagination',
+                        dynamicBullets: true,
+                        dynamicMainBullets: 3
+                    },
+                    navigation: {
+                        nextEl: ".multi-regulations .swiper-button-next",
+                        prevEl: '.multi-regulations .swiper-button-prev'
+                    },
+                    autoHeight: true
+                })
+            </script>
+        </div>
+
+        <!-- Блок Отзывы наших клиентов -->
+        <div class="wrapper reviews p-x-8 m-p-x-7 p-y-60 m-p-y-50 flex-column gap-2">
+            <div class="wrapper-title upper mb-1">Отзывы наших клиентов</div>
+            <div class="companies desktop flex wrap gap-column-3 gap-row-1">
+                <div><img title="title" src="/images/icons/yandex-full.png"></div>
+                <div><img title="title" src="/images/icons/otzovik-full.png"></div>
+                <div><img title="title" src="/images/icons/google-full.png"></div>
+                <div><img title="title" src="/images/icons/yell-full.png"></div>
+            </div>
+            <div class="swiper multi-reviews">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="flex-column gap-1 white-bg p-2">
+                            <div class="flex-column">
+                                <div class="f-14">Имя</div>
+                                <div class="upper">David K.</div>
+                            </div>
+                            <div class="overflow-y">Обратился в компанию Дом Профи 24 для проведения ремонта в моей квартире и был доволен результатом. Работа была выполнена в срок и с учетом моих пожеланий. Мастера проявили профессионализм и внимание к деталям. Однако иногда были незначительные задержки в коммуникации, что можно было бы улучшить. В целом, я остался удовлетворен их работой.</div>
+                            <div class="flex wrap j-between">
+                                <div>Дата: <span>11.05.2024</span></div>
+                                <div class="primary-fg material-icon f-24"><span>grade</span><span>grade</span><span>grade</span><span>grade</span><span>grade</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="flex-column gap-1 white-bg p-2">
+                            <div class="flex-column">
+                                <div class="f-14">Имя</div>
+                                <div class="upper">David K.</div>
+                            </div>
+                            <div class="overflow-y">Обратился в компанию Дом Профи 24 для проведения ремонта в моей квартире и был доволен результатом. Работа была выполнена в срок и с учетом моих пожеланий. Мастера проявили профессионализм и внимание к деталям. Однако иногда были незначительные задержки в коммуникации, что можно было бы улучшить. В целом, я остался удовлетворен их работой.</div>
+                            <div class="flex wrap j-between">
+                                <div>Дата: <span>11.05.2024</span></div>
+                                <div class="primary-fg material-icon f-24"><span>grade</span><span>grade</span><span>grade</span><span>grade</span><span>star_half</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="flex-column gap-1 white-bg p-2">
+                            <div class="flex-column">
+                                <div class="f-14">Имя</div>
+                                <div class="upper">David K.</div>
+                            </div>
+                            <div class="overflow-y">Обратился в компанию Дом Профи 24 для проведения ремонта в моей квартире и был доволен результатом. Работа была выполнена в срок и с учетом моих пожеланий. Мастера проявили профессионализм и внимание к деталям. Однако иногда были незначительные задержки в коммуникации, что можно было бы улучшить. В целом, я остался удовлетворен их работой.</div>
+                            <div class="flex wrap j-between">
+                                <div>Дата: <span>11.05.2024</span></div>
+                                <div class="primary-fg material-icon f-24"><span>grade</span><span>grade</span><span>grade</span><span>grade</span><span class="filgray">grade</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="flex-column gap-1 white-bg p-2">
+                            <div class="flex-column">
+                                <div class="f-14">Имя</div>
+                                <div class="upper">David K.</div>
+                            </div>
+                            <div class="overflow-y">Обратился в компанию Дом Профи 24 для проведения ремонта в моей квартире и был доволен результатом. Работа была выполнена в срок и с учетом моих пожеланий. Мастера проявили профессионализм и внимание к деталям. Однако иногда были незначительные задержки в коммуникации, что можно было бы улучшить. В целом, я остался удовлетворен их работой.</div>
+                            <div class="flex wrap j-between">
+                                <div>Дата: <span>11.05.2024</span></div>
+                                <div class="primary-fg material-icon f-24"><span>grade</span><span>grade</span><span>grade</span><span>star_half</span><span class="filgray">grade</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="flex-column gap-1 white-bg p-2">
+                            <div class="flex-column">
+                                <div class="f-14">Имя</div>
+                                <div class="upper">David K.</div>
+                            </div>
+                            <div class="overflow-y">Обратился в компанию Дом Профи 24 для проведения ремонта в моей квартире и был доволен результатом. Работа была выполнена в срок и с учетом моих пожеланий. Мастера проявили профессионализм и внимание к деталям. Однако иногда были незначительные задержки в коммуникации, что можно было бы улучшить. В целом, я остался удовлетворен их работой.</div>
+                            <div class="flex wrap j-between">
+                                <div>Дата: <span>11.05.2024</span></div>
+                                <div class="primary-fg material-icon f-24"><span>grade</span><span>grade</span><span>grade</span><span>grade</span><span>grade</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="flex-column gap-1 white-bg p-2">
+                            <div class="flex-column">
+                                <div class="f-14">Имя</div>
+                                <div class="upper">David K.</div>
+                            </div>
+                            <div class="overflow-y">Обратился в компанию Дом Профи 24 для проведения ремонта в моей квартире и был доволен результатом. Работа была выполнена в срок и с учетом моих пожеланий. Мастера проявили профессионализм и внимание к деталям. Однако иногда были незначительные задержки в коммуникации, что можно было бы улучшить. В целом, я остался удовлетворен их работой.</div>
+                            <div class="flex wrap j-between">
+                                <div>Дата: <span>11.05.2024</span></div>
+                                <div class="primary-fg material-icon f-24"><span>grade</span><span>grade</span><span>grade</span><span>grade</span><span>grade</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="flex-column gap-1 white-bg p-2">
+                            <div class="flex-column">
+                                <div class="f-14">Имя</div>
+                                <div class="upper">David K.</div>
+                            </div>
+                            <div class="overflow-y">Обратился в компанию Дом Профи 24 для проведения ремонта в моей квартире и был доволен результатом. Работа была выполнена в срок и с учетом моих пожеланий. Мастера проявили профессионализм и внимание к деталям. Однако иногда были незначительные задержки в коммуникации, что можно было бы улучшить. В целом, я остался удовлетворен их работой.</div>
+                            <div class="flex wrap j-between">
+                                <div>Дата: <span>11.05.2024</span></div>
+                                <div class="primary-fg material-icon f-24"><span>grade</span><span>grade</span><span>grade</span><span>grade</span><span>grade</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="flex-column gap-1 white-bg p-2">
+                            <div class="flex-column">
+                                <div class="f-14">Имя</div>
+                                <div class="upper">David K.</div>
+                            </div>
+                            <div class="overflow-y">Обратился в компанию Дом Профи 24 для проведения ремонта в моей квартире и был доволен результатом. Работа была выполнена в срок и с учетом моих пожеланий. Мастера проявили профессионализм и внимание к деталям. Однако иногда были незначительные задержки в коммуникации, что можно было бы улучшить. В целом, я остался удовлетворен их работой.</div>
+                            <div class="flex wrap j-between">
+                                <div>Дата: <span>11.05.2024</span></div>
+                                <div class="primary-fg material-icon f-24"><span>grade</span><span>grade</span><span>grade</span><span>grade</span><span>grade</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+            <div class="flex center">
+                <div class="desktop btn flat border br-0">Показать больше</div>
+            </div>
+            <style>
+                .swiper.multi-reviews {
+                    width: 100%;
+                    height: auto;
+                }
+                .swiper.multi-reviews .swiper-wrapper {
+                    width: 100%;
+                }
+                .swiper.multi-reviews .swiper-slide {
+                    width: 100%;
+                    max-width: 370px;
+                    height: 450px;
+                }
+                .wrapper.reviews .companies > * {
+                    height: 64px;
+                }
+                .wrapper.reviews .companies img {
+                    height: 100%;
+                    object-fit: cover;
+                }
+            </style>
+            <script>
+                const swiper13 = new Swiper('.swiper.multi-reviews', {
+                    spaceBetween: '20px',
+                    loop: true,
+                    pagination: {
+                        el: '.swiper-pagination',
+                        dynamicBullets: true,
+                        dynamicMainBullets: 3
+                    },
+                    grid: {
+                        row: 2
+                    },
+                    breakpoints: {
+                        0: {
+                            grid: {
+                                rows: 1
+                            }
+                        },
+                        768: {
+                            slidesPerView: 'auto',
+                            grid: {
+                                rows: 2,
+                                fill: 'row'
+                            }
+                        }
+                    }
+                })
+            </script>
+        </div>
+
+        <!-- Блок "Стоимость ремонта" -->
+        <div class="wrapper cost p-x-8 m-p-x-7 p-y-60 m-p-y-50">
+            <div class="flex center j-between gap-1">
+                <div class="wrapper-title upper mb-1 balance">Стоимость ремонта квартир в Москве <span class="primary-fg">под ключ с материалом</span></div>
+                <div class="desktop">
+                    <svg width="77" height="77" viewBox="0 0 77 77" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="38.5" cy="38.5" r="38.5" fill="var(--primary-color)"/>
+                        <circle cx="29.1786" cy="31.1434" r="4.17857" fill="white"/>
+                        <circle cx="46.8215" cy="31.1434" r="4.17857" fill="white"/>
+                        <circle cx="29.1786" cy="47.8583" r="4.17857" fill="white"/>
+                        <circle cx="46.8215" cy="47.8583" r="4.17857" fill="white"/>
+                    </svg>                                              
+                </div>
+            </div>
+            <div class="flex-column gap-2 overflow-x">
+                <table>
+                    <thead>
+                        <tr>
+                            <td>Косметический ремонт</td>
+                            <td></td>
+                            <td>Площадь</td>
+                            <td>Черновые материалы</td>
+                            <td>Стоимость работ</td>
+                            <td>Итого</td>
+                            <td>Сроки ремонта</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Студия</td>
+                            <td></td>
+                            <td>22м2</td>
+                            <td>10.000 руб.</td>
+                            <td>94.000 руб.</td>
+                            <td>104.000 руб.</td>
+                            <td>до 1 месяца</td>
+                        </tr>
+                        <tr>
+                            <td>Студия</td>
+                            <td></td>
+                            <td>22м2</td>
+                            <td>10.000 руб.</td>
+                            <td>94.000 руб.</td>
+                            <td>104.000 руб.</td>
+                            <td>до 1 месяца</td>
+                        </tr>
+                        <tr>
+                            <td>Студия</td>
+                            <td></td>
+                            <td>22м2</td>
+                            <td>10.000 руб.</td>
+                            <td>94.000 руб.</td>
+                            <td>104.000 руб.</td>
+                            <td>до 1 месяца</td>
+                        </tr>
+                        <tr>
+                            <td>Студия</td>
+                            <td></td>
+                            <td>22м2</td>
+                            <td>10.000 руб.</td>
+                            <td>94.000 руб.</td>
+                            <td>104.000 руб.</td>
+                            <td>до 1 месяца</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table>
+                    <thead>
+                        <tr>
+                            <td>Косметический ремонт</td>
+                            <td></td>
+                            <td>Площадь</td>
+                            <td>Черновые материалы</td>
+                            <td>Стоимость работ</td>
+                            <td>Итого</td>
+                            <td>Сроки ремонта</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Студия</td>
+                            <td></td>
+                            <td>22м2</td>
+                            <td>10.000 руб.</td>
+                            <td>94.000 руб.</td>
+                            <td>104.000 руб.</td>
+                            <td>до 1 месяца</td>
+                        </tr>
+                        <tr>
+                            <td>Студия</td>
+                            <td></td>
+                            <td>22м2</td>
+                            <td>10.000 руб.</td>
+                            <td>94.000 руб.</td>
+                            <td>104.000 руб.</td>
+                            <td>до 1 месяца</td>
+                        </tr>
+                        <tr>
+                            <td>Студия</td>
+                            <td></td>
+                            <td>22м2</td>
+                            <td>10.000 руб.</td>
+                            <td>94.000 руб.</td>
+                            <td>104.000 руб.</td>
+                            <td>до 1 месяца</td>
+                        </tr>
+                        <tr>
+                            <td>Студия</td>
+                            <td></td>
+                            <td>22м2</td>
+                            <td>10.000 руб.</td>
+                            <td>94.000 руб.</td>
+                            <td>104.000 руб.</td>
+                            <td>до 1 месяца</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table>
+                    <thead>
+                        <tr>
+                            <td>Косметический ремонт</td>
+                            <td></td>
+                            <td>Площадь</td>
+                            <td>Черновые материалы</td>
+                            <td>Стоимость работ</td>
+                            <td>Итого</td>
+                            <td>Сроки ремонта</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Студия</td>
+                            <td></td>
+                            <td>22м2</td>
+                            <td>10.000 руб.</td>
+                            <td>94.000 руб.</td>
+                            <td>104.000 руб.</td>
+                            <td>до 1 месяца</td>
+                        </tr>
+                        <tr>
+                            <td>Студия</td>
+                            <td></td>
+                            <td>22м2</td>
+                            <td>10.000 руб.</td>
+                            <td>94.000 руб.</td>
+                            <td>104.000 руб.</td>
+                            <td>до 1 месяца</td>
+                        </tr>
+                        <tr>
+                            <td>Студия</td>
+                            <td></td>
+                            <td>22м2</td>
+                            <td>10.000 руб.</td>
+                            <td>94.000 руб.</td>
+                            <td>104.000 руб.</td>
+                            <td>до 1 месяца</td>
+                        </tr>
+                        <tr>
+                            <td>Студия</td>
+                            <td></td>
+                            <td>22м2</td>
+                            <td>10.000 руб.</td>
+                            <td>94.000 руб.</td>
+                            <td>104.000 руб.</td>
+                            <td>до 1 месяца</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table>
+                    <thead>
+                        <tr>
+                            <td>Косметический ремонт</td>
+                            <td></td>
+                            <td>Площадь</td>
+                            <td>Черновые материалы</td>
+                            <td>Стоимость работ</td>
+                            <td>Итого</td>
+                            <td>Сроки ремонта</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Студия</td>
+                            <td></td>
+                            <td>22м2</td>
+                            <td>10.000 руб.</td>
+                            <td>94.000 руб.</td>
+                            <td>104.000 руб.</td>
+                            <td>до 1 месяца</td>
+                        </tr>
+                        <tr>
+                            <td>Студия</td>
+                            <td></td>
+                            <td>22м2</td>
+                            <td>10.000 руб.</td>
+                            <td>94.000 руб.</td>
+                            <td>104.000 руб.</td>
+                            <td>до 1 месяца</td>
+                        </tr>
+                        <tr>
+                            <td>Студия</td>
+                            <td></td>
+                            <td>22м2</td>
+                            <td>10.000 руб.</td>
+                            <td>94.000 руб.</td>
+                            <td>104.000 руб.</td>
+                            <td>до 1 месяца</td>
+                        </tr>
+                        <tr>
+                            <td>Студия</td>
+                            <td></td>
+                            <td>22м2</td>
+                            <td>10.000 руб.</td>
+                            <td>94.000 руб.</td>
+                            <td>104.000 руб.</td>
+                            <td>до 1 месяца</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <style>
+                .wrapper.cost table {
+                    border-collapse: collapse;
+                    table-layout: fixed;
+                    text-wrap: nowrap;
+                }
+                .wrapper.cost table td {
+                    border: 1px solid #ccc;
+                    width: 300px;
+                }
+                .wrapper.cost table thead td {
+                    background: white;
+                    color: var(--dark-text);
+                    text-align: center;
+                }
+                .wrapper.cost table thead td:first-child {
+                    background: var(--primary-color);
+                    color: var(--light-text);
+                }
+                .wrapper.cost table thead {
+                    text-transform: uppercase;
+                }
+                .wrapper.cost table td {
+                    padding: 1em;
+                }
+                .wrapper.cost table td:nth-child(2) {
+                    width: 1em;
+                    background: none;
+                    border-top: none;
+                    border-bottom: none;
+                }
+            </style>
         </div>
     </div>
 
-    <div class="wrapper desktop f-jost pad-x-8 m-pad-x-7 pad-y-60 m-pad-y-50">
-        <div class="wrapper-title thin mb-1">НАШИ <span class="bold">ЦЕННОСТИ</span></div>
-        <div class="flex-row gap-2">
-            <div class="block primary-bg">
-                <div class="block-title">
-                    <div class="title">Инновационные решения</div>
-                    <div class="number-circle">01</div>
-                </div>
-                <div class="description">Наша задача — не просто предоставить вам решения на сегодняшний день, но и решения, которые будут эффективными, действенными и эстетичными даже в будущем.</div>
-            </div>
-            <div class="block secondary-bg">
-                <div class="block-title">
-                    <div class="title">Забота о клиентах</div>
-                    <div class="number-circle">02</div>
-                </div>
-                <div class="description">Профессионализм, удовлетворенность клиентов и создание высококачественных схем — главные приоритеты ландшафтных архитекторов «In Garden»</div>
-            </div>
-            <div class="block">
-                <div class="block-title">
-                    <div class="title">Создаем пространство для вас</div>
-                    <div class="number-circle">03</div>
-                </div>
-                <div class="description">Мы знаем как создать индивидуальное пространство, адаптированное к потребностям клиента.</div>
-            </div>
-        </div>
-    </div>
-
-    <div class="wrapper footer f-jost pad-x-8 m-pad-x-20 pad-y-60 m-pad-y-50">
+    <!-- Подвал -->
+    <div class="wrapper footer p-x-8 m-p-x-20 p-y-60 m-p-y-50">
         <div class="logo"><img title="IN GARDEN" src="/images/footer/logo.png"></div>
         <div class="menu">
             <div>
@@ -86,7 +2247,7 @@
                 <a class="menu-item">Система автополива</a>
                 <a class="menu-item">Благоустройство</a>
             </div>
-            <div class="info">
+            <div class="info" style="flex-shrink: 2;">
                 <div class="title">Информация</div>
                 <p>Перепечатка материалов сайта без письменного разрешения запрещена</p>
                 <p>Вся Информация, размещённая на сайте, носит ознакомительный характер и может отличаться от действительности.</p>
