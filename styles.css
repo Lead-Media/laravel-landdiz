@@ -1,6 +1,6 @@
 /* Удалить */
-.wrapper {
-    border-bottom: 1px solid black !important;
+.wrapper:not(.header, .footer) {
+  border-bottom: 1px solid black !important;
 }
 
 :root {
@@ -14,6 +14,11 @@
   cursor: default;
   --background-shadow-color: rgba(0, 0, 0, 0.5);
   --shadow-color: rgba(0, 0, 0, 0.3);
+
+  --header-background: transparent;
+  --header-color: black;
+  --header-mobile-background: gray;
+  --header-mobile-color: white;
 }
 
 body {
@@ -22,6 +27,21 @@ body {
   padding: 0;
   margin: 0;
   overflow-x: hidden;
+}
+
+.wrapper {
+  width: 100%;
+  max-width: 1920px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  font-size: 20px;
+  margin: 0 auto;
+}
+.wrapper-title {
+  font-size: 56px;
+}
+.wrapper-subtitle {
+  font-size: 42px;
 }
 
 a,
@@ -43,6 +63,7 @@ a:visited {
   -o-transition: all 0.5s;
   transition: all 0.5s;
   cursor: pointer;
+  font-size: 18px;
 }
 .btn.link {
   border-radius: 0;
@@ -69,6 +90,10 @@ a:visited {
 .btn.primary.flat {
   border-radius: unset;
 }
+.btn.hover-primary:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
 .btn.primary.white-deg {
   background-image: -o-linear-gradient(
     315deg,
@@ -90,7 +115,8 @@ a:visited {
 }
 
 .filgray {
-    filter: grayscale(1);
+  -webkit-filter: grayscale(1);
+          filter: grayscale(1);
 }
 
 .hidden {
@@ -257,6 +283,9 @@ a:visited {
 .gap-3 {
   gap: 3em;
 }
+.gap-row-0 {
+    row-gap: 0;
+}
 .gap-row-1 {
   row-gap: 0.5em;
 }
@@ -266,17 +295,20 @@ a:visited {
 .gap-row-3 {
   row-gap: 2em;
 }
-.gap-column-1 {
+.gap-col-0 {
+    column-gap: 0;
+}
+.gap-col-1 {
   -webkit-column-gap: 0.5em;
   -moz-column-gap: 0.5em;
   column-gap: 0.5em;
 }
-.gap-column-2 {
+.gap-col-2 {
   -webkit-column-gap: 1em;
   -moz-column-gap: 1em;
   column-gap: 1em;
 }
-.gap-column-3 {
+.gap-col-3 {
   -webkit-column-gap: 2em;
   -moz-column-gap: 2em;
   column-gap: 2em;
@@ -314,7 +346,12 @@ input[type="checkbox"] + label.right {
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  padding: 1em 1.5em 1em 1em;
+}
+input[type="checkbox"] + label.right::before {
+  margin-right: 1em;
+  -webkit-flex-shrink: 0;
+      -ms-flex-negative: 0;
+          flex-shrink: 0;
 }
 input[type="checkbox"].round + label::before {
   border-radius: 50%;
@@ -415,7 +452,7 @@ input[type="checkbox"]:checked + label.primary-outline {
 }
 .flex,
 .flex-row,
-.flex-column,
+.flex-col,
 .flex-start,
 .flex-end {
   display: -webkit-box;
@@ -430,7 +467,7 @@ input[type="checkbox"]:checked + label.primary-outline {
   -ms-flex-direction: row;
   flex-direction: row;
 }
-.flex-column {
+.flex-col {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -webkit-flex-direction: column;
@@ -488,6 +525,9 @@ input[type="checkbox"]:checked + label.primary-outline {
   -webkit-flex: 1 0;
   -ms-flex: 1 0;
   flex: 1 0;
+}
+.flex-1-1-0 {
+    flex: 1 1 0;
 }
 .grow-1 {
   -webkit-box-flex: 1;
@@ -569,7 +609,7 @@ input[type="checkbox"]:checked + label.primary-outline {
   font-size: 28px;
 }
 .f-32 {
-    font-size: 32px;
+  font-size: 32px;
 }
 .f-36 {
   font-size: 36px;
@@ -578,7 +618,7 @@ input[type="checkbox"]:checked + label.primary-outline {
   font-size: 40px;
 }
 .f-48 {
-    font-size: 48px;
+  font-size: 48px;
 }
 .f-96 {
   font-size: 96px;
@@ -611,6 +651,7 @@ svg.primary-fg {
   right: 0;
   bottom: 0;
   background: var(--background-shadow-color);
+  border-radius: inherit !important;
 }
 .background-image {
   background-size: cover;
@@ -625,7 +666,7 @@ svg.primary-fg {
   border: 1px solid;
 }
 .br-0 {
-    border-radius: 0;
+  border-radius: 0;
 }
 .br-1 {
   border-radius: 0.5em;
@@ -804,28 +845,25 @@ table td.description-field .help {
   box-sizing: border-box;
 }
 
-.wrapper {
-  width: 100%;
-  max-width: 1920px;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  font-size: 20px;
-}
-.wrapper-title {
-  font-size: 56px;
-}
-.wrapper-subtitle {
-  font-size: 42px;
-}
-.btn {
-  font-size: 18px;
-}
-
 /* HEADER */
+.header-bg {
+    width: 100%;
+    /* position: sticky; */
+    top: 0;
+    z-index: 1000;
+    background: var(--header-background);
+}
+.header-bg.anim {
+    transition: all .5s;
+}
 .header {
-  width: 100%;
-  background: white;
-  z-index: 1000;
+    color: var(--header-color);
+}
+.header-bg.header-gray {
+    background: var(--header-mobile-background);
+}
+.header-bg.header-gray .header {
+    color: var(--header-mobile-color);
 }
 .header-menu {
   -webkit-box-pack: justify;
@@ -838,11 +876,15 @@ table td.description-field .help {
 }
 
 @media (max-width: 768px) {
-  .header,
+  .header-bg,
   .header .logo > img {
     height: 70px;
   }
-  .header + div {
+  .header-bg {
+    position: fixed;
+    top: 0;
+  }
+  .header-bg + div {
     margin-top: 70px;
   }
   .header {
@@ -855,12 +897,12 @@ table td.description-field .help {
     -webkit-flex-direction: row;
     -ms-flex-direction: row;
     flex-direction: row;
-    position: fixed;
-    top: 0;
     -webkit-box-pack: justify;
     -webkit-justify-content: space-between;
     -ms-flex-pack: justify;
     justify-content: space-between;
+    background: var(--header-mobile-background);
+    color: var(--header-mobile-color);
   }
   .header > div {
     border: unset;
@@ -881,7 +923,7 @@ table td.description-field .help {
     position: fixed;
     top: 0;
     right: 0;
-    background: white;
+    background: inherit;
     gap: 1em;
   }
   .header-menu:not(.visible) {
@@ -1010,14 +1052,17 @@ table td.description-field .help {
   overflow-x: auto;
 }
 .overflow-y {
-    overflow-y: auto;
+  overflow-y: auto;
 }
 
 /* Подвал */
+.footer-bg {
+    width: 100%;
+    background: #181e1a;
+}
 .footer {
   display: grid;
   font-weight: 500;
-  background: #181e1a;
   color: var(--light-text);
   bottom: 0;
 }
@@ -1253,6 +1298,9 @@ table td.description-field .help {
   .m-br-1 {
     border-radius: 0.5em !important;
   }
+  .m-br-10px {
+    border-radius: 10px;
+  }
 
   .m-f-12 {
     font-size: 12px;
@@ -1280,7 +1328,7 @@ table td.description-field .help {
   }
 
   .m-flex-row,
-  .m-flex-column {
+  .m-flex-col {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -1293,12 +1341,19 @@ table td.description-field .help {
     -ms-flex-direction: row;
     flex-direction: row;
   }
-  .m-flex-column {
+  .m-flex-col {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     -webkit-flex-direction: column;
     -ms-flex-direction: column;
     flex-direction: column;
+  }
+  .m-flex-col-rew {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+    -webkit-flex-direction: column-reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
   }
 
   .m-text-center {
