@@ -105,19 +105,19 @@
         <div>
             <input id="right-btns" type="checkbox">
             <label for="right-btns">
-                <div class="material-icon primary-fg f-24" onclick="innerHTML(this, 'add_circle', 'cancel')">add_circle</div>
+                <div class="material-icon primary-fg" onclick="innerHTML(this, 'add_circle', 'cancel')">add_circle</div>
                 <div class="buttons">
                     <div>
                         <a>
-                            <div class="material-icon f-24 icon-stroke">call</div>
+                            <div class="material-icon icon-stroke">call</div>
                             <div>Оставить заявку</div>
                         </a>
                         <a>
-                            <div class="material-icon f-24 icon-stroke">support_agent</div>
+                            <div class="material-icon icon-stroke">support_agent</div>
                             <div>Заказать консультацию</div>
                         </a>
                         <a>
-                            <div class="material-icon f-24 icon-stroke">calculate</div>
+                            <div class="material-icon icon-stroke">calculate</div>
                             <div>Рассчитать стоимость</div>
                         </a>
                     </div>
@@ -134,9 +134,12 @@
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
-                width: 75px;
+                width: 95px;
                 z-index: 500;
                 pointer-events: none;
+            }
+            .right-buttons .material-icon {
+                font-size: 36px;
             }
             .right-buttons input[type="checkbox"] + label::before {
                 display: none;
@@ -176,7 +179,7 @@
                 padding: 10px;
                 text-align: center;
                 transition: all .5s ease-in-out;
-                font-size: 10px;
+                font-size: 14px;
             }
             .right-buttons .buttons a:hover {
                 background: var(--secondary-color);
@@ -190,10 +193,11 @@
         <!-- Нужна для понимания границ блока. -->
 
         <!-- Блок "Стоимость ремонта" -->
-        <div class="wrapper p-x-8 m-p-x-7 p-y-60 m-p-y-50">
-            <div class="wrapper-title upper mb-1 balance flex center">
+        <div class="wrapper p-x-8 m-p-x-7 p-y-60 m-p-y-50 light-bg">
+            <div class="primary-fg">В работе...</div>
+            <div class="wrapper-title upper mb-2 balance flex center">
                 <div>Стоимость ремонта квартир в Москве <span class="primary-fg">под ключ с материалом</span></div>
-                <div class="flex center">
+                <div class="flex center desktop">
                     <svg width="77" height="77" viewBox="0 0 77 77" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <circle cx="38.5" cy="38.5" r="38.5" fill="var(--primary-color)"/>
                         <circle cx="29.1786" cy="31.1434" r="4.17857" fill="white"/>
@@ -204,11 +208,131 @@
                 </div>
             </div>
             <div>
-                <fieldset>
-                    <div></div>
-                    <div></div>
-                </fieldset>
+                <div class="flex gap-2 j-between f-wrap mb-2">
+                    <div class="flex-col f-48 gap-1 upper">
+                        <div class="typework-btn active">Демонтажные работы</div>
+                        <div class="typework-btn">Монтажные работы</div>
+                        <div class="typework-btn">Сантехнические работы</div>
+                        <div class="typework-btn">Электромонтажные работы</div>
+                        <div class="typework-btn">Плиточные работы</div>
+                        <div class="typework-btn">Дополнительные услуги</div>
+                    </div>
+                    <div class="typetablesgroups">
+                        <div class="typetables">
+                            <div class="typetable">
+                                <div class="title">
+                                    <div>Потолки</div>
+                                    <div>expand_circle_down</div>
+                                </div>
+                                <div class="data">
+                                    <div>
+                                        <div>Тип объекта</div>
+                                        <div>Цена за кв м2 /руб.</div>
+                                    </div>
+                                    <div>
+                                        <div>Устройство реечных подвесных потолков</div>
+                                        <div>1 120 ₽</div>
+                                    </div>
+                                    <div>
+                                        <div>Устройство реечных подвесных потолков</div>
+                                        <div>1 120 ₽</div>
+                                    </div>
+                                    <div>
+                                        <div>Устройство реечных подвесных потолков</div>
+                                        <div>1 120 ₽</div>
+                                    </div>
+                                    <div>
+                                        <div>Устройство реечных подвесных потолков</div>
+                                        <div>1 120 ₽</div>
+                                    </div>
+                                    <div>
+                                        <div>Устройство реечных подвесных потолков</div>
+                                        <div>1 120 ₽</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="typetable"></div>
+                            <div class="typetable"></div>
+                        </div>
+                        <div class="typetables"></div>
+                        <div class="typetables"></div>
+                        <div class="typetables"></div>
+                        <div class="typetables"></div>
+                        <div class="typetables"></div>
+                    </div>
+                </div>
+                <form class="flex-col gap-1 mb-3 m-center">
+                    <label class="m-dark-t" for="time-check">Когда удобно перезвонить вам?</label>
+                    <div class="flex gap-1 m-flex-col wrap">
+                        <div class="select-wrapper dark-t">
+                            <select title="time" id="time-check">
+                                <option value="">Сейчас</option>
+                                <option value="">В течение дня</option>
+                                <option value="">Завтра</option>
+                            </select>
+                        </div>
+                        <input type="tel" placeholder="Ваш номер телефона">
+                        <button class="btn primary flat upper" type="">Перезвоните мне</button>
+                    </div>
+                    <input class="w20" id="accept3" type="checkbox">
+                    <label class="right f-14 center" for="accept3">
+                        <div>Согласен с условиями <a class="" href="" target="_blank">политики конфиденциальности данных</a></div>
+                    </label>
+                </form>
             </div>
+            <style>
+                .typework-btn.active {
+                    color: var(--primary-color);
+                }
+                .typetablesgroups {
+                    width: 100%;
+                    max-width: 800px;
+                }
+                .typetables {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 1em;
+                }
+                .typetable {
+                    width: 100%;
+                    padding: 1em 2em;
+                    box-sizing: border-box;
+                    background: white;
+                }
+                .typetable .title {
+                    display: flex;
+                    gap: .5em;
+                    justify-content: space-between;
+                    align-items: center;
+                    font-size: 40px;
+                    text-transform: uppercase;
+                }
+                .typetable .title > div:last-child {
+                    color: var(--primary-color);
+                    font-family: "Material Symbols Rounded";
+                    font-variation-settings: "FILL" 1;
+                }
+                .typetable .data {
+                    margin: 1em 0;
+                }
+                .typetable .data > div {
+                    display: flex;
+                    justify-content: space-between;
+                    flex-wrap: wrap;
+                    padding-top: 1em;
+                    padding-bottom: 1em;
+                }
+                .typetable .data > div:first-child {
+                    text-transform: uppercase;
+                    border-bottom: 1px solid var(--primary-color);
+                }
+                .typetable .data > div:nth-child(n + 2) {
+                    border-bottom: 1px dashed gray;
+                }
+                .typetable .data > div:nth-child(n + 1) > div:last-child {
+                    font-weight: bold;
+                }
+            </style>
         </div>
          
         <!-- Форма "Перезвоните мне" -->
@@ -703,6 +827,7 @@
                     height: 440px;
                 }
                 .swiper.services-list .swiper-wrapper {
+                    width: 84%;
                     height: 410px;
                 }
                 .swiper.services-list .swiper-slide,
@@ -716,11 +841,18 @@
                     autoplay: {
                         delay: 3000
                     },
-                    slidesPerView: 'auto',
                     pagination: {
                         el: '.swiper-pagination',
                         dynamicBullets: true,
                         dynamicMainBullets: 3
+                    },
+                    breakpoints: {
+                        0: {
+                            slidesPerView: 1
+                        },
+                        768: {
+                            slidesPerView: 'auto'
+                        }
                     }
                 })
             </script>
@@ -1037,6 +1169,7 @@
                 }
                 table.name-work td {
                     width: 25%;
+                    min-width: 300px;
                     border: 1px solid #ccc;
                     padding: 1em;
                 }
@@ -1101,7 +1234,6 @@
                         padding-top: 50px;
                     }
                     .wrapper.thanks .btn {
-                        width: 50%;
                         padding: 2em 3em;
                     }
                 }
@@ -1176,13 +1308,13 @@
                     height: 530px;
                 }
                 .swiper.multi-workers .swiper-wrapper {
+                    width: 100%;
                     height: calc(100% - 30px);
                 }
                 .swiper.multi-workers .swiper-slide {
-                    width: auto;
+                    max-width: 375px;
                     aspect-ratio: 3 / 4;
                     height: 500px;
-                    transition: all .2s;
                 }
 
                 @media (max-width: 768px) {
@@ -1217,7 +1349,7 @@
             <script>
                 const swiper6 = new Swiper('.multi-workers', {
                     spaceBetween: 20,
-                    slidesPerView: 'auto',
+                        slidesPerView: 'auto',
                     breakpoints: {
                         0: {
                             centeredSlides: true
@@ -1291,6 +1423,14 @@
                     navigation: {
                         nextEl: ".multi-logos .swiper-button-next",
                         prevEl: ".multi-logos .swiper-button-prev"
+                    },
+                    breakpoints: {
+                        0: {
+                            centeredSlides: true
+                        },
+                        768: {
+                            centeredSlides: false
+                        }
                     }
                 })
             </script>

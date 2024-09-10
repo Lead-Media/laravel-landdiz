@@ -959,9 +959,6 @@ table td.description-field .help {
 /* HEADER */
 .header-bg {
   width: 100%;
-  position: -webkit-sticky;
-  /* position: sticky; */
-  top: 0;
   z-index: 1000;
   background: var(--header-background);
 }
@@ -1011,6 +1008,7 @@ table td.description-field .help {
     justify-content: space-between;
     background: var(--header-mobile-background);
     color: var(--header-mobile-color);
+    position: sticky;
   }
   .header > div {
     border: unset;
@@ -1045,6 +1043,8 @@ table td.description-field .help {
     -webkit-align-items: center;
     -ms-flex-align: center;
     align-items: center;
+    position: sticky;
+    top: 0;
   }
 }
 /*  */
