@@ -10,7 +10,7 @@
     <script src="/swiper/swiper-bundle.js"></script>
     
     <!-- Иконочный шрифт -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 
     <!-- Яндекс карты -->
     <!-- <script crossorigin src="https://cdn.jsdelivr.net/npm/@babel/standalone@7/babel.min.js"></script>
@@ -37,9 +37,9 @@
   </head>
   <body>
     <div class="header-bg anim">
-        <div class="wrapper header p-x-8 p-y-60 m-p-0">
-            <div class="flex center gap-2 mb-2 width-full j-between">
-                <div class="logo flex center gap-1">
+        <div class="wrapper header p-x-8 p-y-2 m-p-0 m-p-y-0">
+            <div class="flex center gap-2 m-gap-1 mb-2 width-full j-between">
+                <div class="logo flex center gap-1 m-gap-1">
                     <img class="primary-bg" height="74px" title="Leval" src="/images/icons/logo.svg">
                     <span class="logo-title f-jost f-40 m-f-24">LEVAL</span>
                 </div>
@@ -54,9 +54,9 @@
                     <img class="btn-icon" title="Скачать прайс на услуги" src="/images/icons/download.svg">
                     <span>Скачать прайс на услуги</span>
                 </a>
-                <div class="desktop flex-col gap-1">
-                    <span class="dot-left">Задайте вопрос, мы онлайн</span>
-                    <div class="flex center gap-1">
+                <div class="desktop flex-col f-14">
+                    <span class="dot-left mb-1 f-14">Задайте вопрос, мы онлайн</span>
+                    <div class="flex center gap-col-1">
                         <a href="/">
                             <svg width="45" height="44" viewBox="0 0 45 44" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <rect x="0.981171" y="0.500427" width="42.8462" height="42.8462" rx="21.4231" fill="white"/>
@@ -78,11 +78,11 @@
                 </div>
             </div>
             <div class="header-menu-btn mobile flex center">
-                <span class="material-icon f-40 p-x-1" onclick="toggle('headmenu')">menu</span>
+                <span class="material-icon f-40 m-f-32 p-x-1" onclick="toggle('headmenu')">menu</span>
             </div>
             <div id="headmenu" class="header-menu flex p-2 b-light b-x m-f-24">
                 <div class="mobile close-btn text-right" onclick="toggle('headmenu')">
-                    <span class="material-icon f-40">close</span>
+                    <span class="material-icon f-40 m-f-32">close</span>
                 </div>
                 <div class="desktop">
                     <svg width="42" height="41" viewBox="0 0 42 41" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -99,10 +99,170 @@
         </div>
         <script src="/header.js"></script>
     </div>
+
+    <!-- Кнопки справа [ПК] -->
+    <div class="right-buttons desktop">
+        <div>
+            <input id="right-btns" type="checkbox">
+            <label for="right-btns">
+                <div class="material-icon primary-fg f-24" onclick="innerHTML(this, 'add_circle', 'cancel')">add_circle</div>
+                <div class="buttons">
+                    <div>
+                        <a>
+                            <div class="material-icon f-24 icon-stroke">call</div>
+                            <div>Оставить заявку</div>
+                        </a>
+                        <a>
+                            <div class="material-icon f-24 icon-stroke">support_agent</div>
+                            <div>Заказать консультацию</div>
+                        </a>
+                        <a>
+                            <div class="material-icon f-24 icon-stroke">calculate</div>
+                            <div>Рассчитать стоимость</div>
+                        </a>
+                    </div>
+                </div>
+            </label>
+        </div>
+        <style>
+            .right-buttons {
+                position: fixed;
+                right: 0;
+                top: 0;
+                bottom: 0;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                width: 75px;
+                z-index: 500;
+                pointer-events: none;
+            }
+            .right-buttons input[type="checkbox"] + label::before {
+                display: none;
+            }
+            .right-buttons label {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 1em;
+            }
+            .right-buttons label > * {
+                pointer-events: all;
+            }
+            .right-buttons .buttons {
+                transition: all .5s ease-in-out;
+                display: grid;
+                grid-template-rows: 0fr;
+            }
+            .right-buttons input[type="checkbox"]:checked + label .buttons {
+                grid-template-rows: 1fr;
+            }
+            .right-buttons .buttons > * {
+                overflow: hidden;
+                display: flex;
+                flex-direction: column;
+                gap: 1em;
+            }
+
+            .right-buttons .buttons a {
+                display: flex;
+                flex-direction: column;
+                gap: .5em;
+                align-items: center;
+                background: var(--primary-color);
+                color: white;
+                border-radius: 15px 0px 0px 15px;
+                padding: 10px;
+                text-align: center;
+                transition: all .5s ease-in-out;
+                font-size: 10px;
+            }
+            .right-buttons .buttons a:hover {
+                background: var(--secondary-color);
+            }
+        </style>
+    </div>
+    
     <div class="content">
 
         <!-- Здесь и далее у каждого блока есть граница снизу. Удаляется в файлах стилей в самом начале. -->
         <!-- Нужна для понимания границ блока. -->
+
+        <!-- Блок "Стоимость ремонта" -->
+        <div class="wrapper p-x-8 m-p-x-7 p-y-60 m-p-y-50">
+            <div class="wrapper-title upper mb-1 balance flex center">
+                <div>Стоимость ремонта квартир в Москве <span class="primary-fg">под ключ с материалом</span></div>
+                <div class="flex center">
+                    <svg width="77" height="77" viewBox="0 0 77 77" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="38.5" cy="38.5" r="38.5" fill="var(--primary-color)"/>
+                        <circle cx="29.1786" cy="31.1434" r="4.17857" fill="white"/>
+                        <circle cx="46.8215" cy="31.1434" r="4.17857" fill="white"/>
+                        <circle cx="29.1786" cy="47.8583" r="4.17857" fill="white"/>
+                        <circle cx="46.8215" cy="47.8583" r="4.17857" fill="white"/>
+                    </svg>                        
+                </div>
+            </div>
+            <div>
+                <fieldset>
+                    <div></div>
+                    <div></div>
+                </fieldset>
+            </div>
+        </div>
+         
+        <!-- Форма "Перезвоните мне" -->
+        <div class="wrapper">
+            <div class="modal-window p-2 flex-col">
+                <div class="modal-title text-center">Перезвоните мне</div>
+                <div class="f-16 text-center mb-2">Перезвоним через пару минут</div>
+                <div class="f-16 text-center mb-2">В какое время вам перезвонить?</div>
+                <form class="flex-col gap-1">
+                    <div class="select-wrapper">
+                        <select title="time" id="time" class="round">
+                            <option value="">Получить в Whatsapp</option>
+                            <option value="">Сейчас</option>
+                            <option value="">В течение часа</option>
+                            <option value="">В течение дня</option>
+                            <option value="">На этой неделе</option>
+                        </select>
+                    </div>
+                    <input class="round" type="tel" placeholder="Ваш номер телефона">
+                    <input class="round" type="text" placeholder="Ваше имя">
+                    <input class="round" type="email" placeholder="Ваш e-mail">
+                    <textarea class="round" type="" placeholder="Текст сообщения"></textarea>
+                    <button class="btn primary">Заказать звонок</button>
+                    <button class="btn primary flex center">Заказать звонок <span class="material-icon f-24 ml-1">north_east</span></button>
+                    <input class="w20" id="accept" type="checkbox">
+                    <label class="right f-14 center" for="accept">
+                        <div>Согласен с условиями <a class="primary-fg none-dec" href="" target="_blank">политики конфиденциальности данных</a></div>
+                    </label>
+                </form>
+            </div>
+        </div>
+
+        <!-- Блок "Ландшафтный дизайн" -->
+        <div class="wrapper mobile background-image light-t relative" style="background-image: url(/images/tecnic/design.webp);">
+            <div class="background-shadow"></div>
+            <div class="m-p-x-7 m-p-y-50 flex-col gap-1 relative">
+                <div class="wrapper-title upper mb-1 text-center">Ландшафтный дизайн в москве от идеи до реализации 30 дней</div>
+                <div class="wrapper-subtitle mb-2 text-center">Стильные и функциональные сады под ключ от проектирования дт реализации за 30 дней БЕЗ ПЕРЕПЛАТ</div>
+                <div class="flex gap-1 center text-center mb-2">
+                    <div class="bold">Улучшение качества жизни</div>
+                    <div class="bold">Безопасность и комфорт</div>
+                    <div class="bold">Источник сил и энергии</div>
+                </div>
+                <div class="flex-col gap-1">
+                    <div class="btn primary">Заказать звонок</div>
+                    <div class="btn secondary">Заказать звонок</div>
+                </div>
+                <div class="flex gap-1 center text-center">
+                    <div class="material-icon icon-stroke f-24">swipe_down</div>
+                    <div class="m-f-12">Сделай шаг к преображению своей жизни с новым садом</div>
+                </div>
+            </div>
+        </div>
+
 
         <!-- Блок "Ландшафтные работы" -->
         <div class="wrapper desktop p-x-8 p-y-100 thin">
@@ -136,9 +296,6 @@
             </div>
         </div>
 
-        <!-- Форма "Перезвоните мне" -->
-        <div class="wrapper"></div>
-
         <!-- Блок "Рассчитайте стоимость" -->
         <div class="wrapper p-x-8 m-p-x-7 p-y-60 m-p-y-50">
             <div class="wrapper-title upper mb-1">Рассчитайте стоимость ландшафтных работ и получите скидку -10% на любую услугу</div>
@@ -157,15 +314,15 @@
                                 <div class="f-40 m-f-20">Укажите размер вашего участка</div>
                             </div>
                             <div class="flex f-wrap gap-row-2 gap-col-3 mb-4 m-center"> <!-- Ответы -->
-                                <input id="checkbox0001" class="w34 round gray" type="checkbox">
+                                <input id="checkbox0001" class="w34 circle gray" type="checkbox">
                                 <label for="checkbox0001" class="right align-center gap-1 white-bg br-2 width-full primary-outline p-1">До 10 соток</label>
-                                <input id="checkbox0002" class="w34 round gray" type="checkbox">
+                                <input id="checkbox0002" class="w34 circle gray" type="checkbox">
                                 <label for="checkbox0002" class="right align-center gap-1 white-bg br-2 width-full primary-outline p-1">От 10 до 15 соток</label>
-                                <input id="checkbox0003" class="w34 round gray" type="checkbox">
+                                <input id="checkbox0003" class="w34 circle gray" type="checkbox">
                                 <label for="checkbox0003" class="right align-center gap-1 white-bg br-2 width-full primary-outline p-1">От 15 до 20 соток</label>
-                                <input id="checkbox0004" class="w34 round gray" type="checkbox">
+                                <input id="checkbox0004" class="w34 circle gray" type="checkbox">
                                 <label for="checkbox0004" class="right align-center gap-1 white-bg br-2 width-full primary-outline p-1">От 20 до 30 соток</label>
-                                <input id="checkbox0005" class="w34 round gray" type="checkbox">
+                                <input id="checkbox0005" class="w34 circle gray" type="checkbox">
                                 <label for="checkbox0005" class="right align-center gap-1 white-bg br-2 width-full primary-outline p-1">Свыше 30 соток</label>
                             </div>
                         </div>
@@ -291,7 +448,6 @@
                         swiper: swiper2
                     }
                 })
-
             </script>
             <div class="mb-3 p-3 white-bg">
                 <div class="title mb-1 f-40 bold">Описание</div>
@@ -301,13 +457,37 @@
         </div>
 
         <!-- Блок "Дарим расчёт" -->
-        <div class="wrapper raschet desktop p-x-8 light-t">
+        <div class="wrapper raschet desktop p-x-8 light-t background-image">
             <div class="background-image"></div>
             <div class="flex-col width-960">
                 <div class="wrapper-title upper mb-1">Дарим расчет!</div>
                 <div class="wrapper-subtitle mb-2 balance">Рассчитайте стоимость ландшафтного дизайна в онлайн-калькуляторе!</div>
                 <div class="btn primary flat p-x-3 p-y-2 width-fit white-deg"><a class="none-dec" href="">Начать ↗</a></div>
             </div>
+            <style>
+                .raschet {
+                position: relative;
+                padding-top: 200px;
+                padding-bottom: 200px;
+                background-image: url("/images/content/dom.jpg");
+                }
+                .raschet .background-image {
+                background-image: url("/images/content/raschet.png");
+                background-repeat: no-repeat;
+                background-size: contain;
+                background-position: right;
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                height: 100%;
+                -webkit-backdrop-filter: blur(5px) brightness(0.5);
+                backdrop-filter: blur(5px) brightness(0.5);
+                }
+                .raschet > *:not(.background-image) {
+                position: relative;
+                }
+            </style>
         </div>
 
         <!-- Блок "Установка САП" -->
@@ -355,11 +535,11 @@
         </div>
 
         <!-- Блок "Наша гордость" -->
-        <div class="wrapper gordost m-p-x-7 m-p-y-50 p-y-60">
-            <div class="wrapper-title p-x-8 mb-1">Наша гордость - это отремонтированные квартиры, за каждой из которых стоит история длиной в 3-6 месяцев</div>
-            <div class="pdf desktop p-x-8 flex center" style="position: absolute; right: 0; margin: -100px 0; z-index: 10;">
+        <div class="wrapper gordost m-p-x-7 m-p-y-50 p-y-60 relative">
+            <div class="wrapper-title p-x-8 mb-2">Наша гордость - это отремонтированные квартиры, за каждой из которых стоит история длиной в 3-6 месяцев</div>
+            <div class="pdf desktop p-x-8 flex center absolute" style="right: 0; margin: -100px 0; z-index: 10;">
                 <img class="rotate-anim" title="PDF" src="/images/tecnic/pdf-bg.png" width="200px">
-                <div class="bold flex-col center" style="color: rgb(0, 102, 255); position: absolute;"><span>↻</span><span>Обновлен:</span><span>30.8.2024</span></div>
+                <div class="bold flex-col center absolute" style="color: rgb(0, 102, 255);"><span>↻</span><span>Обновлен:</span><span>30.8.2024</span></div>
             </div>
             <div class="swiper-container">
                 <div class="swiper one-full-data">
@@ -368,18 +548,24 @@
                             <div class="flex gap-3 height-full">
                                 <img class="desktop width-half height-full shrink-0" title="Комната" src="/images/content/room.png">
                                 <div class="flex-1 width-half">
-                                    <div class="wrapper-subtitle upper mb-2" style="margin-right: 200px;">Дизайнерский ремонт в 3-х комнатной квартире 100м²</div>
+                                    <div class="wrapper-subtitle upper mb-2 m-text-center" style="margin-right: 200px;">Дизайнерский ремонт в 3-х комнатной квартире 100м²</div>
                                     <img class="mobile width-full shrink-0 mb-2" title="Комната" src="/images/content/room.png">
-                                    <div class="flex gap-1 mb-3">
-                                        <span class="dot-top"><span class="f-12">Сроки строительства</span><br><span class="f-20 bold">Малиновая ул, 18</span></span>
-                                        <span class="dot-top"><span class="f-12">Сроки</span><br><span class="f-20 bold">3 месяца</span></span>
-                                        <span class="dot-top"><span class="f-12">Стоимость</span><br><span class="f-20 bold">175 000 руб</span></span>
+                                    <div class="mobile image-button flex center">
+                                        <div class="btn primary upper width-fit">Рассчитать в калькуляторе</div>
                                     </div>
-                                    <div class="mb-3">
-                                        <div class="f-14 mb-1">Описание:</div>
-                                        <div>Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение шаблона, а также реальное распределение букв и пробелов в абзацах, которое не получается при простой дубликации "Здесь ваш текст.. Здесь ваш текст.. Здесь ваш текст.." Многие программы электронной вёрстки и редакторы HTML используют Lorem Ipsum в качестве текста по умолчанию, так что поиск по ключевым словам "lorem</div>
+                                    <div class="flex gap-1 mb-3 f-wrap">
+                                        <span class="dot-top m-line-top"><span class="f-12">Сроки строительства</span><br><span class="f-20 bold">Малиновая ул, 18</span></span>
+                                        <span class="dot-top m-line-top"><span class="f-12">Сроки</span><br><span class="f-20 bold">3 месяца</span></span>
+                                        <span class="dot-top m-line-top"><span class="f-12">Стоимость</span><br><span class="f-20 bold">175 000 руб</span></span>
                                     </div>
-                                    <div class="flex gap-1 align-center">
+                                    <div class="mb-2">
+                                        <div class="desktop f-14 mb-1">Описание:</div>
+                                        <div class="description-wrap mobile dotted-underline text-center underline-primary" onclick="toggle(this, 'active')">Развернуть описание <span class="material-icon">keyboard_arrow_down</span></div>
+                                        <div>
+                                            <div>Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение шаблона, а также реальное распределение букв и пробелов в абзацах, которое не получается при простой дубликации "Здесь ваш текст.. Здесь ваш текст.. Здесь ваш текст.." Многие программы электронной вёрстки и редакторы HTML используют Lorem Ipsum в качестве текста по умолчанию, так что поиск по ключевым словам "lorem</div>
+                                        </div>
+                                    </div>
+                                    <div class="desktop flex gap-1 align-center">
                                         <div class="btn primary flat upper width-fit">Рассчитать в калькуляторе</div>
                                         <span class="f-16"><b>Понравился ремонт?</b><br>Рассчитайте в калькуляторе свой</span>
                                     </div>
@@ -407,6 +593,25 @@
                     .swiper.one-full-data {
                         width: 100%;
                     }
+                    .wrapper.gordost .wrapper-subtitle {
+                        margin-right: 0 !important;
+                    }
+                    .wrapper.gordost .image-button {
+                        margin-top: -6em;
+                        margin-bottom: 3em;
+                    }
+                    .wrapper.gordost .description-wrap + * {
+                        display: grid;
+                        grid-template-rows: 0fr;
+                        transition: all .5s;
+                        margin-top: 1em;
+                    }
+                    .wrapper.gordost .description-wrap + * > * {
+                        overflow: hidden;
+                    }
+                    .wrapper.gordost .description-wrap.active + * {
+                        grid-template-rows: 1fr;
+                    }
                 }
             </style>
             <script>
@@ -426,19 +631,20 @@
         </div>
 
         <!-- Блок "Получите консультацию" -->
-        <div class="wrapper-subtitle primary-fg">В работе...</div>
         <div class="wrapper consulting p-x-8 m-p-x-7 light-t background-image flex j-between wrap" style="background-image: url(/images/content/dom.jpg);">
             <div class="p-y-60 m-p-y-50 flex-1">
-                <div class="wrapper-title upper mb-2 m-text-center">Получите<br>консультацию<br>ландшафтного<br>дизайнера</div>
+                <div class="wrapper-title upper mb-2 m-text-center m-dark-t">Получите<br>консультацию<br>ландшафтного<br>дизайнера</div>
                 <form class="flex-col gap-1 mb-3 m-center">
-                    <label for="time-check">В какое время вам позвонить?</label>
+                    <label class="m-dark-t" for="time-check">В какое время вам позвонить?</label>
                     <div class="flex gap-1 m-flex-col wrap">
-                        <select title="time" class="p-x-3 p-y-2" id="time-check">
-                            <option value="">Сейчас</option>
-                            <option value="">В течение дня</option>
-                            <option value="">Завтра</option>
-                        </select>
-                        <input class="p-x-3 p-y-2" type="tel" placeholder="Ваш номер телефона">
+                        <div class="select-wrapper dark-t">
+                            <select title="time" id="time-check">
+                                <option value="">Сейчас</option>
+                                <option value="">В течение дня</option>
+                                <option value="">Завтра</option>
+                            </select>
+                        </div>
+                        <input type="tel" placeholder="Ваш номер телефона">
                         <button class="btn primary flat" type="">Перезвоните мне ↗</button>
                     </div>
                     <input class="w20" id="accept1" type="checkbox">
@@ -454,13 +660,13 @@
                     </div>
                 </div>
             </div>
-            <div>
+            <div class="relative">
                 <div>
-                    <img title="title" src="/images/workers/stock.png">
+                    <img title="title" src="/images/workers/stock.png" style="position: relative; bottom: -5px;">
                 </div>
-                <div class="desktop flex-col align-end">
+                <div class="desktop flex-col align-end absolute" style="bottom: 50%;">
                     <div>Баринова Ирина</div>
-                    <div class="f-14">Руководитель</div>
+                    <div class="f-14">Руководитель компании</div>
                 </div>
             </div>
             <style>
@@ -692,7 +898,7 @@
                             <div class="dot-left">Требуемый опыт работы: 1–3 года</div>
                             <div class="dot-left">Стабильная заработная плата</div>
                         </div>
-                        <div><span class="pointer material-icon f-24 primary-fg" onclick="toggle('vacancy007'); innerSelf(this, 'cancel', 'add_circle')">add_circle</span></div>
+                        <div><span class="pointer material-icon f-24 primary-fg" onclick="toggle('vacancy007'); innerHTML(this, 'cancel', 'add_circle')">add_circle</span></div>
                     </div>
                     <div id="vacancy007" class="description">
                         <p>
@@ -714,7 +920,7 @@
                             <div class="dot-left">Требуемый опыт работы: 1–3 года</div>
                             <div class="dot-left">Стабильная заработная плата</div>
                         </div>
-                        <div><span class="pointer material-icon f-24 primary-fg" onclick="toggle('vacancy008'); innerSelf(this, 'cancel', 'add_circle')">add_circle</span></div>
+                        <div><span class="pointer material-icon f-24 primary-fg" onclick="toggle('vacancy008'); innerHTML(this, 'cancel', 'add_circle')">add_circle</span></div>
                     </div>
                     <div id="vacancy008" class="description">
                         <p>
@@ -736,7 +942,7 @@
                             <div class="dot-left">Требуемый опыт работы: 1–3 года</div>
                             <div class="dot-left">Стабильная заработная плата</div>
                         </div>
-                        <div><span class="pointer material-icon f-24 primary-fg" onclick="toggle('vacancy009'); innerSelf(this, 'cancel', 'add_circle')">add_circle</span></div>
+                        <div><span class="pointer material-icon f-24 primary-fg" onclick="toggle('vacancy009'); innerHTML(this, 'cancel', 'add_circle')">add_circle</span></div>
                     </div>
                     <div id="vacancy009" class="description">
                         <p>
@@ -912,7 +1118,7 @@
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
                             <div class="background-image height-full" style="background-image: url(/images/workers/1.png);">
-                                <div class="toggle-button"><span class="pointer material-icon f-36 primary-fg" onclick="toggle('special001', this, 'active'); innerSelf(this, 'cancel', 'add_circle')">add_circle</span></div>
+                                <div class="toggle-button"><span class="pointer material-icon f-36 primary-fg" onclick="toggle('special001'); toggle(this, 'active'); innerHTML(this, 'cancel', 'add_circle')">add_circle</span></div>
                                 <div id="special001" class="back-shadow hidden light-t border-box flex-col flex-end height-full p-x-3 p-y-4">
                                     <div class="f-24 bold mb-1">Иван Иванов</div>
                                     <div class="f-16 thin">Проектировщик</div>
@@ -921,8 +1127,8 @@
                         </div>
                         <div class="swiper-slide">
                             <div class="background-image height-full" style="background-image: url(/images/workers/1.png);">
-                                <div class="toggle-button"><span class="pointer material-icon f-36 primary-fg" onclick="toggle('special001', this, 'active'); innerSelf(this, 'cancel', 'add_circle')">add_circle</span></div>
-                                <div id="special001" class="back-shadow hidden light-t border-box flex-col flex-end height-full p-x-3 p-y-4">
+                                <div class="toggle-button"><span class="pointer material-icon f-36 primary-fg" onclick="toggle('special002'); toggle(this, 'active'); innerHTML(this, 'cancel', 'add_circle')">add_circle</span></div>
+                                <div id="special002" class="back-shadow hidden light-t border-box flex-col flex-end height-full p-x-3 p-y-4">
                                     <div class="f-24 bold mb-1">Иван Иванов</div>
                                     <div class="f-16 thin">Проектировщик</div>
                                 </div>
@@ -930,8 +1136,8 @@
                         </div>
                         <div class="swiper-slide">
                             <div class="background-image height-full" style="background-image: url(/images/workers/1.png);">
-                                <div class="toggle-button"><span class="pointer material-icon f-36 primary-fg" onclick="toggle('special001', this, 'active'); innerSelf(this, 'cancel', 'add_circle')">add_circle</span></div>
-                                <div id="special001" class="back-shadow hidden light-t border-box flex-col flex-end height-full p-x-3 p-y-4">
+                                <div class="toggle-button"><span class="pointer material-icon f-36 primary-fg" onclick="toggle('special003'); toggle(this, 'active'); innerHTML(this, 'cancel', 'add_circle')">add_circle</span></div>
+                                <div id="special003" class="back-shadow hidden light-t border-box flex-col flex-end height-full p-x-3 p-y-4">
                                     <div class="f-24 bold mb-1">Иван Иванов</div>
                                     <div class="f-16 thin">Проектировщик</div>
                                 </div>
@@ -939,8 +1145,8 @@
                         </div>
                         <div class="swiper-slide">
                             <div class="background-image height-full" style="background-image: url(/images/workers/1.png);">
-                                <div class="toggle-button"><span class="pointer material-icon f-36 primary-fg" onclick="toggle('special001', this, 'active'); innerSelf(this, 'cancel', 'add_circle')">add_circle</span></div>
-                                <div id="special001" class="back-shadow hidden light-t border-box flex-col flex-end height-full p-x-3 p-y-4">
+                                <div class="toggle-button"><span class="pointer material-icon f-36 primary-fg" onclick="toggle('special004'); toggle(this, 'active'); innerHTML(this, 'cancel', 'add_circle')">add_circle</span></div>
+                                <div id="special004" class="back-shadow hidden light-t border-box flex-col flex-end height-full p-x-3 p-y-4">
                                     <div class="f-24 bold mb-1">Иван Иванов</div>
                                     <div class="f-16 thin">Проектировщик</div>
                                 </div>
@@ -948,8 +1154,8 @@
                         </div>
                         <div class="swiper-slide">
                             <div class="background-image height-full" style="background-image: url(/images/workers/1.png);">
-                                <div class="toggle-button"><span class="pointer material-icon f-36 primary-fg" onclick="toggle('special001', this, 'active'); innerSelf(this, 'cancel', 'add_circle')">add_circle</span></div>
-                                <div id="special001" class="back-shadow hidden light-t border-box flex-col flex-end height-full p-x-3 p-y-4">
+                                <div class="toggle-button"><span class="pointer material-icon f-36 primary-fg" onclick="toggle('special005'); toggle(this, 'active'); innerHTML(this, 'cancel', 'add_circle')">add_circle</span></div>
+                                <div id="special005" class="back-shadow hidden light-t border-box flex-col flex-end height-full p-x-3 p-y-4">
                                     <div class="f-24 bold mb-1">Иван Иванов</div>
                                     <div class="f-16 thin">Проектировщик</div>
                                 </div>
@@ -1096,27 +1302,27 @@
                 <div class="wrapper-title upper thin mb-1"><span class="bold">Вы можете нам довериться</span> и быть спокойным за качество и сроки работы</div>
                 <div class="grid gap-3" style="grid-template-columns: repeat(3, 1fr); margin-top:50px;">
                     <div style="max-width: 210px;">
-                        <input id="dec-1" type="checkbox" class="w34 round" checked disabled>
+                        <input id="dec-1" type="checkbox" class="w34 circle" checked disabled>
                         <label for="dec-1" class="bottom"><span class="bold">Экономим ваш бюджет.</span><br>Покупаем материалы по лучшим ценам у проверенных поставщиков</label>
                     </div>
                     <div style="max-width: 210px;">
-                        <input id="dec-2" type="checkbox" class="w34 round" checked disabled>
+                        <input id="dec-2" type="checkbox" class="w34 circle" checked disabled>
                         <label for="dec-2" class="bottom"><span class="bold">Не дергаем вас по пустякам.</span><br>Сами закупаем, доставляем, разгружаем</label>
                     </div>
                     <div style="max-width: 210px;">
-                        <input id="dec-3" type="checkbox" class="w34 round" checked disabled>
+                        <input id="dec-3" type="checkbox" class="w34 circle" checked disabled>
                         <label for="dec-3" class="bottom"><span class="bold">Используем ваш материал при желании/наличии</span> или можем закупать сами</label>
                     </div>
                     <div style="max-width: 210px;">
-                        <input id="dec-1" type="checkbox" class="w34 round" checked disabled>
+                        <input id="dec-1" type="checkbox" class="w34 circle" checked disabled>
                         <label for="dec-1" class="bottom"><span class="bold">Собственная спец техника.</span><br>Вам не нужно беспокоиться - все берем на себя</label>
                     </div>
                     <div style="max-width: 210px;">
-                        <input id="dec-2" type="checkbox" class="w34 round" checked disabled>
+                        <input id="dec-2" type="checkbox" class="w34 circle" checked disabled>
                         <label for="dec-2" class="bottom"><span class="bold">Составляем смету и фиксируем</span> финальную стоимость</label>
                     </div>
                     <div style="max-width: 210px;">
-                        <input id="dec-3" type="checkbox" class="w34 round" checked disabled>
+                        <input id="dec-3" type="checkbox" class="w34 circle" checked disabled>
                         <label for="dec-3" class="bottom"><span class="bold">Наличный или безналичный расчет.</span><br>Поэтапная оплата</label>
                     </div>
                 </div>
@@ -1265,7 +1471,6 @@
         </div>
 
         <!-- Блок "Наши ценности" -->
-
         <div class="wrapper desktop p-x-8 m-p-x-7 p-y-60 m-p-y-50">
             <div class="wrapper-title thin mb-1">НАШИ <span class="bold">ЦЕННОСТИ</span></div>
             <div class="flex-row gap-2 wrap">
@@ -1854,7 +2059,7 @@
             </script>
         </div>
 
-        <!-- Блок Отзывы наших клиентов -->
+        <!-- Блок "Отзывы наших клиентов" -->
         <div class="wrapper reviews p-x-8 m-p-x-7 p-y-60 m-p-y-50 flex-col gap-2">
             <div class="wrapper-title upper mb-1">Отзывы наших клиентов</div>
             <div class="companies desktop flex wrap gap-col-3 gap-row-1">
@@ -2019,7 +2224,7 @@
             </script>
         </div>
 
-        <!-- Блок "Стоимость ремонта" -->
+        <!-- Блок "Стоимость ремонта 2" -->
         <div class="wrapper cost p-x-8 m-p-x-7 p-y-60 m-p-y-50">
             <div class="flex center j-between gap-1">
                 <div class="wrapper-title upper mb-1 balance">Стоимость ремонта квартир в Москве <span class="primary-fg">под ключ с материалом</span></div>
@@ -2276,6 +2481,659 @@
                 }
             </style>
         </div>
+
+        <!-- Блок "Выберите желаемый тип ремонта" -->
+        <div class="wrapper p-x-8 m-p-x-7 p-y-60 m-p-y-50">
+            <div class="wrapper-title upper mb-1">Выберите желаемый <span class="primary-fg">тип ремонта</span></div>
+            <div class="swiper multi-repair">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="white-bg p-3 border-box flex-col flex-start gap-1 border br-2px m-br-10px">
+                            <div class="block-title upper f-40 m-f-32">Черновой</div>
+                            <div>
+                                <div class="f-14 gray-t">Сроки строительства:</div>
+                                <div class="semibold f-24">От 35 дней</div>
+                            </div>
+                            <div>
+                                <div class="f-14 gray-t">Стоимость</div>
+                                <div class="semibold f-24">от 11 100 ₽/м² </div>
+                            </div>
+                            <div class="f-16">Один из первых этапов в ремонте квартиры, в ходе которого пол и потолок подготавливаются к финишной отделке</div>
+                            <div class="semibold">Включает в себя:</div>
+                            <div class="scroll-y scrollbar-primary">
+                                <ul>
+                                    <li>Удаление краски, старых обоев, плитки, напольных покрытий</li>
+                                    <li>Замена напольного покрытия, укладка плитки </li>
+                                    <li>Штукатурка, грунтовка, шпаклёвка, выравнивание </li>
+                                    <li>Люстры, светильники, розетки выключатели</li>
+                                    <li>Сантехника - раковины, биде, унитаз, установка душевой кабины и мойки</li>
+                                    <li>Удаление краски, старых обоев, плитки, напольных покрытий</li>
+                                    <li>Замена напольного покрытия, укладка плитки </li>
+                                    <li>Штукатурка, грунтовка, шпаклёвка, выравнивание </li>
+                                    <li>Люстры, светильники, розетки выключатели</li>
+                                    <li>Сантехника - раковины, биде, унитаз, установка душевой кабины и мойки</li>
+                                    <li>Удаление краски, старых обоев, плитки, напольных покрытий</li>
+                                    <li>Замена напольного покрытия, укладка плитки </li>
+                                    <li>Штукатурка, грунтовка, шпаклёвка, выравнивание </li>
+                                    <li>Люстры, светильники, розетки выключатели</li>
+                                    <li>Сантехника - раковины, биде, унитаз, установка душевой кабины и мойки</li>
+                                </ul>
+                            </div>
+                            <div class="btn primary upper flat m-br-1 width-full">Оставить заявку</div> 
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="white-bg p-3 border-box flex-col flex-start gap-1 border br-2px m-br-10px">
+                            <div class="block-title upper f-40 m-f-32">Черновой</div>
+                            <div>
+                                <div class="f-14 gray-t">Сроки строительства:</div>
+                                <div class="semibold f-24">От 35 дней</div>
+                            </div>
+                            <div>
+                                <div class="f-14 gray-t">Стоимость</div>
+                                <div class="semibold f-24">от 11 100 ₽/м² </div>
+                            </div>
+                            <div class="f-16">Один из первых этапов в ремонте квартиры, в ходе которого пол и потолок подготавливаются к финишной отделке</div>
+                            <div class="semibold">Включает в себя:</div>
+                            <div class="scroll-y scrollbar-primary">
+                                <ul>
+                                    <li>Удаление краски, старых обоев, плитки, напольных покрытий</li>
+                                    <li>Замена напольного покрытия, укладка плитки </li>
+                                    <li>Штукатурка, грунтовка, шпаклёвка, выравнивание </li>
+                                    <li>Люстры, светильники, розетки выключатели</li>
+                                    <li>Сантехника - раковины, биде, унитаз, установка душевой кабины и мойки</li>
+                                    <li>Удаление краски, старых обоев, плитки, напольных покрытий</li>
+                                    <li>Замена напольного покрытия, укладка плитки </li>
+                                    <li>Штукатурка, грунтовка, шпаклёвка, выравнивание </li>
+                                    <li>Люстры, светильники, розетки выключатели</li>
+                                    <li>Сантехника - раковины, биде, унитаз, установка душевой кабины и мойки</li>
+                                    <li>Удаление краски, старых обоев, плитки, напольных покрытий</li>
+                                    <li>Замена напольного покрытия, укладка плитки </li>
+                                    <li>Штукатурка, грунтовка, шпаклёвка, выравнивание </li>
+                                    <li>Люстры, светильники, розетки выключатели</li>
+                                    <li>Сантехника - раковины, биде, унитаз, установка душевой кабины и мойки</li>
+                                </ul>
+                            </div>
+                            <div class="btn primary upper flat m-br-1 width-full">Оставить заявку</div> 
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="white-bg p-3 border-box flex-col flex-start gap-1 border br-2px m-br-10px">
+                            <div class="block-title upper f-40 m-f-32">Черновой</div>
+                            <div>
+                                <div class="f-14 gray-t">Сроки строительства:</div>
+                                <div class="semibold f-24">От 35 дней</div>
+                            </div>
+                            <div>
+                                <div class="f-14 gray-t">Стоимость</div>
+                                <div class="semibold f-24">от 11 100 ₽/м² </div>
+                            </div>
+                            <div class="f-16">Один из первых этапов в ремонте квартиры, в ходе которого пол и потолок подготавливаются к финишной отделке</div>
+                            <div class="semibold">Включает в себя:</div>
+                            <div class="scroll-y scrollbar-primary">
+                                <ul>
+                                    <li>Удаление краски, старых обоев, плитки, напольных покрытий</li>
+                                    <li>Замена напольного покрытия, укладка плитки </li>
+                                    <li>Штукатурка, грунтовка, шпаклёвка, выравнивание </li>
+                                    <li>Люстры, светильники, розетки выключатели</li>
+                                    <li>Сантехника - раковины, биде, унитаз, установка душевой кабины и мойки</li>
+                                    <li>Удаление краски, старых обоев, плитки, напольных покрытий</li>
+                                    <li>Замена напольного покрытия, укладка плитки </li>
+                                    <li>Штукатурка, грунтовка, шпаклёвка, выравнивание </li>
+                                    <li>Люстры, светильники, розетки выключатели</li>
+                                    <li>Сантехника - раковины, биде, унитаз, установка душевой кабины и мойки</li>
+                                    <li>Удаление краски, старых обоев, плитки, напольных покрытий</li>
+                                    <li>Замена напольного покрытия, укладка плитки </li>
+                                    <li>Штукатурка, грунтовка, шпаклёвка, выравнивание </li>
+                                    <li>Люстры, светильники, розетки выключатели</li>
+                                    <li>Сантехника - раковины, биде, унитаз, установка душевой кабины и мойки</li>
+                                </ul>
+                            </div>
+                            <div class="btn primary upper flat m-br-1 width-full">Оставить заявку</div> 
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="white-bg p-3 border-box flex-col flex-start gap-1 border br-2px m-br-10px">
+                            <div class="block-title upper f-40 m-f-32">Черновой</div>
+                            <div>
+                                <div class="f-14 gray-t">Сроки строительства:</div>
+                                <div class="semibold f-24">От 35 дней</div>
+                            </div>
+                            <div>
+                                <div class="f-14 gray-t">Стоимость</div>
+                                <div class="semibold f-24">от 11 100 ₽/м² </div>
+                            </div>
+                            <div class="f-16">Один из первых этапов в ремонте квартиры, в ходе которого пол и потолок подготавливаются к финишной отделке</div>
+                            <div class="semibold">Включает в себя:</div>
+                            <div class="scroll-y scrollbar-primary">
+                                <ul>
+                                    <li>Удаление краски, старых обоев, плитки, напольных покрытий</li>
+                                    <li>Замена напольного покрытия, укладка плитки </li>
+                                    <li>Штукатурка, грунтовка, шпаклёвка, выравнивание </li>
+                                    <li>Люстры, светильники, розетки выключатели</li>
+                                    <li>Сантехника - раковины, биде, унитаз, установка душевой кабины и мойки</li>
+                                    <li>Удаление краски, старых обоев, плитки, напольных покрытий</li>
+                                    <li>Замена напольного покрытия, укладка плитки </li>
+                                    <li>Штукатурка, грунтовка, шпаклёвка, выравнивание </li>
+                                    <li>Люстры, светильники, розетки выключатели</li>
+                                    <li>Сантехника - раковины, биде, унитаз, установка душевой кабины и мойки</li>
+                                    <li>Удаление краски, старых обоев, плитки, напольных покрытий</li>
+                                    <li>Замена напольного покрытия, укладка плитки </li>
+                                    <li>Штукатурка, грунтовка, шпаклёвка, выравнивание </li>
+                                    <li>Люстры, светильники, розетки выключатели</li>
+                                    <li>Сантехника - раковины, биде, унитаз, установка душевой кабины и мойки</li>
+                                </ul>
+                            </div>
+                            <div class="btn primary upper flat m-br-1 width-full">Оставить заявку</div> 
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination mobile"></div>
+            </div>
+            <style>
+                .swiper.multi-repair {
+                    width: 100%;
+                    max-height: 930px;
+                }
+                .swiper.multi-repair .swiper-wrapper {
+                    width: 100%;
+                    height: calc(100% - 30px);
+                    max-height: 900px;
+                }
+                .swiper.multi-repair .swiper-slide,
+                .swiper.multi-repair .swiper-slide > * {
+                    width: 100%;
+                    max-width: 370px;
+                    height: 100%;
+                    max-height: 900px;
+                    box-sizing: border-box;
+                }
+                .swiper.multi-repair .swiper-slide ul {
+                    margin: 0 auto;
+                }
+                .swiper.multi-repair .swiper-slide .list {
+                    flex-grow: 1;
+                }
+                .swiper.multi-repair .swiper-slide li {
+                    margin-left: -1em;
+                }
+                .swiper.multi-repair .swiper-slide li::marker {
+                    color: var(--primary-color);
+                }
+            </style>
+            <script>
+                const swiper14 = new Swiper('.swiper.multi-repair', {
+                    spaceBetween: '20px',
+                    pagination: {
+                        el: '.swiper.multi-repair .swiper-pagination',
+                        dynamicBullets: true,
+                        dynamicMainBullets: 3
+                    },
+                    breakpoints: {
+                        0: {
+                            slidesPerView: 1
+                        },
+                        768: {
+                            slidesPerView: 'auto'
+                        }
+                    },
+                    autoHeight: true
+                })
+            </script>
+        </div>
+
+        <!-- Блок "Скачайте файл" -->
+        <div class="wrapper downfile light-t background-image flex j-between wrap relative light-t center" style="background-image: url(/images/tecnic/form.png);">
+            <div class="p-x-8 m-p-x-7 flex-1">
+                <div class="wrapper-title upper mb-2 m-text-center">Скачайте файл и узнайте топ 35 дизайнерских решений в оформлении участка</div>
+                <form class="flex-col gap-1 mb-3 m-center">
+                    <label for="time-check">Куда вам отправить файл?</label>
+                    <div class="flex gap-1 m-flex-col wrap">
+                        <div class="select-wrapper">
+                            <select class="round" title="time" id="time-check">
+                                <option value="">WhatsApp</option>
+                                <option value="">Telegram</option>
+                                <option value="">Viber</option>
+                            </select>
+                        </div>
+                        <input class="round" type="tel" placeholder="Ваш номер телефона">
+                        <input class="round mobile" type="text" placeholder="Ваше имя">
+                        <button class="btn primary" type="">Получить файл сейчас</button>
+                    </div>
+                    <input class="w20" id="acception" type="checkbox">
+                    <label class="right f-14 center" for="acception">
+                        <div>Даю согласие на обработку моих <a class="primary-fg none-dec" href="" target="_blank">Персональных Данных</a></div>
+                    </label>
+                </form>
+            </div>
+            <img class="mobile" title="title" src="/images/tecnic/form2.png">
+            <style>
+                .wrapper.downfile {
+                    min-height: 800px;
+                    background-position: center;
+                    padding-top: 50px;
+                }
+                .wrapper.downfile img {
+                    max-width: 100%;
+                }
+                @media (max-width: 768px) {
+                    .wrapper.downfile {
+                        padding-top: 60px;
+                    }
+                }
+            </style>
+        </div>
+
+        <!-- Блок "Посмотрите" -->
+        <div class="wrapper p-y-60 m-p-y-50">
+            <div class="wrapper-title upper p-x-8 m-p-x-7 mb-1 thin">Посмотрите как может преобразиться ваш участок</div>
+            <div class="swiper-container">
+                <div class="swiper multi-slider">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="flex center">
+                                <img title="title" src="/images/tecnic/double1.png">
+                                <div class="images-delimiter flex center">
+                                    <div class="material-icon f-36 light-t flex center" onclick="imagesResize(this)">
+                                        <div>arrow_range</div>
+                                    </div>
+                                </div>
+                                <img title="title" src="/images/tecnic/double2.png">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+                <div class="multi-slider navigation desktop">
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                </div>
+            </div>
+            <style>
+                .swiper.multi-slider {
+                    width: 84%;
+                    height: auto;
+                }
+                .swiper.multi-slider .swiper-wrapper {
+                    aspect-ratio: 16 / 9;
+                    height: calc(100% - 30px);
+                }
+                .swiper.multi-slider .swiper-slide,
+                .swiper.multi-slider .swiper-slide > * {
+                    height: 100%;
+                }
+                .swiper.multi-slider img{
+                    object-fit: contain;
+                    height: 100%;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                }
+                .swiper.multi-slider .images-delimiter {
+                    width: 4px;
+                    height: 100%;
+                    background: white;
+                    z-index: +1;
+                }
+                .swiper.multi-slider .images-delimiter > * {
+                    width: 80px;
+                    aspect-ratio: 1;
+                    background: var(--primary-color);
+                    border-radius: 50%;
+                    cursor: pointer;
+                    margin-left: -40px;
+                    margin-right: -40px;
+                }
+            </style>
+            <script>
+                const swiper15 = new Swiper('.swiper.multi-slider', {
+                    spaceBetween: 0,
+                    slidesPerView: 'auto',
+                    pagination: {
+                        el: '.multi-slider .swiper-pagination',
+                        dynamicBullets: true,
+                        dynamicMainBullets: 3
+                    },
+                    navigation: {
+                        nextEl: ".multi-slider .swiper-button-next",
+                        prevEl: '.multi-slider .swiper-button-prev'
+                    }
+                })
+            </script>
+        </div>
+
+        <!-- Блок "Комплексно подходим" -->
+        <div class="wrapper reviews p-x-8 m-p-x-7 p-y-60 m-p-y-50 flex-col gap-2">
+            <div class="wrapper-title upper mb-1">Комплексно подходим к озеленению и обустройству территории</div>
+            <div class="wrapper-subtitle mb-1">От разработки проекта до полной реализации и поддержки</div>
+            <div class="swiper multi-steps">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="flex-col gap-1">
+                            <div class="mini-slider flex-col">
+                                <div class="swiper one-full-step">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide"><img title="title" src="/images/content/slider_image_1.png"></div>
+                                        <div class="swiper-slide"><img title="title" src="/images/content/slider_image_2.png"></div>
+                                        <div class="swiper-slide"><img title="title" src="/images/content/slider_image_3.png"></div>
+                                        <div class="swiper-slide"><img title="title" src="/images/content/slider_image_4.png"></div>
+                                        <div class="swiper-slide"><img title="title" src="/images/content/slider_image_5.png"></div>
+                                    </div>
+                                </div>
+                                <div class="swiper multi-step">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide"><img title="title" src="/images/content/slider_image_1.png"></div>
+                                        <div class="swiper-slide"><img title="title" src="/images/content/slider_image_2.png"></div>
+                                        <div class="swiper-slide"><img title="title" src="/images/content/slider_image_3.png"></div>
+                                        <div class="swiper-slide"><img title="title" src="/images/content/slider_image_4.png"></div>
+                                        <div class="swiper-slide"><img title="title" src="/images/content/slider_image_5.png"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="f-28">Вертикальная планировка участка</div>
+                            <div class="gray-t">Создали различные уровни высоты, что в перспективе позволит создать интересный и уникальный ландшафтный дизайн</div>
+                            <a href="" class="primary-fg underline">Смотреть подробнее →</a>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="flex-col gap-1">
+                                <div class="mini-slider flex-col">
+                                    <div class="swiper one-full-step">
+                                        <div class="swiper-wrapper">
+                                            <div class="swiper-slide"><img title="title" src="/images/content/slider_image_1.png"></div>
+                                            <div class="swiper-slide"><img title="title" src="/images/content/slider_image_2.png"></div>
+                                            <div class="swiper-slide"><img title="title" src="/images/content/slider_image_3.png"></div>
+                                            <div class="swiper-slide"><img title="title" src="/images/content/slider_image_4.png"></div>
+                                            <div class="swiper-slide"><img title="title" src="/images/content/slider_image_5.png"></div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper multi-step">
+                                        <div class="swiper-wrapper">
+                                            <div class="swiper-slide"><img title="title" src="/images/content/slider_image_1.png"></div>
+                                            <div class="swiper-slide"><img title="title" src="/images/content/slider_image_2.png"></div>
+                                            <div class="swiper-slide"><img title="title" src="/images/content/slider_image_3.png"></div>
+                                            <div class="swiper-slide"><img title="title" src="/images/content/slider_image_4.png"></div>
+                                            <div class="swiper-slide"><img title="title" src="/images/content/slider_image_5.png"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="f-28">Вертикальная планировка участка</div>
+                                <div class="gray-t">Создали различные уровни высоты, что в перспективе позволит создать интересный и уникальный ландшафтный дизайн</div>
+                                <a href="" class="primary-fg underline">Смотреть подробнее →</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+            <div class="flex center">
+                <a href="" class="mobile btn primary">Перейти в портфолио ↗</a>
+            </div>
+            <style>
+                .swiper.multi-steps {
+                    width: 100%;
+                    height: auto;
+                }
+                .swiper.multi-steps > .swiper-wrapper {
+                    width: 100%;
+                }
+                .swiper.multi-steps > .swiper-wrapper > .swiper-slide,
+                .swiper.multi-steps > .swiper-wrapper > .swiper-slide > * {
+                    width: 100%;
+                    max-width: 500px;
+                    height: auto;
+                }
+                .swiper.multi-steps .mini-slider {
+                    gap: 5px;
+                }
+
+                .swiper.multi-steps .one-full-step {
+                    width: 100%;
+                    aspect-ratio: 5 / 4;
+                }
+                .swiper.multi-steps .one-full-step .swiper-wrapper {
+                    width: 100%;
+                }
+                .swiper.multi-steps .one-full-step .swiper-slide img {
+                    object-fit: cover;
+                    height: 100%;
+                }
+
+                .swiper.multi-steps .multi-step {
+                    width: 100%;
+                }
+                .swiper.multi-steps .multi-step .swiper-wrapper {
+                    width: 100%;
+                    height: 100px;
+                }
+                .swiper.multi-steps .multi-step .swiper-slide img,
+                .swiper.multi-steps .multi-step .swiper-slide  {
+                    width: auto;
+                    height: 100%;
+                    object-fit: cover;
+                    aspect-ratio: 1;
+                }
+                .swiper.multi-steps .multi-step .swiper-slide:not(.swiper-slide-thumb-active) {
+                    filter: brightness(.9);
+                }
+            </style>
+            <script>
+                const swiper16 = new Swiper('.swiper.multi-steps', {
+                    spaceBetween: '20px',
+                    pagination: {
+                        el: '.swiper.multi-steps > .swiper-pagination',
+                        dynamicBullets: true,
+                        dynamicMainBullets: 3
+                    },
+                    breakpoints: {
+                        0: {
+                            slidesPerView: 1,
+                            grid: {
+                                rows: 1
+                            }
+                        },
+                        768: {
+                            slidesPerView: 'auto',
+                            grid: {
+                                rows: 2,
+                                fill: 'row'
+                            }
+                        }
+                    }
+                })
+
+                var fulls = document.querySelectorAll('.swiper.multi-steps .one-full-step')
+                var previews = document.querySelectorAll('.swiper.multi-steps .multi-step')
+
+                let previews_sliders = []
+                previews.forEach((element, key) => {
+                    previews_sliders[key] = new Swiper(element, {
+                        slidesPerView: 'auto',
+                        spaceBetween: '5px',
+                        freeNode: true,
+                        watchSlidesVisibility: true,
+                        watchSliderProgress: true
+                    })
+                });
+
+                fulls.forEach((element, key) => {
+                    new Swiper(element, {
+                        slidesPerView: 1,
+                        thumbs: {
+                            swiper: previews_sliders[key]
+                        }
+                    })
+                });
+            </script>
+        </div>
+
+        <!-- Блок "Вы получите на руки договор" -->
+        <div class="wrapper p-x-8 m-p-x-7 p-y-60 m-p-y-50 light-t background-image flex-col j-between relative light-t" style="background-image: url(/images/tecnic/render.jpg);">
+            <div class="flex-1">
+                <div class="wrapper-title upper mb-1">Вы получите на руки договор, в котором будет прописана окончательная стоимость работ</div>
+                <div class="wrapper-subtitle mb-4">+ ещё 4 причины почему выбирают для ландшафтных работ нашу компанию</div>
+            </div>
+            <div>
+                <div class="swiper multi-reasons mb-2">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="light-t border-box flex-col height-full">
+                                <div class="mb-2"><div class="primary-bg border-50 flex center" style="width: 50px; height: 50px">01</div></div>
+                                <div class="mb-1">Фотореалистичная 3D-визуализация</div>
+                                <div class="mb-1">Вы видите заранее как будет выглядеть ваш участок и сможете внести коррективы в проект до начала работ</div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="light-t border-box flex-col height-full">
+                                <div class="mb-2"><div class="primary-bg border-50 flex center" style="width: 50px; height: 50px">02</div></div>
+                                <div class="mb-1">Строим по СНиП и даём 5 лет гарантии</div>
+                                <div class="mb-1">В договоре четко фиксируется список работ, гарантия и ответственности сторон</div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="light-t border-box flex-col height-full">
+                                <div class="mb-2"><div class="primary-bg border-50 flex center" style="width: 50px; height: 50px">03</div></div>
+                                <div class="mb-1">Фиксированная стоимость в смете</div>
+                                <div class="mb-1">Под каждый этап работ мы разрабатываем точную смету, на которой вы увидите из чего складывается стоимость</div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="light-t border-box flex-col height-full">
+                                <div class="mb-2"><div class="primary-bg border-50 flex center" style="width: 50px; height: 50px">04</div></div>
+                                <div class="mb-1">Оплата после выполнения работ </div>
+                                <div class="mb-1">Оплата выполняемых работ осуществляется только после того, как вы примете результат</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination mobile"></div>
+                </div>
+                <style>
+                    .swiper.multi-reasons {
+                        width: 100%;
+                        height: 240px;
+                    }
+                    .swiper.multi-reasons .swiper-wrapper {
+                        height: 210px;
+                    }
+                    .swiper.multi-reasons .swiper-slide,
+                    .swiper.multi-reasons .swiper-slide > div {
+                        max-width: 300px;
+                    }
+                </style>
+                <script>
+                    const swiper17 = new Swiper('.swiper.multi-reasons', {
+                        spaceBetween: '5%',
+                        slidesPerView: 'auto',
+                        pagination: {
+                            el: '.swiper.multi-reasons .swiper-pagination',
+                            dynamicBullets: true,
+                            dynamicMainBullets: 3
+                        }
+                    })
+                </script>
+            </div>
+            <style>
+            </style>
+        </div>
+
+        <!-- Блок "Отвечаем на частые вопросы" -->
+        <div class="wrapper p-x-8 m-p-x-7 p-y-60 m-p-y-50 flex-col gap-1">
+            <div class="wrapper-title upper mb-1">Отвечаем на частые вопросы</div>
+            <div class="questions">
+                <div class="question">
+                    <div class="question-title flex align-center gap-1 j-between" onclick="toggle(this.parentNode, 'active');">
+                        <div>Какие материалы используются в ландшафтных работах?</div>
+                        <div class="icon primary-fg material-icon">add_circle</div>
+                    </div>
+                    <div class="answer">
+                        <div>Ландшафтные работы требуют тщательного подбора материалов, которые обеспечивают не только эстетический вид, но и функциональность пространства. Один из основных компонентов – это почва, которую подбирают в зависимости от типа растений и их потребностей в питательных веществах. Дренажные материалы, такие как гравий и щебень, играют ключевую роль в предотвращении затопления и обеспечении здоровья корневой системы.</div>
+                    </div>
+                </div>
+                <div class="question">
+                    <div class="question-title flex align-center gap-1 j-between" onclick="toggle(this.parentNode, 'active')">
+                        <div>Какие гарантии вы предоставляете на выполненные работы?</div>
+                        <div class="icon primary-fg material-icon">add_circle</div>
+                    </div>
+                    <div class="answer">
+                        <div>Ландшафтные работы требуют тщательного подбора материалов, которые обеспечивают не только эстетический вид, но и функциональность пространства. Один из основных компонентов – это почва, которую подбирают в зависимости от типа растений и их потребностей в питательных веществах. Дренажные материалы, такие как гравий и щебень, играют ключевую роль в предотвращении затопления и обеспечении здоровья корневой системы.</div>
+                    </div>
+                </div>
+                <div class="question">
+                    <div class="question-title flex align-center gap-1 j-between" onclick="toggle(this.parentNode, 'active')">
+                        <div>Какую гарантию вы предоставляете на свою продукцию?</div>
+                        <div class="icon primary-fg material-icon">add_circle</div>
+                    </div>
+                    <div class="answer">
+                        <div>Ландшафтные работы требуют тщательного подбора материалов, которые обеспечивают не только эстетический вид, но и функциональность пространства. Один из основных компонентов – это почва, которую подбирают в зависимости от типа растений и их потребностей в питательных веществах. Дренажные материалы, такие как гравий и щебень, играют ключевую роль в предотвращении затопления и обеспечении здоровья корневой системы.</div>
+                    </div>
+                </div>
+                <div class="question">
+                    <div class="question-title flex align-center gap-1 j-between" onclick="toggle(this.parentNode, 'active')">
+                        <div>Каков бюджет необходим на ландшафтные работы? Этот блок в две строки, чтобы было видно, что не так. Рекомендую в одну строку.</div>
+                        <div class="icon primary-fg material-icon">add_circle</div>
+                    </div>
+                    <div class="answer">
+                        <div>Ландшафтные работы требуют тщательного подбора материалов, которые обеспечивают не только эстетический вид, но и функциональность пространства. Один из основных компонентов – это почва, которую подбирают в зависимости от типа растений и их потребностей в питательных веществах. Дренажные материалы, такие как гравий и щебень, играют ключевую роль в предотвращении затопления и обеспечении здоровья корневой системы.</div>
+                    </div>
+                </div>
+                <div class="question">
+                    <div class="question-title flex align-center gap-1 j-between" onclick="toggle(this.parentNode, 'active')">
+                        <div>Какие материалы используются в ландшафтных работах?</div>
+                        <div class="icon primary-fg material-icon">add_circle</div>
+                    </div>
+                    <div class="answer">
+                        <div>Ландшафтные работы требуют тщательного подбора материалов, которые обеспечивают не только эстетический вид, но и функциональность пространства. Один из основных компонентов – это почва, которую подбирают в зависимости от типа растений и их потребностей в питательных веществах. Дренажные материалы, такие как гравий и щебень, играют ключевую роль в предотвращении затопления и обеспечении здоровья корневой системы.</div>
+                    </div>
+                </div>
+            </div>
+            <div class="flex center">
+                <div class="flex center gap-1 btn primary">
+                    <div>Задать свой вопрос в Whatsapp</div>
+                    <div><svg width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M19 0C8.51076 0 0 8.51076 0 19C0 23.2001 1.35951 27.0686 3.65852 30.2187L1.23793 37.381L8.78709 35.0268C11.7382 36.9058 15.242 38 19 38C29.4892 38 38 29.4892 38 19C38 8.51076 29.4892 0 19 0ZM27.6987 29.1908C24.2501 30.5724 20.1385 29.235 15.6399 25.8197C11.1414 22.4043 8.17917 17.5963 7.98022 14.0262C7.78127 10.4561 10.6882 8.65445 12.2688 8.6655C13.8493 8.67656 15.5846 13.7277 15.6067 14.5015C15.6289 15.2862 13.6725 16.6789 13.5951 17.3421C13.5177 18.0052 16.2589 21.2769 17.4194 22.1611C18.5689 23.0343 20.9453 24.7144 22.1722 24.5596C23.388 24.3938 24.1949 21.9511 24.9686 21.7964C25.7423 21.6417 29.9645 23.7417 30.3845 24.2833C30.8045 24.836 30.7603 27.975 27.6987 29.1908Z" fill="white"/></svg>
+                    </div>
+                </div>
+            </div>
+            <style>
+                .questions {
+                    display: grid;
+                    grid-template-columns: repeat(2, 50%);
+                    gap: 1em;
+                    justify-items: center;
+                }
+                .question {
+                    background: #2C2F31;
+                    border-radius: 5px;
+                    padding: 1em;
+                    color: var(--light-text);
+                    max-width: 740px;
+                    align-self: start;
+                }
+                .questions .answer {
+                    display: grid;
+                    grid-template-rows: 0fr;
+                    transition: all .5s;
+                }
+                .questions .answer > * {
+                    overflow: hidden;
+                }
+                .question.active .answer {
+                    grid-template-rows: 1fr;
+                    margin-top: 1em;
+                }
+                .question .question-title .icon {
+                    transition: all .2s;
+                }
+                .question.active .icon {
+                    color: white !important;
+                    transform: rotate(45deg);
+                }
+
+                @media (max-width: 768px) {
+                    .questions {
+                        grid-template-columns: 1fr;
+                    }
+                }
+            </style>
+        </div>
     </div>
 
     <!-- Подвал -->
@@ -2325,5 +3183,66 @@
             </div>
         </div>
     </div>
+    
+    <!-- Модальное окно -->
+    <div class="wrapper-modal">
+        <div class="modal-close" onclick="modalClose(this)">
+            <div class="close-button material-icon">close</div>
+        </div>
+        <div class="modal-content">
+        </div>
+        <style>
+            .wrapper-modal {
+                display: none;
+            }
+            .wrapper-modal.active {
+                -webkit-backdrop-filter: blur(5px) brightness(.5);
+                backdrop-filter: blur(5px) brightness(.5);
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                z-index: 1200;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .modal-close {
+                color: white;
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                z-index: -1;
+            }
+            .close-button {
+                position: absolute;
+                top: 1em;
+                right: 1em;
+                font-size: 24px;
+                transition: all .2s;
+            }
+            .close-button:hover {
+                color: var(--primary-color);
+            }
+            .wrapper-modal .modal-content {
+                overflow-x: hidden;
+                overflow-y: auto;
+                border-radius: 10px;
+            }
+            .modal-window {
+                background: #efefef;
+                padding: 2em;
+            }
+            .modal-title {
+                font-size: 32px;
+                font-weight: bold;
+                padding-bottom: 1em;
+            }
+        </style>
+    </div>
   </body>
+  <script src="/script.js"></script>
 </html>
