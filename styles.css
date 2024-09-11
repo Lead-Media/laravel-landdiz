@@ -1512,6 +1512,12 @@ table td.description-field .help {
   .m-line-top::before {
     width: 100%;
   }
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    width: 40px !important;
+    height: 40px !important;
+  }
 }
 
 @media (min-width: 768px) and (max-width: 1200px) {

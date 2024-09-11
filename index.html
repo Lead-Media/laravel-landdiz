@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Главная страница</title>
     <link rel="stylesheet" href="/styles.css">
+    <script src="/jquery.js"></script>
     
     <link rel="stylesheet" href="/swiper/swiper-bundle.css"/>
     <script src="/swiper/swiper-bundle.js"></script>
@@ -12,6 +13,10 @@
     <!-- Свайпер "до / после" -->
     <script src="/ba/js/script.js"></script>
     <link rel="stylesheet" href="/ba/css/style.css">
+
+    <script src="twentytwenty/js/jquery.event.move.js"type="text/javascript"></script>
+    <script src="twentytwenty/js/jquery.twentytwenty.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="twentytwenty/css/twentytwenty.css">
     
     <!-- Иконочный шрифт -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
@@ -4185,72 +4190,21 @@
                 <div class="swiper multi-slider">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
-                            <div id="balca1" class="bal-container">
-                                <div class="bal-after">
-                                    <img title="double1" src="/images/tecnic/double1.png">
-                                </div>
-                                <div class="bal-before">
-                                    <div class="bal-before-inset">
-                                    <img title="double2" src="/images/tecnic/double2.png">
-                                </div>
-                                </div>
-                                <div class="bal-handle">
-                                    <span class="handle-left-arrow"></span>
-                                    <span class="handle-right-arrow"></span>
-                                </div>
+                            <div class="twentytwenty-container height-full">
+                                <img title="double1" src="/images/tecnic/double1.png">
+                                <img title="double2" src="/images/tecnic/double2.png">
                             </div>
-                            <script>
-                                new BeforeAfter({
-                                    id: '#balca1'
-                                })
-                            </script>
                         </div>
                         <div class="swiper-slide">
-                            <div id="balca2" class="bal-container">
-                                <div class="bal-after">
-                                    <img title="double1" src="/images/tecnic/double1.png">
-                                </div>
-                                <div class="bal-before">
-                                    <div class="bal-before-inset">
-                                    <img title="double2" src="/images/tecnic/double2.png">
-                                </div>
-                                </div>
-                                <div class="bal-handle">
-                                    <span class="handle-left-arrow"></span>
-                                    <span class="handle-right-arrow"></span>
-                                </div>
+                            <div class="twentytwenty-container height-full">
+                                <img title="double1" src="/images/tecnic/double1.png">
+                                <img title="double2" src="/images/tecnic/double2.png">
                             </div>
-                            <script>
-                                new BeforeAfter({
-                                    id: '#balca2'
-                                })
-                            </script>
-                        </div>
-                        <div class="swiper-slide">
-                            <div id="balca3" class="bal-container">
-                                <div class="bal-after">
-                                    <img title="double1" src="/images/tecnic/double1.png">
-                                </div>
-                                <div class="bal-before">
-                                    <div class="bal-before-inset">
-                                    <img title="double2" src="/images/tecnic/double2.png">
-                                </div>
-                                </div>
-                                <div class="bal-handle">
-                                    <span class="handle-left-arrow"></span>
-                                    <span class="handle-right-arrow"></span>
-                                </div>
-                            </div>
-                            <script>
-                                new BeforeAfter({
-                                    id: '#balca3'
-                                })
-                            </script>
                         </div>
                     </div>
                     <div class="swiper-pagination"></div>
                 </div>
-                <div class="multi-slider navigation desktop">
+                <div class="multi-slider navigation">
                     <div class="swiper-button-prev"></div>
                     <div class="swiper-button-next"></div>
                 </div>
@@ -4258,7 +4212,6 @@
             <style>
                 .swiper.multi-slider {
                     width: 84%;
-                    aspect-ratio: 16 / 9;
                     height: auto;
                 }
                 .swiper.multi-slider .swiper-wrapper {
@@ -4290,11 +4243,47 @@
                     margin-left: -40px;
                     margin-right: -40px;
                 }
+                
+                :root {
+                    --twenty-handle-width: 80px;
+                }
+                @media (max-width: 768px) {
+                    :root {
+                        --twenty-handle-width: 50px;
+                    }
+                }
+                .twentytwenty-handle {
+                    width: var(--twenty-handle-width);
+                    height: var(--twenty-handle-width);
+                    margin: 0;
+                    -webkit-transform: translate(-50%,-50%);
+                    transform: translate(-50%,-50%);
+                    border: none;
+                    -webkit-box-shadow: none;
+                    box-shadow: none;
+                    background: var(--primary-color);
+                    z-index: 50;
+                    background-image: url(/images/icons/before-after-handle-bg.svg);
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    background-size: contain;
+                }
+                .twentytwenty-left-arrow,
+                .twentytwenty-right-arrow {
+                    display: none;
+                }
+                .twentytwenty-handle:before {
+                    margin-bottom: calc(var(--twenty-handle-width) / 2 + 2px) !important;
+                }
+                .twentytwenty-handle:after {
+                    margin-top: calc(var(--twenty-handle-width) / 2 + 2px) !important;
+                }
             </style>
             <script>
                 const swiper15 = new Swiper('.swiper.multi-slider', {
                     spaceBetween: 0,
                     slidesPerView: 1,
+                    allowTouchMove: false,
                     pagination: {
                         el: '.multi-slider .swiper-pagination',
                         dynamicBullets: true,
@@ -4304,6 +4293,12 @@
                         nextEl: ".multi-slider .swiper-button-next",
                         prevEl: '.multi-slider .swiper-button-prev'
                     }
+                })
+
+                $(".twentytwenty-container").each((index, elem) => {
+                    $(elem).twentytwenty({
+                        no_overlay: true
+                    })
                 })
             </script>
         </div>
