@@ -8,6 +8,10 @@
     
     <link rel="stylesheet" href="/swiper/swiper-bundle.css"/>
     <script src="/swiper/swiper-bundle.js"></script>
+
+    <!-- Свайпер "до / после" -->
+    <script src="/ba/js/script.js"></script>
+    <link rel="stylesheet" href="/ba/css/style.css">
     
     <!-- Иконочный шрифт -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
@@ -191,149 +195,6 @@
 
         <!-- Здесь и далее у каждого блока есть граница снизу. Удаляется в файлах стилей в самом начале. -->
         <!-- Нужна для понимания границ блока. -->
-
-        <!-- Блок "Стоимость ремонта" -->
-        <div class="wrapper p-x-8 m-p-x-7 p-y-60 m-p-y-50 light-bg">
-            <div class="primary-fg">В работе...</div>
-            <div class="wrapper-title upper mb-2 balance flex center">
-                <div>Стоимость ремонта квартир в Москве <span class="primary-fg">под ключ с материалом</span></div>
-                <div class="flex center desktop">
-                    <svg width="77" height="77" viewBox="0 0 77 77" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="38.5" cy="38.5" r="38.5" fill="var(--primary-color)"/>
-                        <circle cx="29.1786" cy="31.1434" r="4.17857" fill="white"/>
-                        <circle cx="46.8215" cy="31.1434" r="4.17857" fill="white"/>
-                        <circle cx="29.1786" cy="47.8583" r="4.17857" fill="white"/>
-                        <circle cx="46.8215" cy="47.8583" r="4.17857" fill="white"/>
-                    </svg>                        
-                </div>
-            </div>
-            <div>
-                <div class="flex gap-2 j-between f-wrap mb-2">
-                    <div class="flex-col f-48 gap-1 upper">
-                        <div class="typework-btn active">Демонтажные работы</div>
-                        <div class="typework-btn">Монтажные работы</div>
-                        <div class="typework-btn">Сантехнические работы</div>
-                        <div class="typework-btn">Электромонтажные работы</div>
-                        <div class="typework-btn">Плиточные работы</div>
-                        <div class="typework-btn">Дополнительные услуги</div>
-                    </div>
-                    <div class="typetablesgroups">
-                        <div class="typetables">
-                            <div class="typetable">
-                                <div class="title">
-                                    <div>Потолки</div>
-                                    <div>expand_circle_down</div>
-                                </div>
-                                <div class="data">
-                                    <div>
-                                        <div>Тип объекта</div>
-                                        <div>Цена за кв м2 /руб.</div>
-                                    </div>
-                                    <div>
-                                        <div>Устройство реечных подвесных потолков</div>
-                                        <div>1 120 ₽</div>
-                                    </div>
-                                    <div>
-                                        <div>Устройство реечных подвесных потолков</div>
-                                        <div>1 120 ₽</div>
-                                    </div>
-                                    <div>
-                                        <div>Устройство реечных подвесных потолков</div>
-                                        <div>1 120 ₽</div>
-                                    </div>
-                                    <div>
-                                        <div>Устройство реечных подвесных потолков</div>
-                                        <div>1 120 ₽</div>
-                                    </div>
-                                    <div>
-                                        <div>Устройство реечных подвесных потолков</div>
-                                        <div>1 120 ₽</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="typetable"></div>
-                            <div class="typetable"></div>
-                        </div>
-                        <div class="typetables"></div>
-                        <div class="typetables"></div>
-                        <div class="typetables"></div>
-                        <div class="typetables"></div>
-                        <div class="typetables"></div>
-                    </div>
-                </div>
-                <form class="flex-col gap-1 mb-3 m-center">
-                    <label class="m-dark-t" for="time-check">Когда удобно перезвонить вам?</label>
-                    <div class="flex gap-1 m-flex-col wrap">
-                        <div class="select-wrapper dark-t">
-                            <select title="time" id="time-check">
-                                <option value="">Сейчас</option>
-                                <option value="">В течение дня</option>
-                                <option value="">Завтра</option>
-                            </select>
-                        </div>
-                        <input type="tel" placeholder="Ваш номер телефона">
-                        <button class="btn primary flat upper" type="">Перезвоните мне</button>
-                    </div>
-                    <input class="w20" id="accept3" type="checkbox">
-                    <label class="right f-14 center" for="accept3">
-                        <div>Согласен с условиями <a class="" href="" target="_blank">политики конфиденциальности данных</a></div>
-                    </label>
-                </form>
-            </div>
-            <style>
-                .typework-btn.active {
-                    color: var(--primary-color);
-                }
-                .typetablesgroups {
-                    width: 100%;
-                    max-width: 800px;
-                }
-                .typetables {
-                    display: flex;
-                    flex-direction: column;
-                    gap: 1em;
-                }
-                .typetable {
-                    width: 100%;
-                    padding: 1em 2em;
-                    box-sizing: border-box;
-                    background: white;
-                }
-                .typetable .title {
-                    display: flex;
-                    gap: .5em;
-                    justify-content: space-between;
-                    align-items: center;
-                    font-size: 40px;
-                    text-transform: uppercase;
-                }
-                .typetable .title > div:last-child {
-                    color: var(--primary-color);
-                    font-family: "Material Symbols Rounded";
-                    font-variation-settings: "FILL" 1;
-                }
-                .typetable .data {
-                    margin: 1em 0;
-                }
-                .typetable .data > div {
-                    display: flex;
-                    justify-content: space-between;
-                    flex-wrap: wrap;
-                    padding-top: 1em;
-                    padding-bottom: 1em;
-                }
-                .typetable .data > div:first-child {
-                    text-transform: uppercase;
-                    border-bottom: 1px solid var(--primary-color);
-                }
-                .typetable .data > div:nth-child(n + 2) {
-                    border-bottom: 1px dashed gray;
-                }
-                .typetable .data > div:nth-child(n + 1) > div:last-child {
-                    font-weight: bold;
-                }
-            </style>
-        </div>
          
         <!-- Форма "Перезвоните мне" -->
         <div class="wrapper">
@@ -386,7 +247,6 @@
                 </div>
             </div>
         </div>
-
 
         <!-- Блок "Ландшафтные работы" -->
         <div class="wrapper desktop p-x-8 p-y-100 thin">
@@ -1475,7 +1335,7 @@
         </div>
 
         <!-- Блок "Числа" -->
-        <div class="wrapper achivments p-x-8 p-y-60 m-p-x-7 m-p-y-50 flex m-flex-col f-wrap gap-3 align-center j-between">
+        <div class="wrapper achivments p-x-8 p-y-60 m-p-x-7 m-p-y-50 flex m-flex-col f-wrap gap-3 center j-between">
             <div class="flex gap-3 m-gap-2 flex-1 j-between m-text-center">
                 <div class="flex-1">
                     <div class="number bold">7</div>
@@ -1690,8 +1550,8 @@
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
                             <div class="white-bg p-3 border-box flex-col flex-start gap-1 border br-2px m-br-10px">
-                                <div class="p-x-2 p-y-1 white-bg br-2px primary-fg shadow-2px">Шаг 1</div>
-                                <div class="upper f-40 m-f-32">Заявка <br>на сайте</div>
+                                <div class="p-x-2 p-y-1 white-bg primary-fg shadow-2px">Шаг 1</div>
+                                <div class="upper f-40 m-f-24">Заявка <br>на сайте</div>
                                 <div class="f-24">Звоните</div>
                                 <div class="f-28 grow-1">+7 (968) 300-20-18</div>
                                 <div class="f-24">или оставляете <br>заявку на сайте</div>
@@ -1701,8 +1561,8 @@
                         <div class="swiper-slide">
                             <div class="light-t background-image m-br-10px" style="background-image: url(/images/tecnic/instruments.jpg);">
                                 <div class="background-shadow p-3 border-box flex-col flex-start gap-1 br-2px">
-                                    <div class="p-x-2 p-y-1 white-bg br-2px primary-fg shadow-2px">Шаг 2</div>
-                                    <div class="upper f-40 m-f-32">Полы</div>
+                                    <div class="p-x-2 p-y-1 white-bg primary-fg shadow-2px">Шаг 2</div>
+                                    <div class="upper f-40 m-f-24">Полы</div>
                                     <div class="grow-1">
                                         <ul>
                                             <li>Устройство гидроизоляции в сантехническом узле и на кухне</li>
@@ -1718,8 +1578,8 @@
                         <div class="swiper-slide">
                             <div class="light-t background-image m-br-10px" style="background-image: url(/images/tecnic/instruments.jpg);">
                                 <div class="background-shadow p-3 border-box flex-col flex-start gap-1 br-2px">
-                                    <div class="p-x-2 p-y-1 white-bg br-2px primary-fg shadow-2px">Шаг 3</div>
-                                    <div class="upper f-40 m-f-32">Подготовительные работы</div>
+                                    <div class="p-x-2 p-y-1 white-bg primary-fg shadow-2px">Шаг 3</div>
+                                    <div class="upper f-40 m-f-24">Подготовительные работы</div>
                                     <div class="grow-1">
                                         <ul>
                                             <li>Демонтаж и возведение стен</li>
@@ -1734,8 +1594,8 @@
                         <div class="swiper-slide">
                             <div class="light-t background-image m-br-10px" style="background-image: url(/images/tecnic/instruments.jpg);">
                                 <div class="background-shadow p-3 border-box flex-col flex-start gap-1 br-2px">
-                                    <div class="p-x-2 p-y-1 white-bg br-2px primary-fg shadow-2px">Шаг 4</div>
-                                    <div class="upper f-40 m-f-32">Подготовительные работы</div>
+                                    <div class="p-x-2 p-y-1 white-bg primary-fg shadow-2px">Шаг 4</div>
+                                    <div class="upper f-40 m-f-24">Подготовительные работы</div>
                                     <div class="grow-1">
                                         <ul>
                                             <li>Демонтаж и возведение стен</li>
@@ -1750,8 +1610,8 @@
                         <div class="swiper-slide">
                             <div class="light-t background-image m-br-10px" style="background-image: url(/images/tecnic/instruments.jpg);">
                                 <div class="background-shadow p-3 border-box flex-col flex-start gap-1 br-2px">
-                                    <div class="p-x-2 p-y-1 white-bg br-2px primary-fg shadow-2px">Шаг 5</div>
-                                    <div class="upper f-40 m-f-32">Подготовительные работы</div>
+                                    <div class="p-x-2 p-y-1 white-bg primary-fg shadow-2px">Шаг 5</div>
+                                    <div class="upper f-40 m-f-24">Подготовительные работы</div>
                                     <div class="grow-1">
                                         <ul>
                                             <li>Демонтаж и возведение стен</li>
@@ -1780,6 +1640,9 @@
                         max-width: 500px;
                         height: 700px;
                     }
+                    .swiper.multi-purpose .swiper-slide > * {
+                        width: calc(100% - 2px);
+                    }
                 </style>
                 <script>
                     const swiper10 = new Swiper('.swiper.multi-purpose', {
@@ -1793,14 +1656,6 @@
                         navigation: {
                             nextEl: ".multi-purpose .swiper-button-next",
                             prevEl: '.multi-purpose .swiper-button-prev'
-                        },
-                        breakpoints: {
-                            0: {
-                                slidesPerView: 1
-                            },
-                            768: {
-                                slidesPerView: 'auto'
-                            }
                         }
                     })
                 </script>
@@ -1971,7 +1826,7 @@
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
                         <div class="white-bg p-3 border-box flex-col flex-start gap-1 border br-2px m-br-10px">
-                            <div class="block-title upper f-40 m-f-32">Базовый</div>
+                            <div class="block-title upper f-40 m-f-24">Базовый</div>
                             <div class="f-28 grow-1">
                                 <ul>
                                     <li>Концепция</li>
@@ -1986,7 +1841,7 @@
                     <div class="swiper-slide">
                         <div class="background-image m-br-10px" style="background-image: url(/images/tecnic/interior.jpg);">
                             <div class="light-t background-shadow p-3 border-box flex-col flex-start gap-1 br-2px">
-                                <div class="block-title upper f-40 m-f-32">Оптимальный</div>
+                                <div class="block-title upper f-40 m-f-24">Оптимальный</div>
                                 <div class="f-28 grow-1">
                                     <ul>
                                         <li>Концепция</li>
@@ -2002,7 +1857,7 @@
                     <div class="swiper-slide">
                         <div class="background-image m-br-10px" style="background-image: url(/images/tecnic/interior.jpg);">
                             <div class="light-t background-shadow p-3 border-box flex-col flex-start gap-1 br-2px">
-                                <div class="block-title upper f-40 m-f-32">Премиум</div>
+                                <div class="block-title upper f-40 m-f-24">Премиум</div>
                                 <div class="f-28 grow-1">
                                     <ul>
                                         <li>Концепция</li>
@@ -2018,7 +1873,7 @@
                     <div class="swiper-slide">
                         <div class="background-image m-br-10px" style="background-image: url(/images/tecnic/interior.jpg);">
                             <div class="light-t background-shadow p-3 border-box flex-col flex-start gap-1 br-2px">
-                                <div class="block-title upper f-40 m-f-32">Индивидуальный по дизайн проекту</div>
+                                <div class="block-title upper f-40 m-f-24">Индивидуальный по дизайн проекту</div>
                                 <div class="f-28 grow-1">
                                     <ul>
                                         <li>Концепция</li>
@@ -2040,9 +1895,13 @@
                 }
                 .swiper.multi-tariffs .swiper-slide,
                 .swiper.multi-tariffs .swiper-slide > * {
-                    width: 100%;
+                    width: calc(100% - 2px);
                     max-width: 500px;
                     height: 700px;
+                    overflow: hidden;
+                }
+                .swiper.multi-tariffs .swiper-slide > * {
+                    width: calc(100% - 2px);
                 }
             </style>
             <script>
@@ -2053,14 +1912,6 @@
                         el: '.swiper-pagination',
                         dynamicBullets: true,
                         dynamicMainBullets: 3
-                    },
-                    breakpoints: {
-                        0: {
-                            slidesPerView: 1
-                        },
-                        768: {
-                            slidesPerView: 'auto'
-                        }
                     }
                 })
             </script>
@@ -2113,6 +1964,387 @@
                     <div class="mobile text-center upper dotted-underline"><a class="" href="">Реквизиты для юрлиц</a></div>
                 </div>
             </div>
+        </div>
+
+        <!-- Блок "Калькулятор ремонта" -->
+        <div class="wrapper calculator p-x-8 m-p-x-7 p-y-60 m-p-y-50 relative background-image" style="background-image: url(/images/tecnic/calc.png);">
+            <!-- <div class="background-shadow"></div> -->
+            <form>
+                <!-- Для ПК -->
+                <div class="calculator-desktop desktop flex-row f-wrap relative gap-3 j-between">
+                    <div class="calculator-form light-t">
+                        <div class="wrapper-title upper mb-1 balance">Калькулятор ремонта квартир <span class="primary-fg">с материалом</span></div>
+                        <div class="radio-wrapper">
+                            <div>Тип недвижимости:</div>
+                            <div>
+                                <label class="radio-label">
+                                    <input type="radio" name="answer1" value="" id="">
+                                    <span>Новостройка</span>
+                                </label>
+                                <label class="radio-label">
+                                    <input type="radio" name="answer1" value="" id="">
+                                    <span>Вторичное жильё</span>
+                                </label>
+                                <label class="radio-label">
+                                    <input type="radio" name="answer1" value="" id="">
+                                    <span>Загородный дом</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="radio-wrapper">
+                            <div>Тип ремонта:</div>
+                            <div>
+                                <label class="radio-label">
+                                    <input type="radio" name="answer2" value="" id="">
+                                    <span>Черновой</span>
+                                </label>
+                                <label class="radio-label">
+                                    <input type="radio" name="answer2" value="" id="">
+                                    <span>Косметический</span>
+                                </label>
+                                <label class="radio-label">
+                                    <input type="radio" name="answer2" value="" id="">
+                                    <span>Капитальный</span>
+                                </label>
+                                <label class="radio-label">
+                                    <input type="radio" name="answer2" value="" id="">
+                                    <span>Элитный</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="radio-wrapper">
+                            <div>Нужен ли демонтаж:</div>
+                            <div>
+                                <label class="radio-label">
+                                    <input type="radio" name="answer3" value="" id="">
+                                    <span>Да</span>
+                                </label>
+                                <label class="radio-label">
+                                    <input type="radio" name="answer3" value="" id="">
+                                    <span>Нет</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="flex gap-1">
+                            <div class="radio-wrapper">
+                                <div>Нужно ли выравнивать стены</div>
+                                <div>
+                                    <label class="radio-label">
+                                        <input type="radio" name="answer4" value="" id="">
+                                        <span>Да</span>
+                                    </label>
+                                    <label class="radio-label">
+                                        <input type="radio" name="answer4" value="" id="">
+                                        <span>Нет</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="radio-wrapper">
+                                <div>Нужна ли перепланировка</div>
+                                <div>
+                                    <label class="radio-label">
+                                        <input type="radio" name="answer5" value="" id="">
+                                        <span>Да</span>
+                                    </label>
+                                    <label class="radio-label">
+                                        <input type="radio" name="answer5" value="" id="">
+                                        <span>Нет</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex gap-1 p-y-2">
+                            <div class="radio-wrapper flex-1">
+                                <legend>Нужно ли ремонтировать балкон или лоджию</legend>
+                                <div>
+                                    <label class="radio-label">
+                                        <input type="radio" name="answer6" value="" id="">
+                                        <span>Да</span>
+                                    </label>
+                                    <label class="radio-label">
+                                        <input type="radio" name="answer6" value="" id="">
+                                        <span>Нет</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="square-block flex-1-0 flex-col gap-1">
+                                <div class="flex-end align-center gap-1 width-full">
+                                    <div>Общая площадь, м2</div>
+                                    <div class="select-wrapper">
+                                        <label class="flex gap-1 j-between center">
+                                            <select class="border b-light" title="time">
+                                                <option value="">40</option>
+                                                <option value="">60</option>
+                                                <option value="">80</option>
+                                                <option value="">100</option>
+                                                <option value="">120</option>
+                                            </select>
+                                        </label>
+                                    </div>
+                                </div>
+                                <label class="flex-end gap-1 align-center">
+                                    <span>Высота потолков, м</span>
+                                    <input type="number" placeholder="3">
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="calculator-result flex-col gap-1 white-bg p-3 border-box">
+                        <div class="f-40 upper">Предварительный расчет</div>
+                        <div class="flex f-wrap gap-3 gap-row-3">
+                            <div class="flex-col gap-row-1">
+                                <div class="gray-t f-14">Стоимость работ:</div>
+                                <div class="f-24 bold"><span>232 000</span> ₽</div>
+                            </div>
+                            <div class="flex-col gap-row-1">
+                                <div class="gray-t f-14">Стоимость материалов:</div>
+                                <div class="f-24 bold"><span>41 960</span> ₽</div>
+                            </div>
+                            <div class="flex-col gap-row-1 width-full">
+                                <div class="gray-t f-14">Итого:</div>
+                                <div class="f-36 bold"><span>273 960</span> ₽</div>
+                            </div>
+                        </div>
+                        <div class="flex-col gap-1">
+                            <label class="m-dark-t" for="time-check">Когда удобно перезвонить вам?</label>
+                            <div class="flex-col gap-1 width-full">
+                                <div class="select-wrapper dark-t">
+                                    <select class="border b-light" title="time" id="time-check">
+                                        <option value="">Сейчас</option>
+                                        <option value="">В течение дня</option>
+                                        <option value="">Завтра</option>
+                                    </select>
+                                </div>
+                                <input class="border b-light" type="tel" placeholder="Ваш номер телефона">
+                                <button class="btn primary flat upper" type="">Вызвать замерщика</button>
+                            </div>
+                            <input class="w20 round" id="accept4" type="checkbox">
+                            <label class="right f-14 center" for="accept4">
+                                <div>Согласен с условиями <a href="" target="_blank">политики конфиденциальности данных</a></div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Для мобилки -->
+                <div class="calculator-mobile mobile">
+                    <div class="light-t mb-2"><div class="primary-bg border-50 flex center m-f-20 semibold" style="width: 50px; height: 50px">#1</div></div>
+                    <div class="wrapper-title upper mb-1 balance light-t">Калькулятор ремонта квартир <span class="primary-fg">с материалом</span></div>
+                    <div class="calculator-form light-t">
+                        <div class="radio-wrapper">
+                            <div>Тип ремонта:</div>
+                            <div>
+                                <label class="radio-label">
+                                    <input type="radio" name="answer2" value="" id="">
+                                    <span>Черновой</span>
+                                </label>
+                                <label class="radio-label">
+                                    <input type="radio" name="answer2" value="" id="">
+                                    <span>Косметический</span>
+                                </label>
+                                <label class="radio-label">
+                                    <input type="radio" name="answer2" value="" id="">
+                                    <span>Капитальный</span>
+                                </label>
+                                <label class="radio-label">
+                                    <input type="radio" name="answer2" value="" id="">
+                                    <span>Элитный</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="calculator-result flex-col gap-1 white-bg p-3 border-box">
+                        <div class="f-24 upper">Предварительный расчет</div>
+                        <div class="flex f-wrap gap-1 gap-row-3 j-between">
+                            <div class="flex-col gap-row-1">
+                                <div class="f-14">Стоимость работ:</div>
+                                <div class="f-18 bold"><span>232 000</span> ₽</div>
+                            </div>
+                            <div class="flex-col gap-row-1">
+                                <div class="f-14">Стоимость материалов:</div>
+                                <div class="f-18 bold"><span>41 960</span> ₽</div>
+                            </div>
+                            <div class="flex-col gap-row-1 width-full">
+                                <div class="f-14">Итого:</div>
+                                <div class="f-24 bold"><span>273 960</span> ₽</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="controls light-t upper">
+                        <div class="unactive"><div class="material-icon">chevron_left</div><div>Назад</div></div>
+                        <div><div>Далее</div><div class="material-icon">chevron_right</div></div>
+                    </div>
+                </div>
+                <div class="calculator-mobile mobile">
+                    <div class="light-t mb-2"><div class="primary-bg border-50 flex center m-f-20 semibold" style="width: 50px; height: 50px">#2</div></div>
+                    <div class="wrapper-title upper mb-1 balance light-t">Калькулятор ремонта квартир <span class="primary-fg">с материалом</span></div>
+                    <div class="calculator-form light-t">
+                        <div class="square-block flex-1-0 flex-col gap-1">
+                            <div class="flex-end align-center gap-1 width-full">
+                                <div>Общая площадь, м2</div>
+                                <div class="select-wrapper">
+                                    <label class="flex gap-1 j-between center">
+                                        <select class="border b-light" title="time">
+                                            <option value="">40</option>
+                                            <option value="">60</option>
+                                            <option value="">80</option>
+                                            <option value="">100</option>
+                                            <option value="">120</option>
+                                        </select>
+                                    </label>
+                                </div>
+                            </div>
+                            <label class="flex-end gap-1 align-center">
+                                <span>Высота потолков, м</span>
+                                <input type="number" placeholder="3">
+                            </label>
+                        </div>
+                    </div>
+                    <div class="calculator-result flex-col gap-1 white-bg p-3 border-box">
+                        <div class="f-24 upper">Предварительный расчет</div>
+                        <div class="flex f-wrap gap-1 gap-row-3 j-between">
+                            <div class="flex-col gap-row-1">
+                                <div class="f-14">Стоимость работ:</div>
+                                <div class="f-18 bold"><span>232 000</span> ₽</div>
+                            </div>
+                            <div class="flex-col gap-row-1">
+                                <div class="f-14">Стоимость материалов:</div>
+                                <div class="f-18 bold"><span>41 960</span> ₽</div>
+                            </div>
+                            <div class="flex-col gap-row-1 width-full">
+                                <div class="f-14">Итого:</div>
+                                <div class="f-24 bold"><span>273 960</span> ₽</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="controls light-t upper">
+                        <div><div class="material-icon">chevron_left</div><div>Назад</div></div>
+                        <div><div>Далее</div><div class="material-icon">chevron_right</div></div>
+                    </div>
+                </div>
+                <div class="calculator-mobile mobile">
+                    <div class="light-t mb-2"><div class="primary-bg border-50 flex center m-f-20 semibold" style="width: 50px; height: 50px">#3</div></div>
+                    <div class="wrapper-title upper mb-1 balance light-t">Калькулятор ремонта квартир <span class="primary-fg">с материалом</span></div>
+                    <div class="calculator-result flex-col gap-1 white-bg p-3 border-box">
+                        <div class="f-24 upper">Предварительный расчет</div>
+                        <div class="flex f-wrap gap-1 gap-row-3 j-between">
+                            <div class="flex-col gap-row-1">
+                                <div class="f-14">Стоимость работ:</div>
+                                <div class="f-18 bold"><span>232 000</span> ₽</div>
+                            </div>
+                            <div class="flex-col gap-row-1">
+                                <div class="f-14">Стоимость материалов:</div>
+                                <div class="f-18 bold"><span>41 960</span> ₽</div>
+                            </div>
+                            <div class="flex-col gap-row-1 width-full">
+                                <div class="f-14">Итого:</div>
+                                <div class="f-24 bold"><span>273 960</span> ₽</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex-col gap-1 light-t mb-2">
+                        <div class="flex-col gap-1 width-full">
+                            <div class="select-wrapper dark-t">
+                                <select class="border b-light" title="time" id="time-check">
+                                    <option value="">Получить в WhatsApp</option>
+                                    <option value="">Получить в Telegram</option>
+                                    <option value="">Получить в Viber</option>
+                                </select>
+                            </div>
+                            <input class="border b-light" type="tel" placeholder="Ваш номер телефона">
+                            <button class="btn primary" type="">Вызвать замерщика</button>
+                        </div>
+                        <input class="w20 round" id="accept4" type="checkbox">
+                        <label class="right f-14 center" for="accept4">
+                            <div>Согласен с условиями <a href="" target="_blank">политики конфиденциальности данных</a></div>
+                        </label>
+                    </div>
+                    <div class="controls light-t upper">
+                        <div><div class="material-icon">chevron_left</div><div>Назад</div></div>
+                        <div class="unactive"><div>Далее</div><div class="material-icon">chevron_right</div></div>
+                    </div>
+                </div>
+            </form>
+
+            <style>
+                .calculator .calculator-desktop > *:first-child {
+                    display: flex;
+                    flex-direction: column;
+                }
+                .calculator .radio-wrapper {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 1em;
+                    padding: 1em 0;
+                    border-bottom: 1px solid var(--primary-color);
+                    width: 100%;
+                    justify-content: center;
+                }
+                .calculator-form {
+                    width: 100%;
+                    max-width: 700px;
+                    font-size: 16px;
+                }
+                .calculator-result {
+                    width: 100%;
+                    max-width: 500px;
+                }
+                .calculator-form .square-block .select-wrapper,
+                .calculator-form .square-block input {
+                    width: 100%;
+                    max-width: 170px;
+                }
+
+                .calculator .radio-label input[type="radio"] {
+                    display: none;
+                }
+                .calculator .radio-label > span {
+                    display: inline-flex;
+                    align-items: center;
+                    width: fit-content;
+                    gap: .5em;
+                    position: relative;
+                }
+                .calculator .radio-label:not(:last-child) {
+                    margin-right: 2em;
+                }
+                .calculator .radio-label > span::before {
+                    content: '';
+                    width: 24px;
+                    height: 24px;
+                    border: 1px solid white;
+                    border-radius: 50%;
+                    box-sizing: border-box;
+                }
+                .calculator input[type="radio"]:checked + span::before {
+                    background: radial-gradient(circle, var(--primary-color) 0%, var(--primary-color) 50%, transparent 50%, transparent 100%);
+                }
+
+                .calculator-mobile .calculator-result {
+                    border-radius: 1em;
+                    margin: 1em 0;
+                }
+                .calculator-mobile .controls {
+                    display: flex;
+                    justify-content: space-between;
+                }
+                .calculator-mobile .controls > * {
+                    display: flex;
+                    align-items: center;
+                    padding: 1em;
+                    flex-wrap: nowrap;
+                    background: var(--primary-color);
+                    border-radius: var(--button-radius);
+                }
+                .calculator-mobile .controls .unactive {
+                    filter: brightness(.5);
+                }
+                .calculator-mobile select,
+                .calculator-mobile input {
+                    border-radius: var(--button-radius);
+                }
+
+            </style>
         </div>
 
         <!-- Блок "Как мы работаем" -->
@@ -2360,6 +2592,1075 @@
                             }
                         }
                     }
+                })
+            </script>
+        </div>
+
+        <!-- Блок "Стоимость ремонта" -->
+        <div class="wrapper p-x-8 m-p-x-7 p-y-60 m-p-y-50">
+            <div class="wrapper-title upper mb-2 balance flex center">
+                <div>Стоимость ремонта квартир в Москве <span class="primary-fg">под ключ с материалом</span></div>
+                <div class="flex center desktop">
+                    <svg width="77" height="77" viewBox="0 0 77 77" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="38.5" cy="38.5" r="38.5" fill="var(--primary-color)"/>
+                        <circle cx="29.1786" cy="31.1434" r="4.17857" fill="white"/>
+                        <circle cx="46.8215" cy="31.1434" r="4.17857" fill="white"/>
+                        <circle cx="29.1786" cy="47.8583" r="4.17857" fill="white"/>
+                        <circle cx="46.8215" cy="47.8583" r="4.17857" fill="white"/>
+                    </svg>                        
+                </div>
+            </div>
+            <div>
+                <div class="flex gap-2 j-between f-wrap mb-2">
+                    <div class="flex-col f-48 m-f-18 gap-1 upper">
+                        <div class="typework-btn active" data-id="1">Демонтажные работы</div>
+                        <div class="typework-btn" data-id="2">Монтажные работы</div>
+                        <div class="typework-btn" data-id="3">Сантехнические работы</div>
+                        <div class="typework-btn" data-id="4">Электромонтажные работы</div>
+                        <div class="typework-btn" data-id="5">Плиточные работы</div>
+                        <div class="typework-btn" data-id="6">Дополнительные услуги</div>
+                    </div>
+                    <div class="typetablesgroups">
+                        <div class="typetables visible" data-id="1">
+                            <div class="typetable">
+                                <div class="title">
+                                    <div>Потолки</div>
+                                    <div>expand_circle_down</div>
+                                </div>
+                                <div class="data">
+                                    <div class="data-container">
+                                        <div>
+                                            <div>Тип объекта</div>
+                                            <div>Цена за кв м2 /руб.</div>
+                                        </div>
+                                        <div>
+                                            <div>Устройство реечных подвесных потолков</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                        <div>
+                                            <div>Демонтаж воздуховода</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                        <div>
+                                            <div>Устройство подвесного потолка из гипсокартона (1 слой)</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                        <div>
+                                            <div>Демонтаж перегородок и стильный натяжного потолка</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                        <div>
+                                            <div>Нанесение грунтовка</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                        <div>
+                                            <div>Шпаклевка / Шлифовка, нанесение</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                        <div>
+                                            <div>Окраска натяжной потолок</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                        <div>
+                                            <div>Выравнивание потолка под ключ</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                        <div>
+                                            <div>Теплоизоляция потолка вагонкой из дерева</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="typetable">
+                                <div class="title">
+                                    <div>Потолки</div>
+                                    <div>expand_circle_down</div>
+                                </div>
+                                <div class="data">
+                                    <div class="data-container">
+                                        <div>
+                                            <div>Тип объекта</div>
+                                            <div>Цена за кв м2 /руб.</div>
+                                        </div>
+                                        <div>
+                                            <div>Устройство реечных подвесных потолков</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                        <div>
+                                            <div>Демонтаж воздуховода</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                        <div>
+                                            <div>Устройство подвесного потолка из гипсокартона (1 слой)</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                        <div>
+                                            <div>Демонтаж перегородок и стильный натяжного потолка</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                        <div>
+                                            <div>Нанесение грунтовка</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                        <div>
+                                            <div>Шпаклевка / Шлифовка, нанесение</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                        <div>
+                                            <div>Окраска натяжной потолок</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                        <div>
+                                            <div>Выравнивание потолка под ключ</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                        <div>
+                                            <div>Теплоизоляция потолка вагонкой из дерева</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="typetable">
+                                <div class="title">
+                                    <div>Потолки</div>
+                                    <div>expand_circle_down</div>
+                                </div>
+                                <div class="data">
+                                    <div class="data-container">
+                                        <div>
+                                            <div>Тип объекта</div>
+                                            <div>Цена за кв м2 /руб.</div>
+                                        </div>
+                                        <div>
+                                            <div>Устройство реечных подвесных потолков</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                        <div>
+                                            <div>Демонтаж воздуховода</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                        <div>
+                                            <div>Устройство подвесного потолка из гипсокартона (1 слой)</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                        <div>
+                                            <div>Демонтаж перегородок и стильный натяжного потолка</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                        <div>
+                                            <div>Нанесение грунтовка</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                        <div>
+                                            <div>Шпаклевка / Шлифовка, нанесение</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                        <div>
+                                            <div>Окраска натяжной потолок</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                        <div>
+                                            <div>Выравнивание потолка под ключ</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                        <div>
+                                            <div>Теплоизоляция потолка вагонкой из дерева</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="typetables" data-id="2">
+                            <div class="typetable">
+                                <div class="title">
+                                    <div>Потолки</div>
+                                    <div>expand_circle_down</div>
+                                </div>
+                                <div class="data">
+                                    <div class="data-container">
+                                        <div>
+                                            <div>Тип объекта</div>
+                                            <div>Цена за кв м2 /руб.</div>
+                                        </div>
+                                        <div>
+                                            <div>Устройство реечных подвесных потолков</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                        <div>
+                                            <div>Демонтаж воздуховода</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                        <div>
+                                            <div>Устройство подвесного потолка из гипсокартона (1 слой)</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                        <div>
+                                            <div>Демонтаж перегородок и стильный натяжного потолка</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                        <div>
+                                            <div>Нанесение грунтовка</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                        <div>
+                                            <div>Шпаклевка / Шлифовка, нанесение</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                        <div>
+                                            <div>Окраска натяжной потолок</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                        <div>
+                                            <div>Выравнивание потолка под ключ</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                        <div>
+                                            <div>Теплоизоляция потолка вагонкой из дерева</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="typetable">
+                                <div class="title">
+                                    <div>Стены</div>
+                                    <div>expand_circle_down</div>
+                                </div>
+                                <div class="data">
+                                    <div class="data-container">
+                                        <div>
+                                            <div>Тип объекта</div>
+                                            <div>Цена за кв м2 /руб.</div>
+                                        </div>
+                                        <div>
+                                            <div>Устройство реечных подвесных потолков</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                        <div>
+                                            <div>Демонтаж воздуховода</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                        <div>
+                                            <div>Устройство подвесного потолка из гипсокартона (1 слой)</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                        <div>
+                                            <div>Демонтаж перегородок и стильный натяжного потолка</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                        <div>
+                                            <div>Нанесение грунтовка</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                        <div>
+                                            <div>Шпаклевка / Шлифовка, нанесение</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                        <div>
+                                            <div>Окраска натяжной потолок</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                        <div>
+                                            <div>Выравнивание потолка под ключ</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                        <div>
+                                            <div>Теплоизоляция потолка вагонкой из дерева</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="typetable">
+                                <div class="title">
+                                    <div>Полы</div>
+                                    <div>expand_circle_down</div>
+                                </div>
+                                <div class="data">
+                                    <div class="data-container">
+                                        <div>
+                                            <div>Тип объекта</div>
+                                            <div>Цена за кв м2 /руб.</div>
+                                        </div>
+                                        <div>
+                                            <div>Устройство реечных подвесных потолков</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                        <div>
+                                            <div>Демонтаж воздуховода</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                        <div>
+                                            <div>Устройство подвесного потолка из гипсокартона (1 слой)</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                        <div>
+                                            <div>Демонтаж перегородок и стильный натяжного потолка</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                        <div>
+                                            <div>Нанесение грунтовка</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                        <div>
+                                            <div>Шпаклевка / Шлифовка, нанесение</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                        <div>
+                                            <div>Окраска натяжной потолок</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                        <div>
+                                            <div>Выравнивание потолка под ключ</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                        <div>
+                                            <div>Теплоизоляция потолка вагонкой из дерева</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div></div>
+                        <div class="typetables" data-id="3">
+                            <div class="typetable">
+                                <div class="title">
+                                    <div>Потолки</div>
+                                    <div>expand_circle_down</div>
+                                </div>
+                                <div class="data">
+                                    <div class="data-container">
+                                        <div>
+                                            <div>Тип объекта</div>
+                                            <div>Цена за кв м2 /руб.</div>
+                                        </div>
+                                        <div>
+                                            <div>Устройство реечных подвесных потолков</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                        <div>
+                                            <div>Демонтаж воздуховода</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                        <div>
+                                            <div>Устройство подвесного потолка из гипсокартона (1 слой)</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                        <div>
+                                            <div>Демонтаж перегородок и стильный натяжного потолка</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                        <div>
+                                            <div>Нанесение грунтовка</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                        <div>
+                                            <div>Шпаклевка / Шлифовка, нанесение</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                        <div>
+                                            <div>Окраска натяжной потолок</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                        <div>
+                                            <div>Выравнивание потолка под ключ</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                        <div>
+                                            <div>Теплоизоляция потолка вагонкой из дерева</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="typetable">
+                                <div class="title">
+                                    <div>Потолки</div>
+                                    <div>expand_circle_down</div>
+                                </div>
+                                <div class="data">
+                                    <div class="data-container">
+                                        <div>
+                                            <div>Тип объекта</div>
+                                            <div>Цена за кв м2 /руб.</div>
+                                        </div>
+                                        <div>
+                                            <div>Устройство реечных подвесных потолков</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                        <div>
+                                            <div>Демонтаж воздуховода</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                        <div>
+                                            <div>Устройство подвесного потолка из гипсокартона (1 слой)</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                        <div>
+                                            <div>Демонтаж перегородок и стильный натяжного потолка</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                        <div>
+                                            <div>Нанесение грунтовка</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                        <div>
+                                            <div>Шпаклевка / Шлифовка, нанесение</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                        <div>
+                                            <div>Окраска натяжной потолок</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                        <div>
+                                            <div>Выравнивание потолка под ключ</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                        <div>
+                                            <div>Теплоизоляция потолка вагонкой из дерева</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="typetable">
+                                <div class="title">
+                                    <div>Потолки</div>
+                                    <div>expand_circle_down</div>
+                                </div>
+                                <div class="data">
+                                    <div class="data-container">
+                                        <div>
+                                            <div>Тип объекта</div>
+                                            <div>Цена за кв м2 /руб.</div>
+                                        </div>
+                                        <div>
+                                            <div>Устройство реечных подвесных потолков</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                        <div>
+                                            <div>Демонтаж воздуховода</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                        <div>
+                                            <div>Устройство подвесного потолка из гипсокартона (1 слой)</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                        <div>
+                                            <div>Демонтаж перегородок и стильный натяжного потолка</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                        <div>
+                                            <div>Нанесение грунтовка</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                        <div>
+                                            <div>Шпаклевка / Шлифовка, нанесение</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                        <div>
+                                            <div>Окраска натяжной потолок</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                        <div>
+                                            <div>Выравнивание потолка под ключ</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                        <div>
+                                            <div>Теплоизоляция потолка вагонкой из дерева</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div></div>
+                        <div class="typetables" data-id="4">
+                            <div class="typetable">
+                                <div class="title">
+                                    <div>Потолки</div>
+                                    <div>expand_circle_down</div>
+                                </div>
+                                <div class="data">
+                                    <div class="data-container">
+                                        <div>
+                                            <div>Тип объекта</div>
+                                            <div>Цена за кв м2 /руб.</div>
+                                        </div>
+                                        <div>
+                                            <div>Устройство реечных подвесных потолков</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                        <div>
+                                            <div>Демонтаж воздуховода</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                        <div>
+                                            <div>Устройство подвесного потолка из гипсокартона (1 слой)</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                        <div>
+                                            <div>Демонтаж перегородок и стильный натяжного потолка</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                        <div>
+                                            <div>Нанесение грунтовка</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                        <div>
+                                            <div>Шпаклевка / Шлифовка, нанесение</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                        <div>
+                                            <div>Окраска натяжной потолок</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                        <div>
+                                            <div>Выравнивание потолка под ключ</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                        <div>
+                                            <div>Теплоизоляция потолка вагонкой из дерева</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="typetable">
+                                <div class="title">
+                                    <div>Потолки</div>
+                                    <div>expand_circle_down</div>
+                                </div>
+                                <div class="data">
+                                    <div class="data-container">
+                                        <div>
+                                            <div>Тип объекта</div>
+                                            <div>Цена за кв м2 /руб.</div>
+                                        </div>
+                                        <div>
+                                            <div>Устройство реечных подвесных потолков</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                        <div>
+                                            <div>Демонтаж воздуховода</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                        <div>
+                                            <div>Устройство подвесного потолка из гипсокартона (1 слой)</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                        <div>
+                                            <div>Демонтаж перегородок и стильный натяжного потолка</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                        <div>
+                                            <div>Нанесение грунтовка</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                        <div>
+                                            <div>Шпаклевка / Шлифовка, нанесение</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                        <div>
+                                            <div>Окраска натяжной потолок</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                        <div>
+                                            <div>Выравнивание потолка под ключ</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                        <div>
+                                            <div>Теплоизоляция потолка вагонкой из дерева</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="typetable">
+                                <div class="title">
+                                    <div>Потолки</div>
+                                    <div>expand_circle_down</div>
+                                </div>
+                                <div class="data">
+                                    <div class="data-container">
+                                        <div>
+                                            <div>Тип объекта</div>
+                                            <div>Цена за кв м2 /руб.</div>
+                                        </div>
+                                        <div>
+                                            <div>Устройство реечных подвесных потолков</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                        <div>
+                                            <div>Демонтаж воздуховода</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                        <div>
+                                            <div>Устройство подвесного потолка из гипсокартона (1 слой)</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                        <div>
+                                            <div>Демонтаж перегородок и стильный натяжного потолка</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                        <div>
+                                            <div>Нанесение грунтовка</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                        <div>
+                                            <div>Шпаклевка / Шлифовка, нанесение</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                        <div>
+                                            <div>Окраска натяжной потолок</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                        <div>
+                                            <div>Выравнивание потолка под ключ</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                        <div>
+                                            <div>Теплоизоляция потолка вагонкой из дерева</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div></div>
+                        <div class="typetables" data-id="5">
+                            <div class="typetable">
+                                <div class="title">
+                                    <div>Потолки</div>
+                                    <div>expand_circle_down</div>
+                                </div>
+                                <div class="data">
+                                    <div class="data-container">
+                                        <div>
+                                            <div>Тип объекта</div>
+                                            <div>Цена за кв м2 /руб.</div>
+                                        </div>
+                                        <div>
+                                            <div>Устройство реечных подвесных потолков</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                        <div>
+                                            <div>Демонтаж воздуховода</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                        <div>
+                                            <div>Устройство подвесного потолка из гипсокартона (1 слой)</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                        <div>
+                                            <div>Демонтаж перегородок и стильный натяжного потолка</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                        <div>
+                                            <div>Нанесение грунтовка</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                        <div>
+                                            <div>Шпаклевка / Шлифовка, нанесение</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                        <div>
+                                            <div>Окраска натяжной потолок</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                        <div>
+                                            <div>Выравнивание потолка под ключ</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                        <div>
+                                            <div>Теплоизоляция потолка вагонкой из дерева</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="typetable">
+                                <div class="title">
+                                    <div>Потолки</div>
+                                    <div>expand_circle_down</div>
+                                </div>
+                                <div class="data">
+                                    <div class="data-container">
+                                        <div>
+                                            <div>Тип объекта</div>
+                                            <div>Цена за кв м2 /руб.</div>
+                                        </div>
+                                        <div>
+                                            <div>Устройство реечных подвесных потолков</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                        <div>
+                                            <div>Демонтаж воздуховода</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                        <div>
+                                            <div>Устройство подвесного потолка из гипсокартона (1 слой)</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                        <div>
+                                            <div>Демонтаж перегородок и стильный натяжного потолка</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                        <div>
+                                            <div>Нанесение грунтовка</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                        <div>
+                                            <div>Шпаклевка / Шлифовка, нанесение</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                        <div>
+                                            <div>Окраска натяжной потолок</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                        <div>
+                                            <div>Выравнивание потолка под ключ</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                        <div>
+                                            <div>Теплоизоляция потолка вагонкой из дерева</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="typetable">
+                                <div class="title">
+                                    <div>Потолки</div>
+                                    <div>expand_circle_down</div>
+                                </div>
+                                <div class="data">
+                                    <div class="data-container">
+                                        <div>
+                                            <div>Тип объекта</div>
+                                            <div>Цена за кв м2 /руб.</div>
+                                        </div>
+                                        <div>
+                                            <div>Устройство реечных подвесных потолков</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                        <div>
+                                            <div>Демонтаж воздуховода</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                        <div>
+                                            <div>Устройство подвесного потолка из гипсокартона (1 слой)</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                        <div>
+                                            <div>Демонтаж перегородок и стильный натяжного потолка</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                        <div>
+                                            <div>Нанесение грунтовка</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                        <div>
+                                            <div>Шпаклевка / Шлифовка, нанесение</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                        <div>
+                                            <div>Окраска натяжной потолок</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                        <div>
+                                            <div>Выравнивание потолка под ключ</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                        <div>
+                                            <div>Теплоизоляция потолка вагонкой из дерева</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div></div>
+                        <div class="typetables" data-id="6">
+                            <div class="typetable">
+                                <div class="title">
+                                    <div>Потолки</div>
+                                    <div>expand_circle_down</div>
+                                </div>
+                                <div class="data">
+                                    <div class="data-container">
+                                        <div>
+                                            <div>Тип объекта</div>
+                                            <div>Цена за кв м2 /руб.</div>
+                                        </div>
+                                        <div>
+                                            <div>Устройство реечных подвесных потолков</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                        <div>
+                                            <div>Демонтаж воздуховода</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                        <div>
+                                            <div>Устройство подвесного потолка из гипсокартона (1 слой)</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                        <div>
+                                            <div>Демонтаж перегородок и стильный натяжного потолка</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                        <div>
+                                            <div>Нанесение грунтовка</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                        <div>
+                                            <div>Шпаклевка / Шлифовка, нанесение</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                        <div>
+                                            <div>Окраска натяжной потолок</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                        <div>
+                                            <div>Выравнивание потолка под ключ</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                        <div>
+                                            <div>Теплоизоляция потолка вагонкой из дерева</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="typetable">
+                                <div class="title">
+                                    <div>Потолки</div>
+                                    <div>expand_circle_down</div>
+                                </div>
+                                <div class="data">
+                                    <div class="data-container">
+                                        <div>
+                                            <div>Тип объекта</div>
+                                            <div>Цена за кв м2 /руб.</div>
+                                        </div>
+                                        <div>
+                                            <div>Устройство реечных подвесных потолков</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                        <div>
+                                            <div>Демонтаж воздуховода</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                        <div>
+                                            <div>Устройство подвесного потолка из гипсокартона (1 слой)</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                        <div>
+                                            <div>Демонтаж перегородок и стильный натяжного потолка</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                        <div>
+                                            <div>Нанесение грунтовка</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                        <div>
+                                            <div>Шпаклевка / Шлифовка, нанесение</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                        <div>
+                                            <div>Окраска натяжной потолок</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                        <div>
+                                            <div>Выравнивание потолка под ключ</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                        <div>
+                                            <div>Теплоизоляция потолка вагонкой из дерева</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="typetable">
+                                <div class="title">
+                                    <div>Потолки</div>
+                                    <div>expand_circle_down</div>
+                                </div>
+                                <div class="data">
+                                    <div class="data-container">
+                                        <div>
+                                            <div>Тип объекта</div>
+                                            <div>Цена за кв м2 /руб.</div>
+                                        </div>
+                                        <div>
+                                            <div>Устройство реечных подвесных потолков</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                        <div>
+                                            <div>Демонтаж воздуховода</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                        <div>
+                                            <div>Устройство подвесного потолка из гипсокартона (1 слой)</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                        <div>
+                                            <div>Демонтаж перегородок и стильный натяжного потолка</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                        <div>
+                                            <div>Нанесение грунтовка</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                        <div>
+                                            <div>Шпаклевка / Шлифовка, нанесение</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                        <div>
+                                            <div>Окраска натяжной потолок</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                        <div>
+                                            <div>Выравнивание потолка под ключ</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                        <div>
+                                            <div>Теплоизоляция потолка вагонкой из дерева</div>
+                                            <div>1 120 ₽</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div></div>
+                    </div>
+                </div>
+                <form class="flex-col gap-1 mb-3 m-center">
+                    <label class="desktop m-dark-t" for="time-check">Когда удобно перезвонить вам?</label>
+                    <div class="flex gap-1 m-flex-col wrap">
+                        <div class="desktop select-wrapper dark-t">
+                            <select class="m-br-1" title="time" id="time-check">
+                                <option value="">Сейчас</option>
+                                <option value="">В течение дня</option>
+                                <option value="">Завтра</option>
+                            </select>
+                        </div>
+                        <input class="m-br-1" type="tel" placeholder="Ваш номер телефона">
+                        <button class="btn primary flat upper m-br-1" type="">Перезвоните мне</button>
+                    </div>
+                    <input class="w20" id="accept3" type="checkbox">
+                    <label class="right f-14 center" for="accept3">
+                        <div>Согласен с условиями <a class="" href="" target="_blank">политики конфиденциальности данных</a></div>
+                    </label>
+                </form>
+            </div>
+            <style>
+                .typework-btn {
+                    transition: all .2s;
+                }
+                .typework-btn.active {
+                    color: var(--primary-color);
+                }
+                .typetablesgroups {
+                    width: 100%;
+                    max-width: 800px;
+                }
+                .typetables {
+                    display: none;
+                    flex-direction: column;
+                    gap: 1em;
+                }
+                .typetables.visible {
+                    display: flex;
+                }
+                .typetable {
+                    width: 100%;
+                    padding: 1.5em 2em;
+                    box-sizing: border-box;
+                    background: white;
+                }
+                .typetable .title {
+                    display: flex;
+                    gap: .5em;
+                    justify-content: space-between;
+                    align-items: center;
+                    font-size: 40px;
+                    text-transform: uppercase;
+                }
+                .typetable .title > div:last-child {
+                    color: var(--primary-color);
+                    font-family: "Material Symbols Rounded";
+                    font-variation-settings: "FILL" 1;
+                }
+                .typetable .data {
+                    display: grid;
+                    grid-template-rows: 0fr;
+                    transition: all .5s;
+                }
+                .typetable .data-container {
+                    overflow: hidden;
+                }
+                .typetable .title.active + .data {
+                    grid-template-rows: 1fr;
+                    margin-top: 1em;
+                }
+                .typetable .title.active .data-container {
+                    margin: 1em 0;
+                }
+                .typetable .data-container > * {
+                    display: flex;
+                    justify-content: space-between;
+                    flex-wrap: no-wrap;
+                }
+                .typetable .data-container > * > :last-child {
+                    flex-shrink: 0;
+                }
+                .typetable .data-container > div:first-child {
+                    text-transform: uppercase;
+                    border-bottom: 1px solid var(--primary-color);
+                    padding: 1em 0;
+                }
+                .typetable .data-container > div:nth-child(n + 2) {
+                    border-bottom: 1px dashed gray;
+                    font-size: 16px;
+                    padding: 1.5em 0;
+                }
+                .typetable .data-container > div:nth-child(n + 2) > div:last-child {
+                    font-weight: bold;
+                }
+
+                @media (max-width: 768px) {
+                    .typework-btn {
+                        display: flex;
+                        align-items: center;
+                        gap: .5em;
+                        padding: .5em 1em;
+                        border-radius: 6px;
+                        width: 100%;
+                    }
+                    .typework-btn.active {
+                        background: lightgray;
+                    }
+                    .typework-btn::before {
+                        content: "";
+                        width: .5em;
+                        height: .5em;
+                        background: lightgray;
+                        border-radius: 50%;
+                        transition: all .2s;
+                    }
+                    .typework-btn.active::before {
+                        background: var(--primary-color);
+                    }
+                }
+            </style>
+            <script>
+                document.querySelectorAll('.typework-btn').forEach(elem => {
+                    elem.addEventListener('click', e => {
+                        choosenOne(e.currentTarget)
+                        document.querySelectorAll('.typetablesgroups > *').forEach(table => {
+                            if (table.getAttribute('data-id') != e.target.getAttribute('data-id')) table.classList.remove('visible')
+                            else table.classList.add('visible')
+                        })
+                    })
+                })
+                document.querySelectorAll('.typetable .title').forEach(elem => {
+                    elem.addEventListener('click', e => toggle(e.currentTarget, 'active'))
                 })
             </script>
         </div>
@@ -2871,15 +4172,67 @@
                 <div class="swiper multi-slider">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
-                            <div class="flex center">
-                                <img title="title" src="/images/tecnic/double1.png">
-                                <div class="images-delimiter flex center">
-                                    <div class="material-icon f-36 light-t flex center" onclick="imagesResize(this)">
-                                        <div>arrow_range</div>
-                                    </div>
+                            <div id="balca1" class="bal-container">
+                                <div class="bal-after">
+                                    <img title="double1" src="/images/tecnic/double1.png">
                                 </div>
-                                <img title="title" src="/images/tecnic/double2.png">
+                                <div class="bal-before">
+                                    <div class="bal-before-inset">
+                                    <img title="double2" src="/images/tecnic/double2.png">
+                                </div>
+                                </div>
+                                <div class="bal-handle">
+                                    <span class="handle-left-arrow"></span>
+                                    <span class="handle-right-arrow"></span>
+                                </div>
                             </div>
+                            <script>
+                                new BeforeAfter({
+                                    id: '#balca1'
+                                })
+                            </script>
+                        </div>
+                        <div class="swiper-slide">
+                            <div id="balca2" class="bal-container">
+                                <div class="bal-after">
+                                    <img title="double1" src="/images/tecnic/double1.png">
+                                </div>
+                                <div class="bal-before">
+                                    <div class="bal-before-inset">
+                                    <img title="double2" src="/images/tecnic/double2.png">
+                                </div>
+                                </div>
+                                <div class="bal-handle">
+                                    <span class="handle-left-arrow"></span>
+                                    <span class="handle-right-arrow"></span>
+                                </div>
+                            </div>
+                            <script>
+                                new BeforeAfter({
+                                    id: '#balca2'
+                                })
+                            </script>
+                        </div>
+                        <div class="swiper-slide">
+                            <div id="balca3" class="bal-container">
+                                <div class="bal-after">
+                                    <img title="double1" src="/images/tecnic/double1.png">
+                                </div>
+                                <div class="bal-before">
+                                    <div class="bal-before-inset">
+                                    <img title="double2" src="/images/tecnic/double2.png">
+                                </div>
+                                </div>
+                                <div class="bal-handle">
+                                    <span class="handle-left-arrow"></span>
+                                    <span class="handle-right-arrow"></span>
+                                </div>
+                            </div>
+                            <script>
+                                new BeforeAfter({
+                                    id: '#balca3'
+                                })
+                            </script>
                         </div>
                     </div>
                     <div class="swiper-pagination"></div>
@@ -2892,6 +4245,7 @@
             <style>
                 .swiper.multi-slider {
                     width: 84%;
+                    aspect-ratio: 16 / 9;
                     height: auto;
                 }
                 .swiper.multi-slider .swiper-wrapper {
@@ -2903,7 +4257,6 @@
                     height: 100%;
                 }
                 .swiper.multi-slider img{
-                    object-fit: contain;
                     height: 100%;
                     position: absolute;
                     top: 0;
@@ -2928,7 +4281,7 @@
             <script>
                 const swiper15 = new Swiper('.swiper.multi-slider', {
                     spaceBetween: 0,
-                    slidesPerView: 'auto',
+                    slidesPerView: 1,
                     pagination: {
                         el: '.multi-slider .swiper-pagination',
                         dynamicBullets: true,

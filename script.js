@@ -17,3 +17,13 @@ function imagesResize(a) {
     imgs[0].style.clipPath = `inset(0 ${toString(100 - value)}% 0 0)`
     imgs[1].style.clipPath = `inset(0 0 0 ${toString(value)}%)`
 }
+
+function choosenOne(a, class_name = null) {
+    var children = a.parentNode.children
+    for (const key in children) {
+        if (Object.prototype.hasOwnProperty.call(children, key)) {
+            children[key].classList.remove(class_name ?? 'active')
+        }
+    }
+    a.classList.add(class_name ?? 'active')
+}
