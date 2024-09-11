@@ -8,15 +8,13 @@ function changeHeaderColor() {
 }
 
 const observer = new IntersectionObserver(entry => {
-    console.log(entry[0])
-    var header_menu = document.querySelector('.header-menu')
-    if (entry[0].isIntersecting) header_menu.classList.remove('b-x')
-    else header_menu.classList.add('b-x')
+    if (entry[0].isIntersecting) entry[0].target.classList.remove('b-x')
+    else entry[0].target.classList.add('b-x')
 }, {
-    rootMargin: '100% 0px -100% 0px',
-    threshold: 1,
+    rootMargin: '0px 0px -99% 0px',
+    threshold: 0,
 })
 
-observer.observe(document.querySelector('.header-bg'))
+observer.observe(document.querySelector('.header-menu'))
 
 window.addEventListener('scroll', changeHeaderColor)
