@@ -786,20 +786,21 @@ svg.primary-fg {
   opacity: 0.5;
 }
 
-.progress,
-.progress > * {
-  height: 25px;
-}
 .progress {
   border-radius: 50vh;
   background: white;
   border: 5px solid white;
-}
-.progress > * {
-  margin-bottom: -25px;
   position: relative;
 }
-.progress .current-line {
+.progress > * {
+  height: 25px;
+}
+.progress > *:nth-child(n+2) {
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+.progress .current-line-progress {
   position: relative;
   border-radius: 50vh;
   background: var(--primary-color);
@@ -1492,12 +1493,8 @@ table td.description-field .help {
     max-width: 330px;
   }
 
-  .progress,
   .progress > * {
     height: 18px;
-  }
-  .progress > * {
-    margin-bottom: -18px;
   }
 
   .m-dark-t {

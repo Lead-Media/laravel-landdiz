@@ -2,7 +2,7 @@ function toggle(a, b = null) {
     var element = typeof(a) === "string" ? element = document.getElementById(a) : a
     element.classList.toggle(b ? b : 'visible')
 }
-function innerHTML(a, b, c) {
+function inner(a, b, c) {
     a.innerHTML = a.innerHTML == b ? c : b
 }
 

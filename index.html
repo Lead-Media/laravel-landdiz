@@ -113,7 +113,7 @@
         <div>
             <input id="right-btns" type="checkbox">
             <label for="right-btns">
-                <div class="material-icon primary-fg" onclick="innerHTML(this, 'add_circle', 'cancel')">add_circle</div>
+                <div class="material-icon primary-fg" onclick="inner(this, 'add_circle', 'cancel')">add_circle</div>
                 <div class="buttons">
                     <div>
                         <a>
@@ -293,7 +293,7 @@
                     <form class="flex-col height-full" action="" metod="get"> <!-- Форма -->
                         <div class="flex-1">
                             <div class="progress mb-3 f-14 m-f-12"> <!-- Прогресс-бар -->
-                                <div class="current-line" style="width: 40%;"></div>
+                                <div class="current-line-progress" style="width: 40%;"></div>
                                 <div class="current-text-progress flex center height-full" style="clip-path: inset(0 60% 0 0 round 20vh);"><span>Расчёт пройден на <span id="">40</span>%</span></div>
                                 <div class="current-text flex center height-full" style="clip-path: inset(0 0 0 40% round 20vh);"><span>Расчёт пройден на <span id="">40</span>%</span></div>
                             </div>
@@ -894,7 +894,7 @@
                             <div class="dot-left">Требуемый опыт работы: 1–3 года</div>
                             <div class="dot-left">Стабильная заработная плата</div>
                         </div>
-                        <div><span class="pointer material-icon f-24 primary-fg" onclick="toggle('vacancy007'); innerHTML(this, 'cancel', 'add_circle')">add_circle</span></div>
+                        <div><span class="pointer material-icon f-24 primary-fg" onclick="toggle('vacancy007'); inner(this, 'cancel', 'add_circle')">add_circle</span></div>
                     </div>
                     <div id="vacancy007" class="description">
                         <p>
@@ -916,7 +916,7 @@
                             <div class="dot-left">Требуемый опыт работы: 1–3 года</div>
                             <div class="dot-left">Стабильная заработная плата</div>
                         </div>
-                        <div><span class="pointer material-icon f-24 primary-fg" onclick="toggle('vacancy008'); innerHTML(this, 'cancel', 'add_circle')">add_circle</span></div>
+                        <div><span class="pointer material-icon f-24 primary-fg" onclick="toggle('vacancy008'); inner(this, 'cancel', 'add_circle')">add_circle</span></div>
                     </div>
                     <div id="vacancy008" class="description">
                         <p>
@@ -938,7 +938,7 @@
                             <div class="dot-left">Требуемый опыт работы: 1–3 года</div>
                             <div class="dot-left">Стабильная заработная плата</div>
                         </div>
-                        <div><span class="pointer material-icon f-24 primary-fg" onclick="toggle('vacancy009'); innerHTML(this, 'cancel', 'add_circle')">add_circle</span></div>
+                        <div><span class="pointer material-icon f-24 primary-fg" onclick="toggle('vacancy009'); inner(this, 'cancel', 'add_circle')">add_circle</span></div>
                     </div>
                     <div id="vacancy009" class="description">
                         <p>
@@ -1114,7 +1114,7 @@
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
                             <div class="background-image height-full" style="background-image: url(/images/workers/1.png);">
-                                <div class="toggle-button"><span class="pointer material-icon f-36 primary-fg" onclick="toggle('special001'); toggle(this, 'active'); innerHTML(this, 'cancel', 'add_circle')">add_circle</span></div>
+                                <div class="toggle-button"><span class="pointer material-icon f-36 primary-fg" onclick="toggle('special001'); toggle(this, 'active'); inner(this, 'cancel', 'add_circle')">add_circle</span></div>
                                 <div id="special001" class="back-shadow hidden light-t border-box flex-col flex-end height-full p-x-3 p-y-4">
                                     <div class="f-24 bold mb-1">Иван Иванов</div>
                                     <div class="f-16 thin">Проектировщик</div>
@@ -1123,7 +1123,7 @@
                         </div>
                         <div class="swiper-slide">
                             <div class="background-image height-full" style="background-image: url(/images/workers/1.png);">
-                                <div class="toggle-button"><span class="pointer material-icon f-36 primary-fg" onclick="toggle('special002'); toggle(this, 'active'); innerHTML(this, 'cancel', 'add_circle')">add_circle</span></div>
+                                <div class="toggle-button"><span class="pointer material-icon f-36 primary-fg" onclick="toggle('special002'); toggle(this, 'active'); inner(this, 'cancel', 'add_circle')">add_circle</span></div>
                                 <div id="special002" class="back-shadow hidden light-t border-box flex-col flex-end height-full p-x-3 p-y-4">
                                     <div class="f-24 bold mb-1">Иван Иванов</div>
                                     <div class="f-16 thin">Проектировщик</div>
@@ -1132,7 +1132,7 @@
                         </div>
                         <div class="swiper-slide">
                             <div class="background-image height-full" style="background-image: url(/images/workers/1.png);">
-                                <div class="toggle-button"><span class="pointer material-icon f-36 primary-fg" onclick="toggle('special003'); toggle(this, 'active'); innerHTML(this, 'cancel', 'add_circle')">add_circle</span></div>
+                                <div class="toggle-button"><span class="pointer material-icon f-36 primary-fg" onclick="toggle('special003'); toggle(this, 'active'); inner(this, 'cancel', 'add_circle')">add_circle</span></div>
                                 <div id="special003" class="back-shadow hidden light-t border-box flex-col flex-end height-full p-x-3 p-y-4">
                                     <div class="f-24 bold mb-1">Иван Иванов</div>
                                     <div class="f-16 thin">Проектировщик</div>
@@ -1141,7 +1141,7 @@
                         </div>
                         <div class="swiper-slide">
                             <div class="background-image height-full" style="background-image: url(/images/workers/1.png);">
-                                <div class="toggle-button"><span class="pointer material-icon f-36 primary-fg" onclick="toggle('special004'); toggle(this, 'active'); innerHTML(this, 'cancel', 'add_circle')">add_circle</span></div>
+                                <div class="toggle-button"><span class="pointer material-icon f-36 primary-fg" onclick="toggle('special004'); toggle(this, 'active'); inner(this, 'cancel', 'add_circle')">add_circle</span></div>
                                 <div id="special004" class="back-shadow hidden light-t border-box flex-col flex-end height-full p-x-3 p-y-4">
                                     <div class="f-24 bold mb-1">Иван Иванов</div>
                                     <div class="f-16 thin">Проектировщик</div>
@@ -1150,7 +1150,7 @@
                         </div>
                         <div class="swiper-slide">
                             <div class="background-image height-full" style="background-image: url(/images/workers/1.png);">
-                                <div class="toggle-button"><span class="pointer material-icon f-36 primary-fg" onclick="toggle('special005'); toggle(this, 'active'); innerHTML(this, 'cancel', 'add_circle')">add_circle</span></div>
+                                <div class="toggle-button"><span class="pointer material-icon f-36 primary-fg" onclick="toggle('special005'); toggle(this, 'active'); inner(this, 'cancel', 'add_circle')">add_circle</span></div>
                                 <div id="special005" class="back-shadow hidden light-t border-box flex-col flex-end height-full p-x-3 p-y-4">
                                     <div class="f-24 bold mb-1">Иван Иванов</div>
                                     <div class="f-16 thin">Проектировщик</div>
@@ -1980,7 +1980,7 @@
                         <div class="wrapper-title upper mb-1 balance">Калькулятор ремонта квартир <span class="primary-fg">с материалом</span></div>
                         <div class="radio-wrapper">
                             <div>Тип недвижимости:</div>
-                            <div>
+                            <div class="radio-labels-group">
                                 <label class="radio-label">
                                     <input type="radio" name="answer1" value="" id="">
                                     <span>Новостройка</span>
@@ -1997,7 +1997,7 @@
                         </div>
                         <div class="radio-wrapper">
                             <div>Тип ремонта:</div>
-                            <div>
+                            <div class="radio-labels-group">
                                 <label class="radio-label">
                                     <input type="radio" name="answer2" value="" id="">
                                     <span>Черновой</span>
@@ -2018,7 +2018,7 @@
                         </div>
                         <div class="radio-wrapper">
                             <div>Нужен ли демонтаж:</div>
-                            <div>
+                            <div class="radio-labels-group">
                                 <label class="radio-label">
                                     <input type="radio" name="answer3" value="" id="">
                                     <span>Да</span>
@@ -2032,7 +2032,7 @@
                         <div class="flex gap-1">
                             <div class="radio-wrapper">
                                 <div>Нужно ли выравнивать стены</div>
-                                <div>
+                                <div class="radio-labels-group">
                                     <label class="radio-label">
                                         <input type="radio" name="answer4" value="" id="">
                                         <span>Да</span>
@@ -2045,7 +2045,7 @@
                             </div>
                             <div class="radio-wrapper">
                                 <div>Нужна ли перепланировка</div>
-                                <div>
+                                <div class="radio-labels-group">
                                     <label class="radio-label">
                                         <input type="radio" name="answer5" value="" id="">
                                         <span>Да</span>
@@ -2060,7 +2060,7 @@
                         <div class="flex gap-1 p-y-2">
                             <div class="radio-wrapper flex-1">
                                 <legend>Нужно ли ремонтировать балкон или лоджию</legend>
-                                <div>
+                                <div class="radio-labels-group">
                                     <label class="radio-label">
                                         <input type="radio" name="answer6" value="" id="">
                                         <span>Да</span>
@@ -2137,7 +2137,7 @@
                     <div class="calculator-form light-t">
                         <div class="radio-wrapper">
                             <div>Тип ремонта:</div>
-                            <div>
+                            <div class="radio-labels-group">
                                 <label class="radio-label">
                                     <input type="radio" name="answer2" value="" id="">
                                     <span>Черновой</span>
@@ -2299,6 +2299,13 @@
                     max-width: 170px;
                 }
 
+                .calculator .radio-labels-group {
+                    display: flex;
+                    column-gap: 2em;
+                    align-items: stretch;
+                    align-content: stretch;
+                    flex-wrap: wrap;
+                }
                 .calculator .radio-label input[type="radio"] {
                     display: none;
                 }
@@ -2308,9 +2315,6 @@
                     width: fit-content;
                     gap: .5em;
                     position: relative;
-                }
-                .calculator .radio-label:not(:last-child) {
-                    margin-right: 2em;
                 }
                 .calculator .radio-label > span::before {
                     content: '';
@@ -2346,6 +2350,11 @@
                 .calculator-mobile select,
                 .calculator-mobile input {
                     border-radius: var(--button-radius);
+                }
+                .calculator-mobile .radio-labels-group {
+                    display: grid;
+                    grid-template-columns: repeat(2, 1fr);
+                    column-gap: 1em;
                 }
 
             </style>
@@ -4094,7 +4103,7 @@
                     box-sizing: border-box;
                 }
                 .swiper.multi-repair .swiper-slide ul {
-                    margin: 0 auto;
+                    margin: 0 auto 0 5px;
                 }
                 .swiper.multi-repair .swiper-slide .list {
                     flex-grow: 1;
