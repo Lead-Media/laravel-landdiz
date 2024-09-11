@@ -4215,9 +4215,6 @@
                     aspect-ratio: 16 / 9;
                     height: calc(100% - 30px);
                 }
-                .swiper.multi-slider .swiper-wrapper.noswipe {
-                    transform: translate(0) !important;
-                }
                 .swiper.multi-slider .swiper-slide,
                 .swiper.multi-slider .swiper-slide > * {
                     height: 100%;
@@ -4283,7 +4280,6 @@
                 const swiper15 = new Swiper('.swiper.multi-slider', {
                     spaceBetween: 0,
                     slidesPerView: 1,
-                    allowTouchMove: true,
                     pagination: {
                         el: '.multi-slider .swiper-pagination',
                         dynamicBullets: true,
@@ -4302,8 +4298,8 @@
                         no_overlay: true
                     })
                 })
-                $(".twentytwenty-wrapper").on('touchstart touchmove touchend mousemove', function(e) {
-                    var elemParent = $(e.currentTarget).parents('.swiper-wrapper')
+                $(".twentytwenty-container").on('click mousedown mousemove movestart pointerdown pointercancel pointerup pointerout touchcancel touchstart touchmove touchend', function(e) {
+                    var elemParent = $(e.currentTarget).parents(".swiper-slide")
                     if (e.target.classList.contains("twentytwenty-handle")) elemParent.addClass("noswipe")
                     else elemParent.removeClass("noswipe")
                 })
